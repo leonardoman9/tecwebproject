@@ -142,3 +142,78 @@ input [type ="submit"]{
 input [type ="submit"].hover{
     background:#a8825a;
 }
+
+/*section1*/
+
+.section{
+    padding: 100px;
+}
+.riga1{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.riga1 .col50{
+position: relative;
+width: 40%;
+justify-content: center;
+align-items: center;
+}
+
+.riga1 .col50 h2{
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+.descrizione{
+    color: #111;
+    font-size: 1em;
+    font-weight: 300 px;
+    text-transform: capitalize;
+}
+
+.descrizione span{
+    color: #d87710;
+    font-size: 1em ;
+    font-weight: 700px;
+    margin-left: 70px;
+    margin-top: 100px;
+}
+
+.riga1 .col50 img{
+height: 200px;
+width: 190px;
+position: relative;
+margin-top: 150px;
+margin-left: 109px;
+margin-right: 50px;
+
+}
+
+.descrizione1{
+    margin-top: 34px;
+    margin-left: 70px;
+    margin-right: 500px;
+}
+
+/*section2*/
+
+
+.riga2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 700px;
+}
+
+
+/*section3*/
+
+
+.riga3{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1500px;
+}
