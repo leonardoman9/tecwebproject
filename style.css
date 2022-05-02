@@ -198,7 +198,9 @@ margin-right: 50px;
 }
 
 /*section2*/
-
+.section{
+    padding: 100px;
+}
 
 .riga2{
     width: 100%;
@@ -207,6 +209,47 @@ margin-right: 50px;
     margin-left: 700px;
 }
 
+.riga1 .col51{
+    position: relative;
+    width: 80%;
+    justify-content:right;
+    align-items: center;
+    }
+
+.riga2 .col51 h2{
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+.descrizione2{
+    color: #111;
+    font-size: 1em;
+    font-weight: 300 px;
+    text-transform: capitalize;
+}
+
+.descrizione span{
+    color: #d87710;
+    font-size: 1em ;
+    font-weight: 700px;
+    margin-left: 70px;
+    margin-top: 100px;
+}
+
+.riga2 .col51 img{
+height: 200px;
+width: 190px;
+position: relative;
+margin-top: 150px;
+margin-left: 109px;
+margin-right: 50px;
+
+}
+
+.descrizione2{
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-right: 800px;
+}
 
 /*section3*/
 

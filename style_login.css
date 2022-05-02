@@ -1,0 +1,72 @@
+body{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./image/font2.jpg');
+    font-family: 'Roboto', sans-serif;
+}
+
+form{
+    margin-top: 20px;
+    background-color: azure;
+    padding: 40px 60px;
+    border-radius: 10px;
+    min-width: 300px;
+}
+
+form h1{
+    color: rgb(127, 11, 221);
+    text-align: center;
+}
+
+form .social-media{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+form .social-media p{
+  padding: 5px;
+  margin-left: 10px;
+  border: 1px solid #545454;
+  border-radius: 100%;
+  width: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+form p.usare-email{
+    text-align: center;
+}
+form .inputs{
+    display: flex;
+    flex-direction: column;
+}
+form .inputs input[type="email"], [type="password"]{
+   padding: 15px;
+   border-radius: 5px;
+   border: none;
+   background-color: #f2f2ff;
+   margin-bottom: 15px;
+   outline: none; 
+}
+form p.iscrizione{
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #878787;
+    justify-content: center;
+}
+form p.iscrizione span{
+    color: rgb(127, 11, 221);
+    cursor: pointer;
+}
+form button{
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    color: rgb(127, 11, 221);
+    background-color: rgb(11, 137, 221);
+    outline: none;
+    cursor: pointer;
+}
