@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="SignUp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <title>SignUp</title>
 </head>
 <body>
@@ -45,19 +48,29 @@
             </div>
 
             <div class="dettaglio_genere">
+
+                <input type="radio" name="genere" id="scelta_1" >
+                <input type="radio" name="genere" id="scelta_2" >
+                <input type="radio" name="genere" id="scelta_3" >
+
                 <span class="genere_tipo">Genere</span>
                 <div class="categoria">
-                    <label for=""></label>
-                    <span class="seleziona"></span>
+                <label for="scelta_1">
+                    <span class="sel uno"></span>
                     <span class="genere">Uomo</span>
-                </div>
-
-                <div class="categoria">
-                    <label for=""></label>
-                    <span class="seleziona"></span>
+                </label>
+                <label for="scelta_2">
+                    <span class="sel due"></span>
                     <span class="genere">Donna</span>
-                </div>
-
+                </label>
+                <label for="scelta_3">
+                    <span class="sel tre"></span>
+                    <span class="genere">Non sciegliere</span>
+                </label>
+                </div>            
+             </div>
+            <div class="button">
+                <input type="submit" value="Register">
             </div>
         </form>
     </div>
