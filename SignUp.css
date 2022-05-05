@@ -1,9 +1,103 @@
+/*
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+*/
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding: 20px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    background:thistle;
+}
+
+.logo{
+    color:rgb(38, 46, 160);
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.logo span{
+    color: #13ec0c;
+}
+
+
+.navbar{
+    display: flex;
+    position: relative;
+}
+
+
+.navbar li{
+    list-style: none;
+}
+
+.navbar a{
+    color: rgb(175, 58, 58);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 1em;
+
+}
+
+
+.btn-accedi{
+    padding: 10px 20px;
+    background: #fb911f;
+    margin-top: -10px;
+    text-transform: uppercase;
+}
+
+
+.btn-accedi:hover{
+    background: #d87710;
+    transition: ease-out;
+}
+.header .navbar li a:hover{
+    color: #fb911f;
+    border-bottom: 2px solid #fb911f;
+}
+
+.btn-registrati {
+    padding: 10px 20px;
+    background: #fb911f;
+    margin-top: -10px;
+    text-transform: uppercase;
+}
+
+.btn-registrati:hover {
+    background: #a8825a;  
+    transition: ease-out; 
+}
+
+
+
+
+
+
+
+
+
+
 
 body{
     display: flex;
