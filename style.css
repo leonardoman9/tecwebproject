@@ -261,6 +261,23 @@ margin-right: 50px;
     margin-left: 1500px;
 }
 
+
+/*footer*/
+
+.section_footer{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 10vh;
+    flex-direction: column;
+    background: #ccc8d3;
+}
+
+
 footer{
     position:relative;
     width: 100%;
@@ -283,18 +300,18 @@ footer .container .sec{
     margin-right: 30px;
 }
 
-footer .container .sec .aboutus{
-    width: 40px;
+footer .container .sec.imetti_contatto{
+    width: 20%;
 }
 
-footer .container .sec .aboutus h2{
+footer .container  h2{
     position: relative;
-    color: #fff;
+    color: rgb(238, 222, 222);
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-footer .container .sec .aboutus h2::before{
+footer .container  h2:before{
     content: "";
     position: absolute;
     bottom: -5px;
@@ -308,8 +325,12 @@ footer p{
 }
 
 .sci{
-    margin-top:20px ;
+    margin-top: 20px ;
     display: flex;
+}
+
+.sci li{
+    list-style: none;
 }
 
 .sci li a{
@@ -329,4 +350,91 @@ footer p{
     background: #f00;
 }
 
+.sci li a .fa{
+    color: #fff;
+    font-size: 20px;
+}
 
+.quicklink{
+    position: relative;
+    width: 25%;
+}
+
+.quicklink ul li{
+    list-style: none;
+}
+
+.quicklink ul li a{
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.quicklink ul li a:hover{
+    color: #fff;
+}
+
+.contatti{
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+
+.contatti .informazioni{
+    position: relative;
+}
+
+.contatti .informazioni li{
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.contatti .informazioni li span:nth-child(1){
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.contatti .informazioni li span{
+    color: #999;
+}
+
+.contatti .informazioni li a{
+    color: #999;
+    text-decoration: none;
+}
+
+.contatti .informazioni li a:hover{
+    color: #fff;
+}
+
+.copyright{
+    width: 100%;
+    background: #181818;
+    padding: 0px 100px;
+    text-align:left;
+    color: #999;
+}
+
+@media (max-width: 991px){
+    footer{
+        padding: 40px;
+    }
+    footer .container{
+        flex-direction:column ;
+    }
+    footer .container .sec{
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    footer .container .sec.aboutus, .quicklink, .contatti{
+        width: 100%;
+    }
+    .copyright{
+        width: 100%;
+        text-align: center;
+        color: #999;
+        background: #181818;
+        padding: 5px 40px;
+      
+    }
+}
