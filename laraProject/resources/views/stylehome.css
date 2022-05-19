@@ -166,9 +166,6 @@ header{
 }
 
 
-
-
-
 /*banner*/
 
 .banner{
@@ -297,26 +294,7 @@ header{
 
 
 
-
-/*footer*/
-
-
-
-/*
-.section_footer{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    min-height: 10vh;
-    flex-direction: column;
-    background: #ccc8d3;
-    margin-top: auto;
-}
-*/
+/*Footer*/
 
 
 footer{
@@ -365,60 +343,13 @@ footer p{
     color: #999;
 }
 
-.sci{
-    margin-top: 20px ;
-    display: flex;
-}
+/*Contatti*/
 
-.sci li{
-    list-style: none;
-}
-
-.sci li a{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: #222;
-    display: flex;
-    justify-content: center;  
-    align-items: center;
-    margin-right: 10px;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.sci li a:hover{
-    background: #f00;
-}
-
-.sci li a .fa{
-    color: #fff;
-    font-size: 20px;
-}
-
-.quicklink{
-    position: relative;
-    width: 25%;
-}
-
-.quicklink ul li{
-    list-style: none;
-}
-
-.quicklink ul li a{
-    color: #999;
-    text-decoration: none;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-
-.quicklink ul li a:hover{
-    color: #fff;
-}
 
 .contatti{
     width: calc(35% - 60px);
     margin-right: 0 !important;
+    margin-left: 70px;
 }
 
 .contatti .informazioni{
@@ -427,8 +358,10 @@ footer p{
 
 .contatti .informazioni li{
     display: flex;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
+
+
 
 .contatti .informazioni li span:nth-child(1){
     color: #fff;
@@ -448,8 +381,90 @@ footer p{
     color: #fff;
 }
 
+
+
+/*Link utili*/
+
+.quicklink{
+    position: relative;
+    width: 25%;
+    margin-left: 90px;
+}
+
+.quicklink ul li{
+    list-style: none;
+}
+
+.quicklink ul li a{
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.quicklink ul li a:hover{
+    color: #fff;
+}
+
+.sec .imetti_contatto{
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+
+
+/*Newsletter*/
+
+
+form {
+      
+  }
+
+  /* Add some padding and a grey background color to containers */
+.container {
+    padding: 5px;
+    margin-top: 10px;
+    background-color: transparent;
+    
+   }
+
+  /* Style the input elements and the submit button */
+input[type=text], input[type=submit] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: 0px;
+    
+  }
+
+
+
+/* Add margins to the checkbox */
+input[type=checkbox] {
+    
+  }
+  
+  /* Style the submit button */
+  input[type=submit] {
+    
+    background-color: #1ce4a1;
+    color: rgb(12, 11, 11);
+    border: none;
+  
+    
+  }
+  
+  input[type=submit]:hover {
+    opacity: 0.9;
+  }
+
+
+/*copyright*/
+
+
 .copyright{
-    margin-top: 25px;
+    margin-top: 30px;
     width: 100%;
     background: #181818;
     padding: 0px 100px;
