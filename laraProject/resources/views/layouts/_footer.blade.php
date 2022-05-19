@@ -6,17 +6,17 @@
                         <ul class="informazioni">
                             <li>
                                 <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                                <span>123 Street, Italia <br>IT</span>
+                                <span>Via Brecce Bianche 12, 60131 Ancona (AN) <br>IT</span>
                             </li>
                 
                             <li>
                                 <span><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                <p><a href="tel:000.000.000.000">000.000.000.000</a><br></p>
+                                <p><a href="tel:333.294.2526">333.294.2526</a><br></p>
                             </li>
                 
                             <li>
                                 <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                <p><a href="mail:mail@domain.com">mail@domain.com</a></p>
+                                <p><a href="mail:info@homeaway.com">info@homeaway.com</a></p>
                             </li>
                 
                         </ul>
@@ -29,9 +29,10 @@
                 <h2>Link Utili</h2>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Chi siamo</a></li>
-                    <li><a href="#">Nostro servizi</a></li>
+                    <li><a href="#chisiamo">Chi siamo</a></li>
+                    <li><a href="#">I nostri servizi</a></li>
                     <li><a href="#">FAQ</a></li>
+                    <li><a href="mailto:info@homeaway.com">Contattaci</a></li>
                     
                 </ul>
             </div>

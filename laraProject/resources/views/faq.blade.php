@@ -12,13 +12,11 @@
     <title>HomeAway | @yield('title', 'Home')</title>
 </head>
 <body>
-    <header> 
-            @include('layouts/_navpublic')
-      </header>
- 
+    <header>
+    @include('layouts/_navpublic')
+    </header>
      @include('layouts/_cover')
-     @include('layouts/_publicCatalog')
-     @include('layouts/_cards')
+     @include('layouts/_faq')
      
     <!--<section class="section_footer"> -->
         <footer>
