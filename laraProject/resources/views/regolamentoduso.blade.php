@@ -12,20 +12,23 @@
     <title>HomeAway | @yield('title', 'Home')</title>
 </head>
 <body>
-    <header> 
-            @include('layouts/_navpublic')
-     </header>
- 
+    <header>
+    @include('layouts/_navpublic')
+    </header>
      @include('layouts/_cover')
-     @include('layouts/_publicCatalog')
-     @include('layouts/_cards')
+     
+     <section>
+      @include('layouts/_regole')
+     </section>
+     
      
     <!--<section class="section_footer"> -->
-     <footer>
-     @include('layouts/_footer')
-     </footer>
-     
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <footer>
+            @include('layouts/_footer')
+        </footer>
+        </section>
+<scrip src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 
 </body>
 </html>

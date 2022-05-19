@@ -25,3 +25,6 @@ Route::get('/catalogo', 'PublicController@showCatalogo')
 
 Route::get('/faq', 'PublicController@showFaq')
         ->name('FaqPage');
+
+Route::get('/regolamento', 'PublicController@showRegolamento')
+        ->name('RegolamentoPage');

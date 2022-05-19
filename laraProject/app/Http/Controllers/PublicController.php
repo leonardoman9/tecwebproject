@@ -25,4 +25,8 @@ class PublicController extends Controller
         return view('faq');
     }
    
+    public function showRegolamento() {
+        return view('regolamentoduso');
+    }
+    
    }

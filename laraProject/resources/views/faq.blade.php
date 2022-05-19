@@ -16,7 +16,9 @@
     @include('layouts/_navpublic')
     </header>
      @include('layouts/_cover')
+     <section id="faq">
      @include('layouts/_faq')
+     </section>
      
     <!--<section class="section_footer"> -->
         <footer>
