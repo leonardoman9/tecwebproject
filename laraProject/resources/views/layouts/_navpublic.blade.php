@@ -2,7 +2,7 @@
         <div id="menu">
               <ul class="navbar">
                 <li> <a href=""> Ricerca</a> </li>
-                <li><a href="">Catalogo</a></li>
+                <li><a href="{{route('Catalogo')}}">Catalogo</a></li>
                 <li><a href="{{route('RegolamentoPage')}}">Regolamento e Condizioni d'uso</a></li>
                 <li><a href="{{route('FaqPage')}} ">FAQ</a></li>
                 <li> <a href="{{route('LoginPage')}}" class="btn-accedi ">Accedi</a> </li>

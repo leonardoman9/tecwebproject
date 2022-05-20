@@ -15,12 +15,15 @@
     <header> 
             @include('layouts/_navpublic')
      </header>
- 
-     @include('layouts/_cover')
-     @include('layouts/_publicCatalog')
-     @include('layouts/_cards')
+    @include('layouts/_cover')
+    
+    
+    @yield('content')
+       <!--<section class="section_footer"> -->
+    
      
-    <!--<section class="section_footer"> -->
+     
+     
      <footer>
      @include('layouts/_footer')
      </footer>
