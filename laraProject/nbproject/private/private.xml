@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/login.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_cards.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/catalogopubb.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/home.blade.php</file>
@@ -14,6 +15,7 @@
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_publicCatalog.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/regolamentoduso.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/faq.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/register.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_faq.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/app/Http/Controllers/PublicController.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/routes/web.php</file>

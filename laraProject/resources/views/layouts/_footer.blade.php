@@ -28,10 +28,10 @@
             <div class="sec quicklink">
                 <h2>Link Utili</h2>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{route('Home')}}">Home</a></li>
                     <li><a href="#chisiamo">Chi siamo</a></li>
                     <li><a href="#">I nostri servizi</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="{{route('FaqPage')}}">FAQ</a></li>
                     <li><a href="mailto:info@homeaway.com">Contattaci</a></li>
                     
                 </ul>
