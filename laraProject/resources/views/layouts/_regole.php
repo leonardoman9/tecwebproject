@@ -67,4 +67,6 @@ Il sito web www.HomeAway.it, i componenti per dispositivi mobili e le applicazio
 
 <p style="text-align: justify;">L&rsquo;accesso da parte dell&rsquo;utente al proprio profilo &egrave; possibile tramite una password e un indirizzo email univoco scelti dall&rsquo;utente stesso. La password &egrave; crittografata. &Egrave; consigliabile utilizzare una password alfanumerica complessa, che non deve essere comunicata a nessuno e che, soprattutto, non sia mai stata usata per accessi ad altri siti web. Le Informazioni personali dell&#39;utente risiedono su un server sicuro a cui hanno accesso tramite password solo personale e collaboratori selezionati di HomeAway Srl. Le Informazioni personali degli utenti sono sottoposte a crittografia quando vengono trasmesse a HomeAway.it. Tutti i dati personali sono raccolti e trattati nel rispetto delle leggi italiane e dell&#39;UE sulla tutela dei dati.</p>
 
+<p style="text-align: justify;"><br />
+3<strong>G Aggiornamento o cancellazione dei dati personali</strong></p>
 </div>
