@@ -176,11 +176,12 @@ h1, h2 {
     margin-left: 150px;
     margin-right: 150px;
     background: rgb(228, 221, 221);
-    height: 50%;
+    height: 30%;
     position: relative;
-   /* border: 2px solid red; 
-      border-style:outset;
-   */
+   /* border: 2px solid red;   */
+   margin-top: 30px;
+    border-style:outset;
+ 
     
 }
 
@@ -199,6 +200,7 @@ h1, h2 {
     background-position: center center;
     position: relative;
     border-radius: 10px;
+    animation:animate 20s;
     
 }
 .banner_copy{
@@ -222,7 +224,7 @@ h1, h2 {
 
 .banner_copy_text .prezzo {
     font-size: 20px;
-    margin-top: 60px;
+    margin-top: 40px;
     position: relative;
     text-align: left;
     margin-left: 100px;
@@ -261,6 +263,18 @@ h1, h2 {
 
 .banner_copy_text button{
     margin-top: 20px;
+    
+}
+.button{
+    background-color: #c8dfc7;
+    border-radius: 9em;
+    font-size: 22px;
+    padding: 0.2em 0.4em;
+    cursor: pointer;
+    user-select: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
 }
 
 
@@ -271,12 +285,10 @@ h1, h2 {
     
     max-width: 1200px;
     margin: auto;
-    
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
+    margin-left: 130px;
+    margin-right: 120px;
+    margin-top: 100px;
     margin-bottom: 150px;
-    
 }
  .card{
     
@@ -302,15 +314,15 @@ h1, h2 {
 }
 
 
+/*Footer */
 
-/*Footer*/
 
 
 footer{
     position:relative;
     width: 100%;
     height: auto;
-    padding: 50px 100px;
+    padding: 10px 100px;
     background: #111;
     display: flex;
     justify-content: space-between;
@@ -355,22 +367,29 @@ footer p{
     color: #999;
 }
 
+
 /*Contatti*/
 
 
 .contatti{
     width: calc(35% - 60px);
-    margin-right: 0 !important;
+    margin-right: 70px ;
     margin-left: 70px;
 }
 
-.contatti .informazioni{
-    position: relative;
+.informazioni{
+    display: inline-block;
+    
+}
+
+.informazioni .via{
+    display: flex;
 }
 
 .contatti .informazioni li{
+   
+    margin-bottom: 10px;
     display: flex;
-    margin-bottom: 18px;
 }
 
 
@@ -418,18 +437,23 @@ footer p{
     color: #fff;
 }
 
-.sec .imetti_contatto{
-    width: calc(35% - 60px);
-    margin-right: 0 !important;
+
+/*dove siamo*/
+
+.mapouter {
+    position: relative;
+    text-align: left;
+    height:230px;
+    width:230px;
+
+}
+.gmap_canvas{
+    width:300px;
+    height:200px;
+    overflow:hidden;
+    background:none!important;
 }
 
-
-/*Newsletter*/
-
-
-form {
-      
-  }
 
   /* Add some padding and a grey background color to containers */
 .container {
@@ -476,7 +500,7 @@ input[type=checkbox] {
 
 
 .copyright{
-    margin-top: 30px;
+    margin-top: 10px;
     width: 100%;
     background: #181818;
     padding: 0px 100px;

@@ -13,16 +13,12 @@
 </head>
 <body>
     <header> 
-            @include('layouts/_navpublic')
+        @include('layouts/_navpublic')
      </header>
- 
-     @include('layouts/_cover')
-     @include('layouts/_publicCatalog')
-     @include('layouts/_cards')
-     
-    <!--<section class="section_footer"> -->
+        @include('layouts/_cover')
+        @yield('content')
      <footer>
-     @include('layouts/_footer')
+         @include('layouts/_footer')
      </footer>
      
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

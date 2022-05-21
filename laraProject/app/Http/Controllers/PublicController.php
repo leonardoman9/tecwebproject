@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PublicController extends Controller
 {
     public function showHome() {
-        return view('welcome');
+        return view('home');
     }
    public function showLogin() {
        return view('login');
@@ -17,8 +17,8 @@ class PublicController extends Controller
        return view('register');
    }
 
-   public function catalogo() {
-       return view('catalogo');
+   public function showCatalogo() {
+       return view('catalogopubb');
    }
    
     public function showFaq() {

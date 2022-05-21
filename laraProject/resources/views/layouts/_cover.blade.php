@@ -1,4 +1,5 @@
- <section class="cover" >
+
+<section class="cover" >
           <div class="cover_"></div>
           <div class="cover_caption">
               <div class="cover_caption_copy">
