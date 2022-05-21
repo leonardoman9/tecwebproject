@@ -6,7 +6,7 @@
                         <ul class="informazioni">
                             <li>
                                 <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                                <span>Via Brecce Bianche 12, 60131 Ancona (AN) <br>IT</span>
+                                <span class="via">Via Bianche 12, 60131 Ancona(AN),IT</span>
                             </li>
                 
                             <li>
@@ -37,12 +37,22 @@
                 </ul>
             </div>
     
-  <div class="mapouter">
-      <h2>Dove siamo</h2>
-      <div class="gmap_canvas">
-          <iframe width="202" height="215" id="gmap_canvas" src="https://maps.google.com/maps?q=ia%20Brecce%20Bianche%2012,%2060131%20Ancona%20(AN)%20IT&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/">divi discount</a><br><style>.mapouter{position:relative;text-align:right;height:215px;width:202px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:215px;width:202px;}</style>
-      </div>
-  </div>
+            <div class="mapouter">
+                <h2>Dove siamo</h2>
+                <ul>
+                    <div class="gmap_canvas">
+                    <iframe  id="gmap_canvas" src="https://maps.google.com/maps?q=ia%20Brecce%20Bianche%2012,%2060131%20Ancona%20(AN)%20IT&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+
+                    </iframe><a href="https://www.whatismyip-address.com/divi-discount/"></a><br>
+                      <!--  <style>.mapouter{position:relative;text-align:right;height:215px;width:202px;}</style>
+                     <style>.gmap_canvas {overflow:hidden;background:none!important;height:215px;width:202px;}</style>
+                    -->
+                        <a href="https://www.embedgooglemap.net"></a>
+                       
+                </div>
+                </ul>
+                
+            </div>
     <!--https://google-map-generator.com/-->	
     
     
