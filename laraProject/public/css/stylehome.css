@@ -219,26 +219,27 @@ h1, h2 {
 .banner_copy_text  h3{
     margin-top: 20px;
     font-size: 30px;
-    
 }
 
+.prezzo{
+    margin: auto;
+}
 .banner_copy_text .prezzo {
     font-size: 20px;
     margin-top: 40px;
     position: relative;
     text-align: left;
     margin-left: 100px;
-    display: flex;
-    
-    
+    display: flex;    
 }
 
 .banner_copy_text .prezzo h4{
-  margin: auto;
+  margin: 20px;
+  
 }
 
 .banner_copy_text .prezzo h4{
-    margin: px;
+    margin: auto;
   }
 
   
@@ -267,14 +268,15 @@ h1, h2 {
 }
 .button{
     background-color: #c8dfc7;
-    border-radius: 9em;
-    font-size: 22px;
-    padding: 0.2em 0.4em;
+    border-radius: 3em;
+    font-size: 18px;
+    padding: 0.1em 1em;
     cursor: pointer;
     user-select: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     text-decoration: none;
+   
 }
 
 
@@ -283,19 +285,22 @@ h1, h2 {
 
 .cards{
     
-    max-width: 1200px;
+    max-width: 2000px;
     margin: auto;
-    margin-left: 130px;
-    margin-right: 120px;
+    text-align: left;
+    margin-left: 55px;
+    margin-right: 90px;
     margin-top: 100px;
-    margin-bottom: 150px;
+    margin-bottom: 35px;
 }
  .card{
-    
+    left: 20%; 
     width: 30%;
     margin: 20px;  
     background: #fff;
-    float: left;
+    float: right;
+    text-align: left;
+   
 }
 
 .card .card_image {
@@ -311,7 +316,9 @@ h1, h2 {
 }
 .card_modello h3{
     margin-bottom: 0;
+    margin-left: px;
 }
+
 
 
 /*Footer */
@@ -440,7 +447,7 @@ footer p{
 
 /*dove siamo*/
 
-.mapouter {
+.indirizzo {
     position: relative;
     text-align: left;
     height:230px;
@@ -449,9 +456,10 @@ footer p{
 }
 .gmap_canvas{
     width:300px;
-    height:200px;
+    height:170px;
     overflow:hidden;
     background:none!important;
+    overflow: hidden;
 }
 
 

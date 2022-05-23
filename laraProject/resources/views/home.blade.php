@@ -18,15 +18,13 @@
                                    {{$ann->descrizione}}
                                </p>
                                <div class="prezzo">
-                                    <h4>1 locale</h4>
-                                    <h4> {{$ann->numero_posto_letto_totale}} posti letto </h4>
-                                    <h4> {{$ann->dimensione}}m° </h4>
-                                    <h4>Prezzo: {{$ann->canone}}€/Mese </h4>
+                                    <h4> 1 locale | </h4>
+                                    <h4> {{$ann->numero_posto_letto_totale}} posti letto | </h4>
+                                    <h4> {{$ann->dimensione}}Mq | </h4>
+                                    <h4> Prezzo: {{$ann->canone}}€/Mese </h4>
 
                                  <a href="{{route('LoginPage')}}" class="button">Vedi l'annuncio</a>
-                               </div>
-
-                               <h5></h5>
+                                </div>
                          </div>
                      </div>
                       </section>
