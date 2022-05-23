@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models;
 use App\Models\FAQ;
 use App\Models\alloggio;
+use app\Models\utente;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use auth;
 
 
 
@@ -15,6 +17,7 @@ class PublicController extends Controller
     
     protected $_catalogoPubb;
     protected $_faqs;
+    protected $utente;
     
     public function _construct(){ 
         $this->_faqs = new FAQ();
@@ -23,18 +26,22 @@ class PublicController extends Controller
    
    
     public function showHome() {
+        
         $alloggio = new alloggio();
      //  $this->_catalogoPubb = new alloggio;
      //  $latestAnn = $this->_catalogoPubb->getUltimiAlloggi();
-       return view('home')
+        //Prende l'id dell'utente
+        $id = \Auth::id();
+        //Se l'utente si è autenticato prende anche gli eventi a cui parteciperà altrimenti no
+        if ($id != null) {
+        return view('home')
                 ->with('latestAnn', $alloggio->returnLatest());
-    }
-   public function showLogin() {
-       return view('login');
-   }
-  
-   public function showRegister() {
-       return view('register');
+        }
+        else
+        {
+        return view('home')
+                ->with('latestAnn', $alloggio->returnLatest());}
+        
    }
 
    public function showCatalogo() {

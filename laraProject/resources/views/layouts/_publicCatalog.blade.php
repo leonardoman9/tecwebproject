@@ -10,10 +10,10 @@
                         di cinque locali vicino all'università, e ha 3 fermate dell'autobus, una fermata della mensa universitaria.
                     </p>
                     <div class="prezzo">
-                          <h4>1 locale |</h4>
-                         <h4>3 camere da letto |</h4>
-                         <h4>60 Mq</h4>
-                         <h4>Prezzo: 300 € </h4>
+                          <h4>1 locale</h4>
+                         <h4>3 camere da letto</h4>
+                         <h4>60m°</h4>
+                         <h4>Prezzo: 300 €</h4>
                         
                       <a href="" class="button">Vedi l'annuncio</a>
                     </div>
@@ -34,10 +34,10 @@
                       di cinque locali vicino all'università, e ha 3 fermate dell'autobus, una fermata della mensa universitaria.
                   </p>
                   <div class="prezzo">
-                        <h4>1 locale |</h4>
-                       <h4>3 camere da letto |</h4>
-                       <h4>90 Mq</h4>
-                       <h4>Prezzo: 300 € </h4>
+                        <h4>1 locale</h4>
+                       <h4>3 camere da letto</h4>
+                       <h4>60m°</h4>
+                       <h4>Prezzo: 300 €</h4>
                       
                     <a href="" class="button">Vedi l'annuncio</a>
                   </div>
@@ -59,9 +59,9 @@
                       di cinque locali vicino all'università, e ha 3 fermate dell'autobus, una fermata della mensa universitaria.
                   </p>
                   <div class="prezzo">
-                        <h4>1 locale |</h4>
-                       <h4>3 camere da letto |</h4>
-                       <h4>100 Mq |</h4>
+                        <h4>1 locale</h4>
+                       <h4>3 camere da letto</h4>
+                       <h4>60m°</h4>
                        <h4>Prezzo: 300 €</h4>
                       
                     <a href="" class="button">Vedi l'annuncio</a>

@@ -14,11 +14,8 @@
 Route::get('/', 'PublicController@showHome')
         ->name('Home');
 
-Route::get('/login', 'PublicController@showLogin')
-        ->name('LoginPage');
 
-Route::get('/register', 'PublicController@showRegister')
-        ->name('RegisterPage');
+Auth::routes();
 
 Route::get('/catalogo', 'PublicController@showCatalogo')
         ->name('Catalogo');
@@ -28,3 +25,6 @@ Route::get('/faq', 'PublicController@showFaq')
 
 Route::get('/regolamento', 'PublicController@showRegolamento')
         ->name('RegolamentoPage');
+
+
+
