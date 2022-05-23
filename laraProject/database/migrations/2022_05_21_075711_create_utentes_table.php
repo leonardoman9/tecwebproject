@@ -17,10 +17,10 @@ class CreateUtentesTable extends Migration
             $table->bigIncrements('id_utente');
             $table->string('username');
             $table->string('password');
-            $table->string('indirizzo');
             $table->string('data_di_nascita');
             $table->string('nome');
-            $table->string('codice_fiscale');
+            $table->string('cognome');
+            $table->string('indirizzo');
         });
     }
 

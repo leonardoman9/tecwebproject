@@ -22,12 +22,8 @@
         <div class="card">
             <img class="card_image" src="../public/css/images/download.png"  alt="Nature">
             <div class="card_modello">
-                <h3>Vantaggi</h3>
-                <p>La propriété « max-width » appliquera à l’image cible la largeur maximale de son conteneur, le problème est que 
-                    la hauteur de l’image ne sera pas adaptée et le ratio de l’image sera donc modifié.
-                    Pour résoudre ce problème, il faudra ajouter une propriété « height » avec 
-                    la valeur « auto » à l’image pour que la hauteur de l’image s’ajuste en fonction de 
-                    la largeur en conservant le ratio initial de l’image.</p>
+                <h3>Mission</h3>
+                <p>La missione di HomeAway è creare un mondo in cui chiunque possa appartenere a qualsiasi luogo e siamo concentrati sulla creazione di una piattaforma di viaggio end-to-end che gestirà ogni parte del tuo viaggio. Mentre lavoriamo per raggiungere questo obiettivo, ci concentriamo sulla costruzione per il futuro, guidando una forte crescita sostenuta e creando nuove attività che alimenteranno il successo a lungo termine.</p>
             </div>
         
         </div>

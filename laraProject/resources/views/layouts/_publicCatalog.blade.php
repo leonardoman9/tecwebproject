@@ -1,5 +1,4 @@
 
-      
       <section class="banner ">
           <div class="banner_image"></div>
               <div class="banner_copy">

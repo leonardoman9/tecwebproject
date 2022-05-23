@@ -1,9 +1,7 @@
 @extends('welcome')
-@section('title', 'Homepage')
+@section('title', 'Registrati')
     @section('content')
-          <p>
-        PROVA
-    </p>
+    <p> DA IMPLEMENTARE </p>
     @endsection
     
 
