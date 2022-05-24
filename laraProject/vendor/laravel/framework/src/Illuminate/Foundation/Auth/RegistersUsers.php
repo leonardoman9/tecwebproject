@@ -6,7 +6,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-trait RegistersUsers
+trait    RegistersUsers
 {
     use RedirectsUsers;
 

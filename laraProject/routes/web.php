@@ -26,5 +26,7 @@ Route::get('/faq', 'PublicController@showFaq')
 Route::get('/regolamento', 'PublicController@showRegolamento')
         ->name('RegolamentoPage');
 
+Route::get('/user', 'UserController@index')
+        ->name('user')->middleware('can:isUser');
 
 

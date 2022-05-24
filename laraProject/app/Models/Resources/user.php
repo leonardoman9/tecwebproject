@@ -4,10 +4,10 @@ namespace App\Models\Resources;
 
 use Illuminate\Database\Eloquent\Model;
 
+//Classe che definisce il mapping con la tabella delle faq del nostro database
+class User extends Model {
 
-class utente extends Model {
-
-    protected $table = 'utentes';
+    protected $table = 'users';
     protected $primaryKey = 'id';
     public $timestamps = false;
 

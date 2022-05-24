@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_navpublic.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/User.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Http/Controllers/Auth/LoginController.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Http/Controllers/UserController.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/auth/login.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Providers/AuthServiceProvider.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Http/Controllers/Controller.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/auth/register.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Http/Controllers/PublicController.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Http/Controllers/Auth/RegisterController.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/routes/web.php</file>
+        </group>
     </open-files>
 </project-private>

@@ -5,16 +5,20 @@
                 <li><a href="{{route('Catalogo')}}">Catalogo</a></li>
                 <li><a href="{{route('RegolamentoPage')}}">Regolamento e Condizioni d'uso</a></li>
                 <li><a href="{{route('FaqPage')}} ">FAQ</a></li>
-                @if(!auth::check())
-                <li> <a href="{{route('login')}}" class="btn-accedi ">Accedi</a> </li>
-                <li> <a href="{{route('register')}}" class="btn-registrati ">Registrati</a> </li>
-                @else
-                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+
+               @can('isUser')
+        <li><a href="{{ route('user') }}" class="highlight" title="Home User">Home User</a></li>
+               @endcan
+    @auth
+        <li><a href="" title="Esci dal sito" class="highlight" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
-            
-            <button type="submit" ><i class="fa fa-sign-out fa-lg"></i>Logout</button>
         </form>
-        </div>
-        @endif
+    @endauth    
+    @guest
+        <li><a href="{{ route('login') }}" class="highlight" title="Accedi all'area riservata del sito">Accedi</a></li>  
+        <li><a href="{{ route('register') }}" class="highlight" title="Accedi all'area riservata del sito">registrati</a></li>  
+        @endguest
+
                 </ul>
         </div>
