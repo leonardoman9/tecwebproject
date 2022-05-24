@@ -30,3 +30,7 @@ Route::get('/user', 'UserController@index')
         ->name('user')->middleware('can:isUser');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -14,8 +14,9 @@ class CreateFotosTable extends Migration
     public function up()
     {
         Schema::create('fotos', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigIncrements('foto_id');
+            $table->string('path');
+            $table->string('id_alloggio');
         });
     }
 

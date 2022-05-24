@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,45 +20,60 @@ class DatabaseSeeder extends Seeder
                                      'data_inserimento' => '21-05-2022',
                                      'canone' => 350,
                                      'dimensione'=> '30',
-                                     'indirizzo'=> 'Via Scaffoldi 20',
+                                     'citta' => 'Ancona',
+                                     'indirizzo'=> 'Via Andreini 2',
                                      'periodo_di_locazione'=> '4 mesi',
                                      'numero_posto_letto_totale' => 1,
                                      'descrizione' => 'Comodo appartamento in centro, dotato di giardino e corte personale. Disponibile un posto letto.',
                                      'etat'=> 'prova',
+                                     'timestamp' =>  '2022-05-03 20:24:23'
                     ],
                      [  'id_alloggio' => 3,
                                     'tipologia'  =>  0, // 0 = posto letto, 1 = appartamento
                                      'data_inserimento' => '21-05-2022',
                                      'canone' => 400,
                                      'dimensione'=> 30,
-                                     'indirizzo'=> 'Via Scaffoldi 20',
+                         
+                                     'citta' => 'Ancona',
+                                     'indirizzo'=> 'Via Rossi 2',
                                      'periodo_di_locazione'=> '4 mesi',
                                      'numero_posto_letto_totale' => 2,
                                      'descrizione' => 'Comodo appartamento in centro, dotato di giardino e corte personale. Disponibile un posto letto.',
                                      'etat'=> 'prova',
+                         
+                      'timestamp' =>  '2022-05-04 20:24:23'
                     ],
                      [  'id_alloggio' => 4,
                                     'tipologia'  =>  1, // 0 = posto letto, 1 = appartamento
                                      'data_inserimento' => '21-05-2022',
                                      'canone' => 350,
                                      'dimensione'=> 30,
-                                     'indirizzo'=> 'Via Scaffoldi 20',
+                         
+                                     'citta' => 'Milano',
+                                     'indirizzo'=> 'Piazza Roma 2',
                                      'periodo_di_locazione'=> '4 mesi',
                                      'numero_posto_letto_totale' => 4,
                                      'descrizione' => 'Appartamento 4ºpiano in condivisione con altri 2/3 inquilini in altre 2 camere. Ogni camera ha la sua chiave. Cucina e bagno in comune.
 Ideale per studenti o dipendenti dell ospedale.',
                                      'etat'=> 'prova',
+                         
+                      'timestamp' =>  '2022-05-05 20:24:23'
                     ],
                      [   'id_alloggio' => 5,
                                     'tipologia'  =>  1, // 0 = posto letto, 1 = appartamento
                                      'data_inserimento' => '21-05-2022',
                                      'canone' => 350,
                                      'dimensione'=> 30,
+                         
+                                     'citta' => 'Torino',
                                      'indirizzo'=> 'Via Scaffoldi 20',
                                      'periodo_di_locazione'=> '4 mesi',
                                      'numero_posto_letto_totale' => 3,
                                      'descrizione' => 'Appartamento vista mare, disponibile da subito. no perditempo. ',
                                      'etat'=> 'prova',
+                         
+                      'timestamp' =>  '2022-05-06 20:24:23'
+                         
                     ]
                     
                    
@@ -78,6 +95,68 @@ Ideale per studenti o dipendenti dell ospedale.',
                 'risposta' => 'Sarà possibile contattare il locatore con un sistema di messaggistica, una volta registrati sul portale apposito.',
             ]
         ]);
+    
+        DB::table('users')->insert(
+                [
+                 
+                ]
+        );
+
+        DB::table('messaggis')->insert(
+                       [
+                         [
+                      'id' => 0,
+                      'mittente' => 'leona',
+                      'destinatario' => 'ggigi',
+                      'testo' => 'Buongiorno, questo è un testo di esempio',
+                      'timestamp' =>  '2022-05-03 20:24:23'
+                  ],
+                   [
+                      'id' => 3,
+                      'mittente' => 'ggigi',
+                      'destinatario' => 'leona',
+                      'testo' => 'Salve a lei, grazie per la considerazione',
+                      'timestamp' => '2022-05-03 20:25:30'
+                  ],
+                ]
+        ); 
+        
+        DB::table('fotos')->insert(
+                       [
+                         [
+                             'foto_id' => 1,
+                      'path' => 'public\foto\app1.jpg',
+                      'id_alloggio' => 2,
+                      
+                  ],
+                   [
+                             'foto_id' => 2,
+                      'path' => 'public\foto\66671136.jpg',
+                      'id_alloggio' => 2,
+                      
+                  ],
+                           [
+                             'foto_id' => 3,
+                      'path' => 'public\foto\4dss.jpg',
+                      'id_alloggio' => 3,
+                      
+                  ],
+                           [
+                             'foto_id' => 4,
+                      'path' => 'public\foto\hi.jpg',
+                      'id_alloggio' => 4,
+                      
+                  ],
+                           [
+                             'foto_id' => 5,
+                      'path' => 'public\foto\huehuo.jpg',
+                      'id_alloggio' => 5,
+                      
+                  ],
+                           
+                ]
+        ); 
+        
     }
         
         // $this->call(UsersTableSeeder::class);

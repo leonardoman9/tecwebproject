@@ -10,8 +10,9 @@ class alloggio extends Model
     protected $primarykey = 'id_alloggio';
     public $timestamps = false;
 
-    public function returnLatest(){
-        return  alloggio::all();
+    public function returnLatest(int $n){
+        return alloggio::latest('timestamp')->take($n)->get();
+
     }
     
 }

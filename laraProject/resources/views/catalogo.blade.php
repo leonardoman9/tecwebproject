@@ -1,21 +1,24 @@
 @extends('welcome')
-@section('title', 'Homepage')
+@section('title', 'Catalogo')
+
     @section('content')
-          @include('layouts/_ultimiAnnunci')
+          @include('layouts/_ricerca')
     @isset($latestAnn)
-          @foreach($latestAnn as $ann)
+          @foreach ($latestAnn as $ann)
                     <?php $stampa = false; ?>
                         <section class="banner">
+                            
                             <div class="banner_image">
-                                <a href="{{route('login')}}">
+                                <a href="{{route('LoginPage')}}">
                         @include('helpers/annImg')
                                 </a>
                             </div>
+                            
                          <div class="banner_copy">
                              <div class="banner_copy_text">
                                  @switch($ann->tipologia)
-                                 @case(0) <h3> <u> {{$ann->citta}} -  POSTO LETTO in {{$ann->indirizzo}}</u></h3> @break
-                                 @case(1) <h3> <u>{{$ann->citta}}-  APPARTAMENTO in {{$ann->indirizzo}}</u></h3> @break
+                                 @case(0) <h3> <u>{{$ann->citta}} - POSTO LETTO in {{$ann->indirizzo}}</u></h3> @break
+                                 @case(1) <h3> <u>{{$ann->citta}} - APPARTAMENTO in {{$ann->indirizzo}}</u></h3> @break
                                  @endswitch
                                <p>
                                    {{$ann->descrizione}}
@@ -26,7 +29,7 @@
                                     <h4> {{$ann->dimensione}}Mq | </h4>
                                     <h4> Prezzo: {{$ann->canone}}€/Mese </h4>
 
-                                 <a href="{{route('login')}}" class="button">Vedi l'annuncio</a>
+                                 <a href="{{route('LoginPage')}}" class="button">Vedi l'annuncio</a>
                                 </div>
                          </div>
                      </div>
@@ -37,4 +40,7 @@
 
           @include('layouts/_cards')
     @endsection
+    
+
+     
     

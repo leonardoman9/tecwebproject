@@ -8,7 +8,7 @@
         
         </div>
 
-        <div class="card ">
+        <div class="card">
             <img class="card_image" src="../public/css/images/servizi.jpg"); alt="Nature">
             <div class="card_modello">
                 <h3>Nostri servizi</h3>

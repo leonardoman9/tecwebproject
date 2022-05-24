@@ -9,11 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>HomeAway | @yield('title', 'Home')</title>
 </head>
 <body>
     <header> 
-        @include('layouts/_navpublic')
+       
+            @include('layouts/_navpublic')
      </header>
         @include('layouts/_cover')
         @yield('content')
