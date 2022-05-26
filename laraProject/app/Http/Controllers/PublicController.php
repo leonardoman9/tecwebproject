@@ -51,7 +51,13 @@ class PublicController extends Controller
        public function showCatalogo() {
         $alloggio = new alloggio();
         $foto = new foto();
+        $id = \Auth::id();
+        if ($id != null){
               return view('catalogo')
+                ->with('latestAnn', $alloggio->returnLatest(10))
+                ->with('allFotos', $foto->returnAllFotos());
+        }
+        else return view('home')
                 ->with('latestAnn', $alloggio->returnLatest(10))
                 ->with('allFotos', $foto->returnAllFotos());
    }

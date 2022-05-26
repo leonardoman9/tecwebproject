@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', 'PublicController@showHome')
-        ->name('Home');
-
 
 Auth::routes();
+
+Route::get('/', 'PublicController@showHome')
+        ->name('Home');
 
 Route::get('/catalogo', 'PublicController@showCatalogo')
         ->name('Catalogo');
@@ -26,11 +26,23 @@ Route::get('/faq', 'PublicController@showFaq')
 Route::get('/regolamento', 'PublicController@showRegolamento')
         ->name('RegolamentoPage');
 
+
+
+Route::get('/messaggi', 'UserController@showMsg')
+        ->name('msgPage')
+        ->middleware('auth');
+
 Route::get('/user', 'UserController@index')
-        ->name('user')->middleware('can:isUser');
+        ->name('user')
+        ->middleware('can:isUser');
 
 
-
-Auth::routes();
+Route::get('/gestionefaq', 'UserController@gestioneFaq')
+        ->name('gestioneFaq')
+        ->middleware('can:isAdmin');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/stats', 'UserController@showStats')
+        ->name('statsPage')
+        ->middleware('can:isAdmin');

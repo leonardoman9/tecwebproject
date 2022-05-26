@@ -1,6 +1,7 @@
 @extends('welcome')
 @section('title', 'FAQ')
 @section('content')
+
 <br><br>
     @isset($allFaqs)
         <h1 style="margin: auto;

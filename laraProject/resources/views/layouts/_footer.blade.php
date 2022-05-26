@@ -28,6 +28,8 @@
             <div class="sec quicklink">
                 <h2>Link Utili</h2>
                 <ul>
+                    
+                      <li><a href="{{route('RegolamentoPage')}}">Regolamento e Condizioni d'uso</a></li>
                     <li><a href="{{route('Home')}}">Home</a></li>
                     <li><a href="{{route('Home')}}#chisiamo">Chi siamo</a></li>
                     <li><a href="{{route('Home')}}#chisiamo">I nostri servizi</a></li>

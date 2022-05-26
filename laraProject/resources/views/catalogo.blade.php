@@ -9,7 +9,7 @@
                         <section class="banner">
                             
                             <div class="banner_image">
-                                <a href="{{route('LoginPage')}}">
+                                <a href="{{route('login')}}">
                         @include('helpers/annImg')
                                 </a>
                             </div>
@@ -29,7 +29,7 @@
                                     <h4> {{$ann->dimensione}}Mq | </h4>
                                     <h4> Prezzo: {{$ann->canone}}€/Mese </h4>
 
-                                 <a href="{{route('LoginPage')}}" class="button">Vedi l'annuncio</a>
+                                 <a href="{{route('login')}}" class="button">Vedi l'annuncio</a>
                                 </div>
                          </div>
                      </div>

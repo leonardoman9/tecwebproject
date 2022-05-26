@@ -1,5 +1,5 @@
 @extends('welcome')
-@section('title', 'login')
+@section('title', 'Login')
 
 @section('content')
 <div id="Login_Div">
@@ -17,6 +17,8 @@
         @endif
         {{ Form::label('password', 'password') }}
         {{ Form::password('password') }}
+        
+        
         @if ($errors->first('password'))
         <ul>
             @foreach ($errors->get('password') as $message)

@@ -96,11 +96,32 @@ Ideale per studenti o dipendenti dell ospedale.',
             ]
         ]);
     
-        DB::table('users')->insert(
-                [
-                 
-                ]
-        );
+        DB::table('users')->insert([
+                 [
+                     'id' => 1,
+                     'username' => 'locatore',
+                     'email_verified_at' => null,
+                     'nome' => 'locatore',
+                     'password' => Hash::make('locatore'),
+                     'role' => 'locatore'
+                 ],
+            [
+                     'id' => 2,
+                     'username' => 'admin',
+                     'email_verified_at' => null,
+                     'nome' => 'admin',
+                     'password' => Hash::make('admin'),
+                     'role' => 'admin'
+                 ],
+            [
+                     'id' => 3,
+                     'username' => 'locatario',
+                     'email_verified_at' => null,
+                     'nome' => 'locatario',
+                     'password' => Hash::make('locatario'),
+                     'role' => 'locatario'
+                 ]
+                ]);
 
         DB::table('messaggis')->insert(
                        [
