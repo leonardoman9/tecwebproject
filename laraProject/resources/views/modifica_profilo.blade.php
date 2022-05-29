@@ -2,16 +2,17 @@
 
 <!-- Titolo da appendere alla rotta -->
 @section('title', 'Modifica del profilo')
+ <script src="../../resources/js/showpassword.js" type="text/javascript"></script>
 
+    
 @section('specific')
 <!-- Stili relativi al signup -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/modifica_profilo.css') }}" >
 <script src="{{ asset('js/modifica_profilo.js') }}"></script>
 @endsection
-
 <!-- Sezione centrale della pagina di modifica del profilo -->
 @section('content')
-<div id="Modify_Div">
+<div id="Modify_Div" >
     <section id="Modify">
         @can('isLocatario')
         {{ Form::open(array('route' => 'modifica_profilo')) }}
@@ -29,6 +30,25 @@
         @if ($errors->first('nome'))
         <ul class="errors">
             @foreach ($errors->get('nome') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+        {{ Form::label('cognome', 'cognome') }}
+        {{ Form::text('cognome', $utente->cognome) }}
+        @if ($errors->first('cognome'))
+        <ul class="errors">
+            @foreach ($errors->get('cognome') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+        
+        {{ Form::label('genere', 'genere') }}
+        {{ Form::text('genere', $utente->genere) }}
+        @if ($errors->first('genere'))
+        <ul class="errors">
+            @foreach ($errors->get('genere') as $message)
             <li>{{ $message }}</li>
             @endforeach
         </ul>

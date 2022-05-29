@@ -58,8 +58,17 @@ class userController extends Controller {
     
     public function gestioneFaq(){
         $faq = new FAQ();
-        return view('gestisciFaq')
+        return view('adminsFaqs')
              ->with('allFaqs', $faq->returnFaqs());
+    }
+     public function modificaFaq($faqnum){
+        $faq = new FAQ();
+        $selectedFaq = $faq::where('id','=',$faqnum)->first();
+         if($selectedFaq === null) {
+            return redirect('/');
+        }
+        return view('gestisciFaq')
+                ->with('faq', $selectedFaq);
     }
     
     public function showStats(){
@@ -86,4 +95,11 @@ public function showAnn($ann) {
                 ->with('foto', $selectedFoto);
    }
    
+   
+   public function showFaqPage($faq) {
+       $faqs = new FAQ();
+       $selectedFaq= $faqs::where('id', '=', $faq)->get();
+       return view('gestisciFaq')
+                ->with('faq', $selectedFaq);
+   }
 }
