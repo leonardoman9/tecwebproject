@@ -15,6 +15,10 @@ class alloggio extends Model
 
     }
     
+    public function returnAll(){
+        return alloggio::all();
+    }
+    
 }
      
 

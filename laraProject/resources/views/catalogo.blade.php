@@ -2,7 +2,9 @@
 @section('title', 'Catalogo')
 
     @section('content')
-          @include('layouts/_ricerca')
+    @auth
+          @include('layouts/_ricerca') 
+    @endauth
     @isset($latestAnn)
           @foreach ($latestAnn as $ann)
                     <?php $stampa = false; ?>
@@ -35,7 +37,8 @@
                      </div>
                       </section>
           @endforeach
-   
+       <!--Paginazione-->
+    @include('pagination.paginator', ['paginator' => $latestAnn])
     @endisset()
 
           @include('layouts/_cards')
