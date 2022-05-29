@@ -58,6 +58,8 @@ class PublicController extends Controller
         
    }
    
+   
+   
     public function showFaq() {
         
         $faq = new FAQ();

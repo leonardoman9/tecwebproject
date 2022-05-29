@@ -267,32 +267,69 @@ Ideale per studenti o dipendenti dell ospedale.',
                        [
                          [
                              'foto_id' => 1,
-                      'path' => 'public\foto\app1.jpg',
-                      'id_alloggio' => 2,
+                      'path' => 'public/foto/4dss.jpg',
+                      'id_alloggio' => 1,
                       
                   ],
                    [
                              'foto_id' => 2,
-                      'path' => 'public\foto\66671136.jpg',
+                      'path' => 'public\foto\87.jpg',
                       'id_alloggio' => 2,
                       
                   ],
                            [
                              'foto_id' => 3,
-                      'path' => 'public\foto\4dss.jpg',
+                      'path' => 'public\foto\66671136.jpg',
                       'id_alloggio' => 3,
                       
                   ],
                            [
                              'foto_id' => 4,
-                      'path' => 'public\foto\hi.jpg',
+                      'path' => 'public\foto\aHR0cHM6Ly93d3cud2ViaW1tb2JpbGlhcmUuY29tL2ZvdG8vMTgxNi8wMjMzOTA0Ni8xXzYwODA1MDlkMTUxZGIuSlBH.jpg',
                       'id_alloggio' => 4,
                       
                   ],
                            [
                              'foto_id' => 5,
-                      'path' => 'public\foto\huehuo.jpg',
+                      'path' => 'public\foto\app1.jpg',
                       'id_alloggio' => 5,
+                      
+                  ],
+                            [
+                             'foto_id' => 6,
+                      'path' => 'public\foto\appartamenti-04.jpg',
+                      'id_alloggio' => 6,
+                      
+                  ],
+                            [
+                             'foto_id' => 7,
+                      'path' => 'public\foto\appartamenti-in-vendita-roma-nord-48.jpg',
+                      'id_alloggio' => 7,
+                      
+                  ],
+                          
+                            [
+                             'foto_id' => 9,
+                      'path' => 'public\foto\HB2020_APT_90MQ_INTRODUTTIVA_PAG_20_21.jpg',
+                      'id_alloggio' => 9,
+                      
+                  ],
+                            [
+                             'foto_id' => 10,
+                      'path' => 'public\foto\hi.jpg',
+                      'id_alloggio' => 10,
+                      
+                  ],
+                            [
+                             'foto_id' => 11,
+                      'path' => 'public\foto\huehuo.jpg',
+                      'id_alloggio' => 11,
+                      
+                  ],
+                            [
+                             'foto_id' => 12,
+                      'path' => 'public\foto\img-6846_orig.jpg',
+                      'id_alloggio' => 12,
                       
                   ],
                            

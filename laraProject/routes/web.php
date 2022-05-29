@@ -20,6 +20,13 @@ Route::get('/', 'PublicController@showHome')
 Route::get('/catalogo', 'PublicController@showCatalogo')
         ->name('Catalogo');
 
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/catalogo/{num}', 'UserController@showAnn')
+        ->name('Ann');
+});
+
+
 Route::get('/faq', 'PublicController@showFaq')
         ->name('FaqPage');
 

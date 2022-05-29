@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User_model;
 use Auth;
 use App\Models\FAQ;
+use App\Models\alloggio;
+use App\Models\foto;
 use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Support\Facades\Hash;
 
@@ -66,5 +68,22 @@ class userController extends Controller {
     public function showMsg(){
         return view('msgPage');
     }
-    
+
+public function showAnn($ann) {
+        $alloggio = new alloggio();
+        $foto = new foto();
+        $fotos = $foto->returnAllFotos();
+        $toShow = $alloggio::where('id_alloggio', '=', $ann)->first();
+        if($toShow === null) {
+            return redirect('/');;
+        }
+        $selectedFoto = $foto::where('id_alloggio', '=', $toShow->id_alloggio)->first();
+        if($selectedFoto === null){
+            $selectedFoto=0;
+        }
+        return view('annuncioPage')
+                ->with('ann', $toShow)
+                ->with('foto', $selectedFoto);
+   }
+   
 }
