@@ -34,7 +34,26 @@ Route::get('/messaggi', 'UserController@showMsg')
 
 Route::get('/user', 'UserController@index')
         ->name('user')
-        ->middleware('can:isUser');
+        ->middleware('can:isLocatario');
+
+Route::get('/profilo', 'UserController@showProfile')
+        ->name('profilo')->middleware("can:isLocatario");
+
+Route::get('/profilo/modifica', 'UserController@showModificaProfilo')
+        ->name('mostra_modifica_profilo')->middleware("can:isLocatario");
+
+
+Route::post('/profilo/modifica', 'UserController@modificaProfilo')
+        ->name('modifica_profilo')->middleware("can:isLocatario");
+
+
+
+
+
+
+
+
+
 
 
 Route::get('/gestionefaq', 'UserController@gestioneFaq')
