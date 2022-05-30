@@ -3,19 +3,36 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_cards.php</file>
-            <file>file:/C:/xampp/htdocs/laraProject/resources/views/home.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/app/Http/Controllers/UserController.php</file>
-            <file>file:/C:/xampp/htdocs/laraProject/public/css/stylehome.css</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/annuncioPage.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Models/foto.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/js/showpassword.js</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/welcome.blade.php</file>
-            <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_catCards.php</file>
-            <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_navpublic.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/gestisciFaq.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_regole.php</file>
-            <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_navlogged.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Http/Requests/UpdateProfileRequest.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/regolamentoduso.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/auth/login.blade.php</file>
-            <file>file:/C:/xampp/htdocs/laraProject/resources/views/auth/register.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/public/foto/4dss.jpg</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Http/Controllers/HomeController.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/modifica_profilo.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/app/Http/Controllers/PublicController.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/profilo.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/adminsFaqs.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_cards.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/home.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/public/css/stylehome.css</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Models/alloggio.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/errors/404.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_catCards.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_navpublic.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/helpers/annImg.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/msgPage.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/faq.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/app/Http/Controllers/Controller.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_ricerca.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_annuncio.blade.php</file>
+            <file>file:/C:/xampp/htdocs/laraProject/resources/views/helpers/paginator.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/layouts/_catalogo.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/resources/views/catalogo.blade.php</file>
             <file>file:/C:/xampp/htdocs/laraProject/routes/web.php</file>

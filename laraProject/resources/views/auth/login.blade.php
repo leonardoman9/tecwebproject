@@ -17,14 +17,13 @@
         @endif
         {{ Form::label('password', 'password') }}
         {{ Form::password('password') }}
-        
-        
         @if ($errors->first('password'))
         <ul>
             @foreach ($errors->get('password') as $message)
             <li>{{ $message }}</li>
             @endforeach
         </ul>
+       
         @endif
         {{ Form::submit('Accedi', ['class' => 'submit'])}}
         {{ Form::close() }}

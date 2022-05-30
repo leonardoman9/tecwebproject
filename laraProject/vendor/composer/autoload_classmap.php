@@ -25,7 +25,11 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+<<<<<<< HEAD
     'App\\Message' => $baseDir . '/app/Message.php',
+=======
+    'App\\Http\\Requests\\UpdateProfileRequest' => $baseDir . '/app/Http/Requests/UpdateProfileRequest.php',
+>>>>>>> 9368113e3bdc05133882de7b4ef7cee225bdd206
     'App\\Models\\FAQ' => $baseDir . '/app/Models/FAQ.php',
     'App\\Models\\Prova' => $baseDir . '/app/Models/Prova.php',
     'App\\Models\\alloggio' => $baseDir . '/app/Models/alloggio.php',

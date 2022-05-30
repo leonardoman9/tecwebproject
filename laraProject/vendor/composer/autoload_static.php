@@ -480,7 +480,11 @@ class ComposerStaticInit74b6f56b03146c69fd51e97ea6804a03
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+<<<<<<< HEAD
         'App\\Message' => __DIR__ . '/../..' . '/app/Message.php',
+=======
+        'App\\Http\\Requests\\UpdateProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateProfileRequest.php',
+>>>>>>> 9368113e3bdc05133882de7b4ef7cee225bdd206
         'App\\Models\\FAQ' => __DIR__ . '/../..' . '/app/Models/FAQ.php',
         'App\\Models\\Prova' => __DIR__ . '/../..' . '/app/Models/Prova.php',
         'App\\Models\\alloggio' => __DIR__ . '/../..' . '/app/Models/alloggio.php',

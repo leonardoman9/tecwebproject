@@ -21,16 +21,17 @@
                 <li><a href="{{route('FaqPage')}} ">FAQ</a></li>
 
                @auth
-                    <li><a href="{{ route('user') }}" class="btn-accedi" title="Home User">Home User</a></li>
+                    <li><a href="{{ route('profilo') }}"  class="btn-accedi" title="Home User">Home User</a></li>
                     <li><a href="" title="Esci dal sito" class="btn-accedi" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ route('logout') }}"  method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
-                 @endauth    
-    @guest
-        <li><a href="{{ route('login') }}" class="btn-accedi" title="Accedi all'area riservata del sito">Accedi</a></li>  
-        <li><a href="{{ route('register') }}" class="btn-registrati" title="Accedi all'area riservata del sito">Registrati</a></li>  
-        @endguest
+                @endauth    
+                @guest
+                    <li><a href="{{route('Catalogo')}}">Catalogo</a></li>
+                    <li><a href="{{ route('login') }}" class="btn-accedi" title="Accedi all'area riservata del sito">Accedi</a></li>  
+                    <li><a href="{{ route('register') }}" class="btn-registrati" title="Accedi all'area riservata del sito">Registrati</a></li>  
+                @endguest
 
                 </ul>
         </div>
