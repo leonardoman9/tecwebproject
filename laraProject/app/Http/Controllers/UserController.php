@@ -81,10 +81,9 @@ class userController extends Controller {
 public function showAnn($ann) {
         $alloggio = new alloggio();
         $foto = new foto();
-        $fotos = $foto->returnAllFotos();
         $toShow = $alloggio::where('id_alloggio', '=', $ann)->first();
         if($toShow === null) {
-            return redirect('/');;
+            return redirect('/');
         }
         $selectedFoto = $foto::where('id_alloggio', '=', $toShow->id_alloggio)->first();
         if($selectedFoto === null){

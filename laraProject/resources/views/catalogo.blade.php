@@ -49,7 +49,7 @@
                       </section>
           @endforeach
        <!--Paginazione-->
-    @include('pagination.paginator', ['paginator' => $latestAnn])
+    @include('helpers/paginator', ['paginator' => $latestAnn])
     @endisset()
 
           @include('layouts/_cards')
