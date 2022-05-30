@@ -27,6 +27,7 @@
                                     <h4> Prezzo: {{$ann->canone}}€/Mese </h4>
 
                                  <a href="{{route('login')}}" class="button">Vedi l'annuncio</a>
+                                  <li><a href="{{route('RegolamentoPage')}}">mandare un messagio per una casa</a></li>
                                 </div>
                          </div>
                      </div>

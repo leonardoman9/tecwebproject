@@ -33,6 +33,16 @@
                                 </div>
                          </div>
                      </div>
+<div class="message">
+  {{form::label("name")}}
+  <br>
+  {{form: textarea('description',$messaggi)}}
+  <div>
+  {{form::sumit('envoyer')}}
+  {{form::close()}}
+
+
+
                       </section>
           @endforeach
    

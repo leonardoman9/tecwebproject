@@ -1,9 +1,10 @@
 <div class="container">
                 <div class="sec imetti_contatto">
-
+ <li><a href="{{route('msgPage')}}">mandare un messagio per  un alloggio</a></li>
                     <div class="sec contatti">
                         <h2>Contatti</h2>
                         <ul class="informazioni">
+
                             <li>
                                 <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
                                 <span>Via Brecce Bianche 1, 60131 Ancona(AN)/IT</span>
