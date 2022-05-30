@@ -30,6 +30,8 @@ Route::group(['middleware' => 'auth'], function(){
 Route::get('/faq', 'PublicController@showFaq')
         ->name('FaqPage');
 
+
+
 Route::get('/regolamento', 'PublicController@showRegolamento')
         ->name('RegolamentoPage');
 
@@ -44,27 +46,27 @@ Route::get('/user', 'UserController@index')
         ->middleware('can:isLocatario');
 
 Route::get('/profilo', 'UserController@showProfile')
-        ->name('profilo')->middleware("can:isLocatario");
+        ->name('profilo');
 
 Route::get('/profilo/modifica', 'UserController@showModificaProfilo')
-        ->name('mostra_modifica_profilo')->middleware("can:isLocatario");
+        ->name('mostra_modifica_profilo')->middleware("auth");
 
 
 Route::post('/profilo/modifica', 'UserController@modificaProfilo')
-        ->name('modifica_profilo')->middleware("can:isLocatario");
+        ->name('modifica_profilo')->middleware("auth");
 
-
-
-
-
-
-
-
+Route::post('/gestionefaq', 'UserController@gestioneFaq')
+        ->name('modifica_faq')->middleware("can:isAdmin");
 
 
 
 Route::get('/gestionefaq', 'UserController@gestioneFaq')
         ->name('gestioneFaq')
+        ->middleware('can:isAdmin');
+
+
+Route::get('/gestionefaq/{num}', 'UserController@modificaFaq')
+        ->name('modificaFaq')
         ->middleware('can:isAdmin');
 
 Route::get('/home', 'HomeController@index')->name('home');

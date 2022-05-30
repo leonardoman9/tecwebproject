@@ -8,12 +8,12 @@
                 
                 @if($foto===0){
                     <div class="img_color">
-                    <img src="../../public/foto/default.jpg" alt=""/>
+                    <img src="../../public/foto/default.jpg" class="catfoto"alt=""/>
                 </div>
                 }
                 @else
                 <div class="img_color">
-                    <img src="../../{{$foto->path}}" >
+                    <img src="../../{{$foto->path}}" class="catfoto" >
                 </div>
                 @endif
             </div>

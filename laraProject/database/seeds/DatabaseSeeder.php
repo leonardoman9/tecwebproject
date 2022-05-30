@@ -201,17 +201,17 @@ Ideale per studenti o dipendenti dell ospedale.',
                 ]);
         DB::table('f_a_q_s')->insert([  
             [
-                'id' => 3,
+                'id' => 1,
                 'domanda' => 'Come funziona il sito?',
                 'risposta' => 'Il sito permette la locazione di strutture da parte dei locatori, visibili poi da potenziali locatari interessati a occupare la struttura per un periodo definito.',
             ],
             [
-                'id' => 4,
+                'id' => 2,
                 'domanda' => 'Come faccio a registrarmi?',
                 'risposta' => 'Per registrarsi basta accedere alla sezione "REGISTRATI" presente nella barra di navigazione in alto a destra.',
             ],
             [
-                'id' => 5,
+                'id' => 3,
                 'domanda' => 'Come contatto il locatore?',
                 'risposta' => 'Sarà possibile contattare il locatore con un sistema di messaggistica, una volta registrati sul portale apposito.',
             ]
@@ -223,6 +223,9 @@ Ideale per studenti o dipendenti dell ospedale.',
                      'username' => 'locatore',
                      'email_verified_at' => null,
                      'nome' => 'locatore',
+                     'cognome'=> 'locatelli',
+                     'genere'=> 'Maschio',
+                     'eta'=> 18,
                      'password' => Hash::make('locatore'),
                      'role' => 'locatore'
                  ],
@@ -231,6 +234,9 @@ Ideale per studenti o dipendenti dell ospedale.',
                      'username' => 'admin',
                      'email_verified_at' => null,
                      'nome' => 'admin',
+                     'cognome'=> 'locatelli',
+                     'genere'=> 'Maschio',
+                     'eta'=> 18,
                      'password' => Hash::make('admin'),
                      'role' => 'admin'
                  ],
@@ -239,6 +245,9 @@ Ideale per studenti o dipendenti dell ospedale.',
                      'username' => 'locatario',
                      'email_verified_at' => null,
                      'nome' => 'locatario',
+                     'cognome'=> 'locatelli',
+                     'genere'=> 'Maschio',
+                     'eta'=> 18,
                      'password' => Hash::make('locatario'),
                      'role' => 'locatario'
                  ]
