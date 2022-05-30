@@ -46,7 +46,7 @@
            
         </div>
         <div class="contact">
-                <h3>prezzo : {{$ann->prezzo}}</h3>
+                <h3>Prezzo : {{$ann->prezzo}}</h3>
                 <a href="">Contatta</a>
                 <!--<button type=""></button>-->
             </div>
