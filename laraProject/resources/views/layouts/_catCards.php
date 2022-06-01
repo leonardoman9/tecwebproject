@@ -6,7 +6,6 @@
                         <section class="banner">
                             <div class="banner_image">
                                 <a href="{{route('LoginPage')}}">
-                                
                         @include('helpers/annImg')
                                 </a>
                             </div>

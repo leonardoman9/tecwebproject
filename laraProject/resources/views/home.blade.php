@@ -31,14 +31,10 @@
                                     <h4> Prezzo: {{$ann->canone}}€/Mese </h4>
                                 @guest
                                  <a href="{{route('login')}}" class="button">Vedi l'annuncio</a>
-<<<<<<< HEAD
-                                  <li><a href="{{route('RegolamentoPage')}}">mandare un messagio per una casa</a></li>
-=======
                                  @endguest
                                  @auth
                                  <a href="{{route('Ann', $ann->id_alloggio)}}" class="button">Vedi l'annuncio</a>
                                  @endauth
->>>>>>> 9368113e3bdc05133882de7b4ef7cee225bdd206
                                 </div>
                          </div>
                      </div>

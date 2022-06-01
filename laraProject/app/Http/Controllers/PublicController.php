@@ -55,6 +55,7 @@ class PublicController extends Controller
         return view('faq')
              ->with('allFaqs', $faq->returnFaqs());
     }
+    
     public function showRegolamento() {
         return view('regolamentoduso');
     }

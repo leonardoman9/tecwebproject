@@ -74,4 +74,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/stats', 'UserController@showStats')
         ->name('statsPage')
         ->middleware('can:isAdmin');
-Route::post('/messages', 'MessagesController@nouveau');
