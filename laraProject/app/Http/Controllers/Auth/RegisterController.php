@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'nome' => ['required', 'string', 'max:30'],
             'cognome' => ['required', 'string', 'max:20'],
             'genere' => ['required', 'string', 'max:20'],
-            'eta' => ['required', 'integer', 'min:18'],
+            'eta' => ['required', 'integer', 'min:18', 'max:120'],
             'username' => ['required', 'string', 'max:20', 'unique:users'],
             'role' => ['required', 'string'],
             'password' => ['required', 'string', 'min:8'],

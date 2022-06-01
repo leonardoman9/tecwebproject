@@ -19,6 +19,8 @@ Route::get('/', 'PublicController@showHome')
 
 Route::get('/catalogo', 'PublicController@showCatalogo')
         ->name('Catalogo');
+Route::post('/catalogo', 'SearchController@search')
+        ->name('RicercaCatalogo');
 
 
 Route::group(['middleware' => 'auth'], function(){
