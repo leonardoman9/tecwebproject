@@ -8,6 +8,7 @@ use App\Models\FAQ;
 use App\Models\alloggio;
 use App\Models\foto;
 use App\Http\Requests\UpdateProfileRequest;
+use App\Http\Requests\FaqCreateRequest;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -71,6 +72,14 @@ class userController extends Controller {
                 ->with('faq', $selectedFaq);
     }
     
+     //Metodo che crea una faq
+    public function creaFaq(FaqCreateRequest $request) {
+        $faq = new FAQ();
+        $faq->fill($request->all());
+        $faq->save();
+        return view('gestisciFaq');
+    }
+    
     public function showStats(){
         return view('statsPage');
     }
@@ -79,24 +88,19 @@ class userController extends Controller {
     }
 
 public function showAnn($ann) {
-    
-    
-    
-    
         $alloggio = new alloggio();
         $foto = new foto();
+        $fotos = $foto->returnAllFotos();
         $toShow = $alloggio::where('id_alloggio', '=', $ann)->first();
         if($toShow === null) {
-            return redirect('/');
+            return redirect('/');;
         }
-        $poster = $alloggio::where('id_alloggio', '=', $ann);
         $selectedFoto = $foto::where('id_alloggio', '=', $toShow->id_alloggio)->first();
         if($selectedFoto === null){
             $selectedFoto=0;
         }
         return view('annuncioPage')
                 ->with('ann', $toShow)
-                ->with('poster', $poster)
                 ->with('foto', $selectedFoto);
    }
    

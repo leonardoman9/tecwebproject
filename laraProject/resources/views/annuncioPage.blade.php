@@ -39,15 +39,14 @@
          <div class="datti">
              <div class="nome">
                 <h2>Informazioni Proprietario</h2>
-                <h3>Nome: {{$poster->value('added_by')}}</h3>
-<!--                <h3>Telefono: 34567890</h3>-->
-<!--                <h3>Mail: wertyuio</h3>-->
-<br><br>
+                <h3>Nome : ......</h3>
+                <h3>Telefono :34567890</h3>
+                <h3>Mail : wertyuio</h3>
              </div>
            
         </div>
         <div class="contact">
-                <h3>Prezzo: €/Mese {{$ann->canone}}</h3>
+                <h3>prezzo : {{$ann->prezzo}}</h3>
                 <a href="">Contatta</a>
                 <!--<button type=""></button>-->
             </div>

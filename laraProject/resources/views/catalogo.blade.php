@@ -10,7 +10,6 @@
     
     @isset($latestAnn)
           @foreach ($latestAnn as $ann)
-                    
           
                     <?php $stampa = false; ?>
                         <section class="banner">
@@ -53,7 +52,7 @@
                       </section>
           @endforeach
        <!--Paginazione-->
-    @include('helpers/paginator', ['paginator' => $latestAnn])
+    @include('pagination.paginator', ['paginator' => $latestAnn])
     @endisset()
     
     @isset($results)

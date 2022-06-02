@@ -16,20 +16,16 @@ class CreateAlloggiosTable extends Migration
         Schema::create('alloggios', function (Blueprint $table) {
             $table->bigIncrements('id_alloggio');
             $table->integer('tipologia');      // 0 = posto letto, 1 = appartamento
-            $table->date('data_inserimento');
+            $table->string('data_inserimento');
             $table->integer('canone');
             $table->integer('dimensione');
             $table->string('citta');
             $table->string('indirizzo');
-            $table->date('data_inizio_locazione');
-            $table->date('data_fine_locazione');
-            $table->integer('numero_camere')->nullable();
-            $table->integer('numero_posto_letto_totale')->nullable();
-            $table->integer('numero_letti_nella_camera')->nullable();
+            $table->string('periodo_di_locazione');
+            $table->integer('numero_posto_letto_totale');
             $table->string('descrizione');
             $table->string('etat');
             $table->timestamp('timestamp')->useCurrent = true;
-            $table->string('added_by');
 
         });
     }
