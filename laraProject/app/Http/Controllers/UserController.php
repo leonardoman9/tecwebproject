@@ -62,6 +62,7 @@ class userController extends Controller {
         return view('adminsFaqs')
              ->with('allFaqs', $faq->returnFaqs());
     }
+        
      public function modificaFaq($faqnum){
         $faq = new FAQ();
         $selectedFaq = $faq::where('id','=',$faqnum)->first();
@@ -77,8 +78,11 @@ class userController extends Controller {
         $faq = new FAQ();
         $faq->fill($request->all());
         $faq->save();
-        return view('gestisciFaq');
+        return view('adminsFaqs')
+                ->with('allFaqs', $faq->returnFaqs());
     }
+   
+    
     
     public function showStats(){
         return view('statsPage');

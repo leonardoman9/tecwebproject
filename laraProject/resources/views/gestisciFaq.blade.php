@@ -5,15 +5,12 @@
 
 <div>
     
-    {{$faq->domanda}}
-    {{$faq->risposta}}
-    
     
 </div>
 {{ Form::open(array('route' => 'modifica_profilo')) }}
 
         {{ Form::label('Domanda', 'Domanda') }}
-        {{ Form::text('Domanda', $faq->domanda) }}
+        {{ Form::text('Domanda', 'Domanda') }}
         @if ($errors->first('Domanda'))
                <ul class="errors">
                    @foreach ($errors->get('Domanda') as $message)
@@ -22,7 +19,7 @@
                </ul>
         @endif
         {{ Form::label('Risposta', 'Risposta') }}
-        {{ Form::text('Risposta', $faq->risposta) }}
+        {{ Form::text('Risposta', 'Risposta') }}
         @if ($errors->first('Risposta'))
         <ul class="errors">
             @foreach ($errors->get('Risposta') as $message)

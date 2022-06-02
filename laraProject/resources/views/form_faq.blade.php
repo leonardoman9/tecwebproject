@@ -12,16 +12,16 @@
     <section id="Modify">
 
   
-
-        {{ Form::open(array(route('crea_faq'), 'method' => 'POST', 'id' => 'creaFaq')) }}
+        
+        {{ Form::open(array('route' => 'modifica_faq', 'method' => 'POST', 'id' => 'creaFaq')) }}
         @csrf
         <h2>Crea FAQ</h2>
         <div>
-            {{ Form::label('domanda', 'domanda') }}
+            {{ Form::label('domanda', 'Domanda') }}
             {{ Form::text('domanda', '', ['class' => 'input', 'id' => 'domanda']) }}
         </div>
         <div>
-            {{ Form::label('risposta', 'risposta') }}
+            {{ Form::label('risposta', 'Risposta') }}
             {{ Form::text('risposta', '', ['class' => 'input', 'id' => 'risposta']) }}
         </div>
         {{ Form::submit('Conferma', ['class' => 'submit']) }}

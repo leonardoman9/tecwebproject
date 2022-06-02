@@ -18,8 +18,8 @@
                          <div class="banner_copy">
                              <div class="banner_copy_text">
                                  @switch($ann->tipologia)
-                                 @case(0) <h3> <u> {{$ann->citta}} -  POSTO LETTO in {{$ann->indirizzo}}</u></h3> @break
-                                 @case(1) <h3> <u>{{$ann->citta}}-  APPARTAMENTO in {{$ann->indirizzo}}</u></h3> @break
+                                 @case(1) <h3> <u> {{$ann->citta}} -  POSTO LETTO in {{$ann->indirizzo}}</u></h3> @break
+                                 @case(2) <h3> <u>{{$ann->citta}}-  APPARTAMENTO in {{$ann->indirizzo}}</u></h3> @break
                                  @endswitch
                                <p>
                                    {{$ann->descrizione}}
