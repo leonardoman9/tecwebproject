@@ -65,6 +65,22 @@ Route::get('/gestionefaq', 'UserController@gestioneFaq')
         ->name('gestioneFaq')
         ->middleware('can:isAdmin');
 
+Route::get('/modifica_faq/{id}', 'userController@showModificaFaq')
+        ->name('modifica_faq')->middleware("can:isAdmin");
+
+//Tale rotta:
+//- è di tipo post
+//- è associata al metodo "modificaFaq" del controller "Controller4"
+Route::post('/modifica_faq/{id}', 'userController@modificaFaq')
+        ->name('modifica_faq')->middleware("can:isAdmin");
+
+//Tale rotta:
+//- è di tipo get
+//- è associata al metodo "eliminaFaq" del controller "Controller4"
+Route::get('/elimina_faq/{id}', 'userController@eliminaFaq')
+        ->name('elimina_faq')->middleware("can:isAdmin");
+
+
 Route::get('/gestionefaq/{num}', 'UserController@modificaFaq')
         ->name('modificaFaq')
         ->middleware('can:isAdmin');

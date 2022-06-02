@@ -33,25 +33,34 @@
                     margin-top: 30px;
                     margin-bottom: 30px;">Aggiungi, modifica o elimina FAQs
         </h1>
-<
+    <a href="{{ route('form_faq') }}">
+    <input type="button" class="btn-accedi" id="tst" value="Aggiungi" onclick="addFaq()" />
+    </a>
+
     <table id='table' class='table'>
+        <th><h2>MOD/DEL</h2></th>
         <th><h2>Domanda</h2></th>
         <th><h2>Risposta</h2></th>
          <th></th>
         @foreach ($allFaqs as $faq)
         <tr>
+            
+       <th>
+                <a class="Button" href="{{ route('modifica_faq', [$faq->id]) }}">
+                   <button type="submit"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></button>
+                </a>
+                <a class="Button" onclick="return conferma();" href="{{ route('elimina_faq', [$faq->id]) }}">
+                    <button type="submit"><i class="fa fa-trash fa-lg"></i></button>
+                </a>
+        </th>    
             <th><h3>{{$faq->domanda}} </h3></th>
             <th> {{$faq->risposta}} </th>
-            <th>  {{ Form::radio('select', 'select') }} </th>
+            
             <th> </th>
         </tr>
         @endforeach
     </table>
-    <a href="{{ route('form_faq') }}">
-    <input type="button" class="btn-accedi" id="tst" value="Aggiungi" onclick="addFaq()" />
-    </a>
-    <input type="button" class="btn-accedi" id="tst" value="Modifica" onclick="addFaq()" />
-    <input type="button" class="btn-accedi" id="tst" value="Elimina" onclick="deleteFaq()" />
+    
         
     @endisset()
     

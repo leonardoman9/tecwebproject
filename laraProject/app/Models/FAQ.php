@@ -15,6 +15,11 @@ class FAQ extends Model
     public function returnFaqs(){
         return FAQ::all();
         }
-    }
+        
+    public function getFaqById (int $id) {
+        $faq = Faq::where('id', $id);
+        return $faq;
+    }    
+}
 
 

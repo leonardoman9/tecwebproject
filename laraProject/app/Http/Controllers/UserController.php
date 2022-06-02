@@ -9,6 +9,7 @@ use App\Models\alloggio;
 use App\Models\foto;
 use App\Http\Requests\UpdateProfileRequest;
 use App\Http\Requests\FaqCreateRequest;
+use App\Http\Requests\FaqUpdateRequest;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -16,9 +17,11 @@ class userController extends Controller {
 
     
     protected $_faqs;
+    protected $FAQ;
     
     public function __construct() {
         $this->middleware('auth');
+        $this->FAQ = new FAQ;
     }
 
     public function index() {
@@ -63,23 +66,48 @@ class userController extends Controller {
              ->with('allFaqs', $faq->returnFaqs());
     }
         
-     public function modificaFaq($faqnum){
-        $faq = new FAQ();
-        $selectedFaq = $faq::where('id','=',$faqnum)->first();
-         if($selectedFaq === null) {
-            return redirect('/');
-        }
-        return view('gestisciFaq')
-                ->with('faq', $selectedFaq);
-    }
-    
-     //Metodo che crea una faq
+    //Metodo che crea una faq
     public function creaFaq(FaqCreateRequest $request) {
         $faq = new FAQ();
         $faq->fill($request->all());
         $faq->save();
         return view('adminsFaqs')
                 ->with('allFaqs', $faq->returnFaqs());
+    }
+    
+    public function showModificaFaq($id) {
+        $faq = $this->FAQ->getFaqById($id)->first();
+        if ($faq == null) {
+            return redirect(route('faq'))->with('error', 'Non puoi modificare una faq inesistente!');
+        }
+        return view('modifica_faq')->with('faq', $faq);
+    }
+   
+   public function modificaFaq(FaqUpdateRequest $request, $id) {
+        $faq = $this->FAQ->getFaqById($id);
+        if ($request->domanda != null) {
+            $faq->update([
+                'domanda' => $request->domanda,
+            ]);
+        }
+        if ($request->risposta != null) {
+            $faq->update([
+                'risposta' => $request->risposta,
+            ]);
+        }
+        return view ('adminsFaqs');
+    }
+    
+    public function eliminaFaq($id) {
+        $faq = $this->FAQ->getFaqById($id)->first();
+        if ($faq == null) {
+            return view ('adminsFaqs');
+//            return redirect(route('adminsFaqs'))->with('error', 'Non puoi eliminare una faq inesistente!');
+        } else {
+            $faq->delete();
+           return view ('adminsFaqs'); 
+//            return redirect(route('adminsFaqs'))->with('message', 'Faq eliminata con successo!');
+        }
     }
    
     
