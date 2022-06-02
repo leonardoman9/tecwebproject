@@ -13,7 +13,7 @@
 
   
         
-        {{ Form::open(array('route' => 'modifica_faq', 'method' => 'POST', 'id' => 'creaFaq')) }}
+        {{ Form::open(array('route' => 'crea_faq', 'method' => 'POST', 'id' => 'creaFaq')) }}
         @csrf
         <h2>Crea FAQ</h2>
         <div>

@@ -59,7 +59,7 @@ Route::post('/profilo/modifica', 'UserController@modificaProfilo')
 
 
 Route::post('/gestionefaq', 'UserController@creaFaq')
-        ->name('modifica_faq')->middleware("can:isAdmin");
+        ->name('crea_faq')->middleware("can:isAdmin");
 Route::get('/gestionefaq', 'UserController@gestioneFaq')
         
         ->name('gestioneFaq')

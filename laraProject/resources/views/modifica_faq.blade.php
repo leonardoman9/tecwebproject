@@ -1,7 +1,7 @@
 @extends('welcome')
 
 <!-- Titolo da appendere alla rotta -->
-@section('title', 'Form per le FAQ')
+@section('title', 'modifica faq')
 
 
 

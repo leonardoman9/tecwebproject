@@ -22,7 +22,11 @@
     
 </script>
 
-
+    <div>
+    <a href="{{ route('form_faq') }}">
+    <input type="button" class="btn-accedi" id="tst" value="Aggiungi" onclick="addFaq()" />
+    </a>
+    </div>
 <br><br>
     @isset($allFaqs)
         <h1 style="margin: auto;
@@ -33,9 +37,6 @@
                     margin-top: 30px;
                     margin-bottom: 30px;">Aggiungi, modifica o elimina FAQs
         </h1>
-    <a href="{{ route('form_faq') }}">
-    <input type="button" class="btn-accedi" id="tst" value="Aggiungi" onclick="addFaq()" />
-    </a>
 
     <table id='table' class='table'>
         <th><h2>MOD/DEL</h2></th>
