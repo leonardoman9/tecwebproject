@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         DB::table('alloggios')->insert(
                 [
                     [               'id_alloggio' => 1,
-                                    'tipologia'  =>  0, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  1, // 1 = posto letto, 2 = appartamento
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 350,
                                      'dimensione'=> '30',
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
                                     
                     ],
                      [  'id_alloggio' => 2,
-                                    'tipologia'  =>  1, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  2, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 400,
                                      'dimensione'=> 30,
@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
                       'timestamp' =>  '2022-05-04 20:24:23'
                     ],
                      [  'id_alloggio' => 3,
-                                    'tipologia'  =>  1, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  2,
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 350,
                                      'dimensione'=> 30,
@@ -73,7 +73,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                       'timestamp' =>  '2022-05-05 20:24:23'
                     ],
                      [   'id_alloggio' => 4,
-                                    'tipologia'  =>  0, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  1, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 350,
                                      'dimensione'=> 30,
@@ -94,7 +94,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                          
                     ],
                     [               'id_alloggio' => 5,
-                                    'tipologia'  =>  0, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  1, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 350,
                                      'dimensione'=> '30',
@@ -111,7 +111,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                                      'timestamp' =>  '2022-05-03 20:24:23'
                     ],             
                      [  'id_alloggio' => 6,
-                                    'tipologia'  =>  1, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  2, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 400,
                                      'dimensione'=> 30,
@@ -128,7 +128,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                       'timestamp' =>  '2022-05-04 20:24:23'
                     ],
                      [  'id_alloggio' => 7,
-                                    'tipologia'  =>  1, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  1, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 350,
                                      'dimensione'=> 30,
@@ -147,7 +147,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                       'timestamp' =>  '2022-05-05 20:24:23'
                     ],
                      [   'id_alloggio' => 8,
-                                    'tipologia'  =>  1, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  2,
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 350,
                                      'dimensione'=> 30,
@@ -167,7 +167,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                          
                     ],
                     [               'id_alloggio' => 9,
-                                    'tipologia'  =>  0, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  1, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 350,
                                      'dimensione'=> '30',
@@ -185,7 +185,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                                      'timestamp' =>  '2022-05-03 20:24:23'
                     ],              
                      [  'id_alloggio' => 10,
-                                    'tipologia'  =>  0, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  1, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 400,
                                      'dimensione'=> 30,
@@ -204,7 +204,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                       'timestamp' =>  '2022-05-04 20:24:23'
                     ],
                      [  'id_alloggio' => 11,
-                                    'tipologia'  =>  1, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  2, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 350,
                                      'dimensione'=> 30,
@@ -225,7 +225,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                       'timestamp' =>  '2022-05-05 20:24:23'
                     ],
                      [   'id_alloggio' => 12,
-                                    'tipologia'  =>  1, // 0 = posto letto, 1 = appartamento
+                                    'tipologia'  =>  2, // 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 350,
                                      'dimensione'=> 30,
@@ -272,7 +272,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                      'email_verified_at' => null,
                      'nome' => 'locatore',
                      'cognome'=> 'locatelli',
-                     'genere'=> 'Maschio',
+                     'genere'=> 'maschio',
                      'eta'=> 18,
                      'password' => Hash::make('locatore'),
                      'role' => 'locatore'
@@ -283,7 +283,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                      'email_verified_at' => null,
                      'nome' => 'admin',
                      'cognome'=> 'locatelli',
-                     'genere'=> 'Maschio',
+                     'genere'=> 'femmina',
                      'eta'=> 18,
                      'password' => Hash::make('admin'),
                      'role' => 'admin'
@@ -294,11 +294,45 @@ Ideale per studenti o dipendenti dell ospedale.',
                      'email_verified_at' => null,
                      'nome' => 'locatario',
                      'cognome'=> 'locatelli',
-                     'genere'=> 'Maschio',
+                     'genere'=> 'femmina',
                      'eta'=> 18,
                      'password' => Hash::make('locatario'),
                      'role' => 'locatario'
-                 ]
+                 ],
+            
+            [
+                     'id' => 4,
+                     'username' => 'lorelore',
+                     'email_verified_at' => null,
+                     'nome' => 'Locatino',
+                     'cognome'=> 'locatelli',
+                     'genere'=> 'maschio',
+                     'eta'=> 18,
+                     'password' => Hash::make('p3NRnrh2'),
+                     'role' => 'locatore'
+                 ],
+            [
+                     'id' => 5,
+                     'username' => 'lariolario',
+                     'email_verified_at' => null,
+                     'nome' => 'Locatello',
+                     'cognome'=> 'locatoris',
+                     'genere'=> 'maschio',
+                     'eta'=> 18,
+                     'password' => Hash::make('p3NRnrh2'),
+                     'role' => 'locatario'
+                 ],
+            [
+                     'id' => 6,
+                     'username' => 'adminadmin',
+                     'email_verified_at' => null,
+                     'nome' => 'adminario',
+                     'cognome'=> 'adminelli',
+                     'genere'=> 'maschio',
+                     'eta'=> 18,
+                     'password' => Hash::make('p3NRnrh2'),
+                     'role' => 'admin'
+                 ],
                 ]);
 
         DB::table('messaggis')->insert(

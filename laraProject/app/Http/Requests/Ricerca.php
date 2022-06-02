@@ -31,7 +31,7 @@ class Ricerca extends FormRequest
                 'numerocamere' => 'nullable|integer|min:0',
                 'numeropostiletto' => 'nullable|integer|min:0',
                 'lettinellacamera' => 'nullable|integer|min:0',
-                'tipologia' => 'nullable|integer|min:0',
+                'tipologia' => 'integer|min:1|max:2',
         ];
     }
 }

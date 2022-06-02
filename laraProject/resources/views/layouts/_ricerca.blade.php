@@ -3,7 +3,8 @@
     @csrf
     
     {{Form::label('citta', 'Città')}}
-    {{ Form::text('citta') }}
+        {{Form::select('citta', array('Ancona' => 'Ancona', 'Milano'=> 'Milano', 'Torino' => 'Torino'))}}
+
     @if ($errors->first('citta'))
         <ul class="errors">
             @foreach ($errors->get('citta') as $message)

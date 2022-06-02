@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Models;
-
+use App\Concerns\Filterable;
 use Illuminate\Database\Eloquent\Model;
-
 class alloggio extends Model
 {
+    use Filterable;
     protected $table = 'alloggios';
     protected $primarykey = 'id_alloggio';
     public $timestamps = false;
