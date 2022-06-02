@@ -1,8 +1,8 @@
  function showPassword() {
-  var text = document.getElementById("password");
-  if (text.type === "password") {
-    text.type = "text";
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
   } else {
-    text.type = "password";
+    x.type = "password";
   }
 }

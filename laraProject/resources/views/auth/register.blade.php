@@ -27,43 +27,8 @@
             @endforeach
         </ul>
         @endif
-     {{ Form::label('cognome', 'Cognome') }}
-        {{ Form::text('cognome', '') }}
-        @if ($errors->first('cognome'))
-        <ul class="errors">
-            @foreach ($errors->get('cognome') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
-        {{ Form::label('eta', 'Età') }}
-        {{ Form::text('eta', '') }}
-        @if ($errors->first('eta'))
-        <ul class="errors">
-            @foreach ($errors->get('eta') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
- 
-     {{ Form::label('genere', 'Maschio') }}
-        {{ Form::radio('genere', 'femmina') }}
-        @if ($errors->first('genere'))
-        <ul class="errors">
-            @foreach ($errors->get('genere') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
-        {{ Form::label('genere', 'Femmina') }}
-        {{ Form::radio('genere', 'femmina') }}
-        @if ($errors->first('genere'))
-        <ul class="errors">
-            @foreach ($errors->get('genere') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
+
+
 
         {{ Form::label('password', 'password') }}
         {{ Form::password('password') }}

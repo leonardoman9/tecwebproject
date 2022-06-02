@@ -343,7 +343,6 @@ footer{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 100px;
 }
 
 footer .container{
@@ -741,29 +740,29 @@ margin: auto;
   padding: 10px;
 }
 
-
-
 /* dettaglio annuncio */
+
 
 .section_p1{
     background-color: blanchedalmond;
-    width: 70rem;
+    width: 100rem;
     height: 35rem;
     border-style:outset;
     border-color: rgb(186, 194, 191);
     border-radius: 50px;
-    margin-left: 390px;
-    
+    margin-left: 90px;
 }
 #detaglio_prodotto{
     display: flex;
-    margin-top:50px ;
+    margin-top:20px ;
 }
 #detaglio_prodotto .imagine_prodotto{
     margin-right: 100px;
     width: 40%;
     
 }
+
+
 
 .img_group{
     display: flex;
@@ -778,14 +777,12 @@ margin: auto;
 #detaglio_prodotto .detagio_prod{
    
     padding-top: 3px;
-    display: inline-block;
 }
 .detagio_prod h4{
     font-size: 20px;
     display: inline-flex;
     padding: 8px;
     margin: 29px;
-    text-align: center;
 }
 
 #detaglio_prodotto .detagio_prod h3{
@@ -793,7 +790,6 @@ margin: auto;
 }
 .detagio_prod h1{
     font-size: 30px;
-    text-align: center;
 }
 
 .detaglio_an{
@@ -812,20 +808,19 @@ margin: auto;
 
 .proprietario{
     background-color: rgb(204, 224, 218);
-    width: 30rem;
+    width: 40rem;
     border-style:outset;
     border-color: none;
     border-radius: 40px;
-    margin-left: 400px;
+    margin-left: 90px;
     height: 150px;
-    margin-top: 20px;
     
 }
 
 .proprietario .nome h2{
     
     text-align: center;
-    margin-top: 10px;
+    margin-top: -40px;
     padding: 0.1px;
 }
 
@@ -833,20 +828,19 @@ margin: auto;
 .proprietario .nome h3{
     
     text-align: left;
-    margin-top: -6px;
+    margin-top: -20px;
     padding: 8px;
-    margin-left: 15px;
 }
 
 .proprietario .contact{
     background-color: rgb(204, 224, 218);
-    width: 30rem;
+    width: 40rem;
     border-style:outset;
     border-color: rgb(219, 235, 229);
     border-radius: 40px;
-    margin-left: 630px;
+    margin-left: 930px;
     height: 150px;
-    margin-top: -140px;
+    margin-top: -34%;
     display: flex;
    
 }
@@ -854,10 +848,9 @@ margin: auto;
 .proprietario .contact h3{
     size-adjust: 20px;
     text-align:left;
-    font-size: 20px;
+    font-size: 30px;
     margin-top: -8%;
     margin: 10%;
-    margin-left: 25px;
 }
 
 .proprietario a {
@@ -876,7 +869,7 @@ margin: auto;
     font-size: 28px;
     cursor: pointer;
     margin: 10%;
-    margin-left: 150px;
+    margin-left: 100px;
     display: inline-block;
   }
   .proprietario a:hover{

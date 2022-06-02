@@ -47,7 +47,9 @@
         </tr>
         @endforeach
     </table>
+    <a href="{{ route('form_faq') }}">
     <input type="button" class="btn-accedi" id="tst" value="Aggiungi" onclick="addFaq()" />
+    </a>
     <input type="button" class="btn-accedi" id="tst" value="Modifica" onclick="addFaq()" />
     <input type="button" class="btn-accedi" id="tst" value="Elimina" onclick="deleteFaq()" />
         

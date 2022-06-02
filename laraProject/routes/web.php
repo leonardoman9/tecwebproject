@@ -19,8 +19,6 @@ Route::get('/', 'PublicController@showHome')
 
 Route::get('/catalogo', 'PublicController@showCatalogo')
         ->name('Catalogo');
-Route::post('/catalogo', 'SearchController@search')
-        ->name('RicercaCatalogo');
 
 
 Route::group(['middleware' => 'auth'], function(){
@@ -70,6 +68,11 @@ Route::get('/gestionefaq', 'UserController@gestioneFaq')
 Route::get('/gestionefaq/{num}', 'UserController@modificaFaq')
         ->name('modificaFaq')
         ->middleware('can:isAdmin');
+
+Route::view('/form_faq', 'form_faq')
+        ->name('form_faq')->middleware("can:isAdmin");
+Route::post('/crea_faq', 'UserController4@creaFaq')
+        ->name('crea_faq')->middleware("can:isAdmin");
 
 Route::get('/home', 'HomeController@index')->name('home');
 
