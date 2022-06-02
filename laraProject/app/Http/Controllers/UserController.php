@@ -76,15 +76,18 @@ class userController extends Controller {
     }
     
     public function showModificaFaq($id) {
+        $faqAll= new FAQ();
         $faq = $this->FAQ->getFaqById($id)->first();
         if ($faq == null) {
             return redirect(route('faq'))->with('error', 'Non puoi modificare una faq inesistente!');
         }
-        return view('modifica_faq')->with('faq', $faq);
+        return view('modifica_faq')
+                ->with('faq', $faq);
     }
    
    public function modificaFaq(FaqUpdateRequest $request, $id) {
         $faq = $this->FAQ->getFaqById($id);
+        $faqAll = new FAQ();
         if ($request->domanda != null) {
             $faq->update([
                 'domanda' => $request->domanda,
@@ -95,17 +98,21 @@ class userController extends Controller {
                 'risposta' => $request->risposta,
             ]);
         }
-        return view ('adminsFaqs');
+        return view ('adminsFaqs')
+                ->with('allFaqs', $faqAll->returnFaqs());
     }
     
     public function eliminaFaq($id) {
+        $faqAll = new FAQ();
         $faq = $this->FAQ->getFaqById($id)->first();
         if ($faq == null) {
-            return view ('adminsFaqs');
+            return view ('adminsFaqs')
+            ->with('allFaqs', $faqAll->returnFaqs());;
 //            return redirect(route('adminsFaqs'))->with('error', 'Non puoi eliminare una faq inesistente!');
         } else {
             $faq->delete();
-           return view ('adminsFaqs'); 
+           return view ('adminsFaqs')
+            ->with('allFaqs', $faqAll->returnFaqs());; 
 //            return redirect(route('adminsFaqs'))->with('message', 'Faq eliminata con successo!');
         }
     }
@@ -127,12 +134,14 @@ public function showAnn($ann) {
         if($toShow === null) {
             return redirect('/');;
         }
+        $poster = $alloggio::where('id_alloggio', '=', $ann);
         $selectedFoto = $foto::where('id_alloggio', '=', $toShow->id_alloggio)->first();
         if($selectedFoto === null){
             $selectedFoto=0;
         }
         return view('annuncioPage')
                 ->with('ann', $toShow)
+                ->with('poster', $poster)
                 ->with('foto', $selectedFoto);
    }
    

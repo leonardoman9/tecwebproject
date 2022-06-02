@@ -20,6 +20,8 @@ class SearchController extends Controller
         $foto = new foto();
         $results = $alloggio::query()
                 ->where('citta', 'LIKE',"%{$request['citta']}%")
+                ->whereDate('data_inizio_locazione', '>=', $request['data_inizio_locazione'])
+                ->whereDate('data_fine_locazione', '<=', $request['data_fine_locazione'])
                 //->where('dimensione', '=<', $request['dimensionemax'])
                 //->where('dimensione', '=', $request['dimensionemin'])
                 //->where('canone', '=<', $request['prezzomax'])
