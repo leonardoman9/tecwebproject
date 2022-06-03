@@ -37,7 +37,7 @@
                                <div class="prezzo">
                                     <h4> 1 locale | </h4>
                                     <h4> {{$ann->numero_posto_letto_totale}} posti letto | </h4>
-                                    <h4> {{$ann->dimensione}}Mq | </h4>
+                                    <h4> {{$ann->dimensione}} Mq | </h4>
                                     <h4> Prezzo: {{$ann->canone}}€/Mese </h4>
                                   @guest
                                  <a href="{{route('login')}}" class="button">Vedi l'annuncio</a>
@@ -49,6 +49,7 @@
                                 </div>
                          </div>
                      </div>
+                     
                       </section>
           @endforeach
        <!--Paginazione-->
@@ -56,7 +57,7 @@
     @endisset()
     
     @isset($results)
-    
+   
     @foreach ($results as $ann)
                     
           
