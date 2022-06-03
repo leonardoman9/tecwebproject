@@ -14,7 +14,7 @@ class CreateAlloggiosTable extends Migration
     public function up()
     {
         Schema::create('alloggios', function (Blueprint $table) {
-             $table->bigIncrements('id_alloggio');
+            $table->bigIncrements('id_alloggio');
             $table->integer('tipologia');      // 0 = posto letto, 1 = appartamento
             $table->date('data_inserimento');
             $table->integer('canone');

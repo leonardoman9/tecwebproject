@@ -461,6 +461,7 @@ class ComposerStaticInit74b6f56b03146c69fd51e97ea6804a03
     );
 
     public static $classMap = array (
+        'App\\Concerns\\Filterable' => __DIR__ . '/../..' . '/app/Concerns/Filterable.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
@@ -471,7 +472,11 @@ class ComposerStaticInit74b6f56b03146c69fd51e97ea6804a03
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
         'App\\Http\\Controllers\\PublicController' => __DIR__ . '/../..' . '/app/Http/Controllers/PublicController.php',
+        'App\\Http\\Controllers\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/SearchController.php',
+        'App\\Http\\Filters\\AnnFilter' => __DIR__ . '/../..' . '/app/Http/Filters/AnnFilter.php',
+        'App\\Http\\Filters\\Filter' => __DIR__ . '/../..' . '/app/Http/Filters/Filter.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -480,7 +485,11 @@ class ComposerStaticInit74b6f56b03146c69fd51e97ea6804a03
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\FaqCreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/FaqCreateRequest.php',
+        'App\\Http\\Requests\\FaqUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/FaqUpdateRequest.php',
+        'App\\Http\\Requests\\Ricerca' => __DIR__ . '/../..' . '/app/Http/Requests/Ricerca.php',
         'App\\Http\\Requests\\UpdateProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateProfileRequest.php',
+        'App\\Insrisci' => __DIR__ . '/../..' . '/app/Insrisci.php',
         'App\\Models\\FAQ' => __DIR__ . '/../..' . '/app/Models/FAQ.php',
         'App\\Models\\Prova' => __DIR__ . '/../..' . '/app/Models/Prova.php',
         'App\\Models\\alloggio' => __DIR__ . '/../..' . '/app/Models/alloggio.php',

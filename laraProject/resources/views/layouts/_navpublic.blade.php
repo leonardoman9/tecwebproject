@@ -10,7 +10,7 @@
                 
                 @can('isLocatore')
                 <li><a href="{{route('msgPage')}}">Messaggi</a></li>
-                <li><a href="">Gestione Annunci</a></li>
+                <li><a href="{{route('inserisci_alloggio')}}">Gestione Annunci</a></li>
                 @endcan
                 
                 @can('isAdmin')

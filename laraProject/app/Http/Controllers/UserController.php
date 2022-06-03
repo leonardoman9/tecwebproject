@@ -150,6 +150,72 @@ public function showAnn($ann) {
        $faqs = new FAQ();
        $selectedFaq= $faqs::where('id', '=', $faq)->get();
        return view('gestisciFaq')
-                ->with('faq', $selectedFaq);
+       ->with('faq', $selectedFaq);
+   }
+
+   //rota per l'inserimento di un alloggio
+
+   public function inserisciAlloggio(){
+    return view('inserisci_alloggio');
+   } 
+
+   public function createAlloggio(Request $request){
+    $post = new alloggio();
+    $post->tipologia = $request->tipologia;
+    $post->data_inserimento = $request->data_inserimento;
+    $post->canone = $request->canone;
+    $post->dimenzione = $request->dimenzione;
+    $post->citta = $request->citta;
+    $post->indirizzo = $request->indirizzo;
+    $post->data_inizio_locazione = $request->data_inizio_locazione;
+    $post->data_fine_locazione = $request->data_fine_locazione;
+    $post->numero_camere = $request->numero_camere;
+    $post->numero_posto_letto_totale = $request->numero_posto_letto_totale;
+    $post->numero_letti_nella_camera = $request->numero_letti_nella_camera;
+    $post->descrizione = $request->descrizione;
+    $post->etat = $request->etat;
+    $post->save();
+    return back()->with('alloggio_creato', 'Hai inserito un nuovo annuncio !');
+   }
+
+
+   public function getalloggio(){
+        $alloggi = alloggio::orderBy('id', 'DESC')->get();
+        return view('alloggi', compact('alloggi'));
+   }
+
+        public function getalloggiotById($id){
+            $post = alloggio::where('id',$id)->first();
+            return view('singolo_alloggio', compact('post'));
+   }
+
+   public function cancelliAlloggio($id){
+        alloggio::where('id',$id)->delete();
+        return back()->with('alloggio_cancellato', 'lalloggio è stato cancellato con successo'); 
+
+    }
+
+    public function modificaAlloggio($id){
+        $post = alloggio::find($id);
+        return view('modifica_alloggio', compact('post'));
+    }
+
+    public function salveModifica(Request $request){
+        $post = new alloggio();
+        $post->tipologia = $request->tipologia;
+        $post->data_inserimento = $request->data_inserimento;
+        $post->canone = $request->canone;
+        $post->dimenzione = $request->dimenzione;
+        $post->citta = $request->citta;
+        $post->indirizzo = $request->indirizzo;
+        $post->data_inizio_locazione = $request->data_inizio_locazione;
+        $post->data_fine_locazione = $request->data_fine_locazione;
+        $post->numero_camere = $request->numero_camere;
+        $post->numero_posto_letto_totale = $request->numero_posto_letto_totale;
+        $post->numero_letti_nella_camera = $request->numero_letti_nella_camera;
+        $post->descrizione = $request->descrizione;
+        $post->etat = $request->etat;
+        $post->save();
+        return back()->with('alloggio_creato', 'Hai inserito un nuovo annuncio !');
    }
 }

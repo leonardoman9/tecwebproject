@@ -93,3 +93,24 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/stats', 'UserController@showStats')
         ->name('statsPage')
         ->middleware('can:isAdmin');
+
+
+
+//rote per l'inserimento di un alloggio
+
+Route::get('/alloggio', 'UserController@inserisciAlloggio') ->name('inserisci_alloggio') ;
+       
+Route::post('/create_alloggio', 'UserController@createAlloggio')->name('alloggio.create');
+
+Route::get('/alloggi', 'UserController@ getalloggio');
+
+Route::get('/alloggi/{id}', 'UserController@getalloggioById');
+
+Route::get('/cancelli_alloggio/{id}', 'UserController@cancelliAlloggio');
+      
+Route::get('/modifica_alloggio/{id}', 'UserController@modificaAlloggio');
+
+Route::post('/salva_modifica', 'UserController@salveModifica')->name('alloggio.salvato');
+
+        
+        
