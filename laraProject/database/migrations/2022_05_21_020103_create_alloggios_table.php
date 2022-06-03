@@ -23,9 +23,9 @@ class CreateAlloggiosTable extends Migration
             $table->string('indirizzo');
             $table->date('data_inizio_locazione');
             $table->date('data_fine_locazione');
-            $table->integer('numero_camere')->nullable();
-            $table->integer('numero_posto_letto_totale')->nullable();
-            $table->integer('numero_letti_nella_camera')->nullable();
+            $table->integer('numero_camere')->nullable();             //per appartamento
+            $table->integer('numero_posto_letto_totale')->nullable(); //posti letto totale alloggio
+            $table->integer('numero_letti_nella_camera')->nullable(); //per i posti letto
             $table->string('descrizione');
             $table->string('etat');
             $table->timestamp('timestamp')->useCurrent = true;
