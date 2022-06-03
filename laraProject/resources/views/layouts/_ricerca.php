@@ -3,9 +3,7 @@
         <div class="search">
         <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-   
-    </div>
-
+        
 
         <form class="form" action="#" methot="POST">
             <div class="input_group ">

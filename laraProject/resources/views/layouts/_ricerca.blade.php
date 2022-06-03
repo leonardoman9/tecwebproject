@@ -1,5 +1,7 @@
 
 <link rel="stylesheet" href="{{asset('css/searchstyle.css')}}" rel="stylesheet" type="text/css"/>
+<div class="container">
+    
 <div id="formId" class="searchForm">
     {{ Form::open(array('route' => 'RicercaCatalogo', 'class' => 'searchForm')) }}
     @csrf
@@ -122,6 +124,7 @@
         {{Form::reset('Reset', ['class'=>'login-btn'])}}
     </tr>
     </table>
+
 {{Form::close()}}
 
-        </div>
+        </div></div>

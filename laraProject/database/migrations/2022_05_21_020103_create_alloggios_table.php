@@ -15,7 +15,7 @@ class CreateAlloggiosTable extends Migration
     {
         Schema::create('alloggios', function (Blueprint $table) {
             $table->bigIncrements('id_alloggio');
-            $table->integer('tipologia');      // 0 = posto letto, 1 = appartamento
+            //$table->integer('tipologia')->nullable();       0 = posto letto, 1 = appartamento
             $table->date('data_inserimento');
             $table->integer('canone');
             $table->integer('dimensione');
@@ -29,7 +29,7 @@ class CreateAlloggiosTable extends Migration
             $table->string('descrizione');
             $table->string('etat');
             $table->timestamp('timestamp')->useCurrent = true;
-            $table->string('added_by');
+           // $table->string('added_by');
 
         });
     }

@@ -1,16 +1,32 @@
-.searchForm{
-    position: relative;
+.container{
+  border-radius: 7px;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+  
+}
 
-    text-align: right;
-margin-right: 70%;
+.searchForm {
+  max-width: 400px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6);
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.searchForm .input_group{
+  display: flex;
+  border-radius: 5px; 
 }
 
 input[type=number], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: block;
+  display: flex;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -29,8 +45,12 @@ input[type=submit], input[type=reset] {
 
 label{
     color: black;
-      font-weight: bold;
-        display: block;
+    font-weight: bold;
+    display: block;
 
+}
 
+.input_style1{
+  display: flex;
+  margin-left: 50px;
 }
