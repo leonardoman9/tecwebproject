@@ -45,15 +45,15 @@
                 <!--    <td>{{$post->tipologia}}</td> -->
                         <td>{{$post->data_inserimento}}</td> 
                         <td>{{$post->canone}}</td>
-                        <td>{{$post->dimenzione}}</td>
+                        <td>{{$post->dimensione}}</td>
                         <td>{{$post->citta}}</td> 
                         <td>{{$post->indirizzo}}</td>
-                        <td>{{$post->descrizione}}</td>
-                        <td>{{$post->data_inizio_locazione}}</td>
-                        <td>{{$post->data_fine_locazione}}</td>
                         <td>{{$post->numero_camere}}</td>
                         <td>{{$post->numero_posto_letto_totale}}</td>
                         <td>{{$post->numero_letti_nella_camera}}</td>
+                        <td>{{$post->descrizione}}</td>
+                        <td>{{$post->data_inizio_locazione}}</td>
+                        <td>{{$post->data_fine_locazione}}</td>
                         <td>{{$post->etat}}</td> 
 
                         <td>
