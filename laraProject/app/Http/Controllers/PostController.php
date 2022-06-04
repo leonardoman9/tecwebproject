@@ -42,4 +42,11 @@ class PostController extends Controller
         return view('singollo_alloggio', compact('post'));
     }
 
+    
+    public function cancelliAlloggio($id_alloggio){
+        alloggio::where('id_alloggio',$id_alloggio)->delete();
+        return back()->with('cancelli_alloggio', 'lalloggio è stato cancellato con successo'); 
+
+    }
+
 }

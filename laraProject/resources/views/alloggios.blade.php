@@ -16,6 +16,11 @@
 <section>
         <a href="/inserisci_alloggio" class="btn_inserisci" left="50px">Inserisci Alloggio</a>
     <div>
+    <?php if (Session::has('cancelli_alloggio')) :?>
+           <div class="alert" role="alert">
+           {{Session::get('cancelli_alloggio')}}
+           </div>
+           <?php endif ?>
         <table>
             <thead>
                 <tr>

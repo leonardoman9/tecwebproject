@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'DettaglioAlloggio')
+@section('title', 'DettagliAlloggio')
 @section('content')
 
 <h1 style="margin: auto;
@@ -9,12 +9,13 @@
                     padding: 10px;
                     text-align: center;
                     margin-top: 30px;
-                    margin-bottom: 30px;">Dettaglio alloggio
+                    margin-bottom: 30px;">Dettagli alloggio
         </h1>
 
 
 <div class="modif">
-        <h1>Dettaglio Alloggio</h1>
+<a href="http://127.0.0.1:8000/alloggios">Mie Alloggi</a>
+        <h1>Dettagli Alloggio</h1>
     </div>
     <div class="dettaglio">
         <!-- Tipologia: {{$post->tipologia}}</h3>--><h3>

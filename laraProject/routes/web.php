@@ -106,7 +106,7 @@ Route::get('/alloggios', 'PostController@getalloggio');
 
 Route::get('/alloggios/{id_alloggio}', 'PostController@getalloggioById');
 
-//Route::get('/cancelli_alloggio/{id}', 'UserController@cancelliAlloggio');
+Route::get('/cancelli_alloggio/{id_alloggio}', 'PostController@cancelliAlloggio');
       
 //Route::get('/modifica_alloggio/{id}', 'UserController@modificaAlloggio');
 
