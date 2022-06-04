@@ -102,7 +102,7 @@ Route::get('/alloggio', 'PostController@inserisciAlloggio') ->name('inserisci_al
        
 Route::post('/create_alloggio', 'PostController@createAlloggio')->name('alloggio.create');
 
-//Route::get('/alloggi', 'UserController@ getalloggio');
+Route::get('/alloggios', 'PostController@getalloggio');
 
 //Route::get('/alloggi/{id}', 'UserController@getalloggioById');
 

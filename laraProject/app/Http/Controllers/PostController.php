@@ -31,4 +31,9 @@ class PostController extends Controller
         $post->save();
         return back()->with('alloggio_creato', 'Hai inserito un nuovo annuncio !');
        }   
+
+       public function getalloggio(){
+        $alloggios = alloggio::orderBy('id_alloggio', 'DESC')->get();
+        return view('alloggios', compact('alloggios'));
+    }
 }

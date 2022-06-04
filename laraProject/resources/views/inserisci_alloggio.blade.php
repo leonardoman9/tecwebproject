@@ -31,7 +31,7 @@
 
             <div class="posti">
                 <label for="data_inserimento">Data Inserimento: </label>
-                <input type="date" id="start" name="data_inserimento"   value="2022-01-01" min="2022-01-01" max="2050-12-31">                            
+                <input type="date" id="" name="data_inserimento"   value="2022-01-01" min="2022-01-01" max="2050-12-31">                            
             </div>  
 
 
@@ -90,13 +90,10 @@
                 <input class="file_upload_input" type="file" onchange="readURL(this)" accept="Image/* ">
             </div>
 
-            <!--  
-            <div class="posti">
-                <label for="added_by">added by: </label>
-                <input type="champ" id="" name="added_by" placeholder="added_by"  >                            
-            </div>  
-            -->                        
+           
+            <a href="/alloggios/{{id_alloggio}}">Alloggi</a>-->                        
                <button type="submit" class="btn">Salva</button>
+               
 
  </form>       
 </div>    
