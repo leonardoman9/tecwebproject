@@ -32,6 +32,7 @@
                     <th>Descrizione</th>
                     <th>Data Inizio Locazione</th>
                     <th>Data Fine Locazione</th>
+                    <th>Etat</th>
                     <th>Action</th> 
                 </tr>
             </thead>
