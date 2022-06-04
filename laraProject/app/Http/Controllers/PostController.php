@@ -36,4 +36,10 @@ class PostController extends Controller
         $alloggios = alloggio::orderBy('id_alloggio', 'DESC')->get();
         return view('alloggios', compact('alloggios'));
     }
+
+    public function getalloggioById($id_alloggio){
+        $post = alloggio::where('id_alloggio',$id_alloggio)->first();
+        return view('singollo_alloggio', compact('post'));
+    }
+
 }

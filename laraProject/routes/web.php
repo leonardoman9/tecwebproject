@@ -104,7 +104,7 @@ Route::post('/create_alloggio', 'PostController@createAlloggio')->name('alloggio
 
 Route::get('/alloggios', 'PostController@getalloggio');
 
-//Route::get('/alloggi/{id}', 'UserController@getalloggioById');
+Route::get('/alloggios/{id_alloggio}', 'PostController@getalloggioById');
 
 //Route::get('/cancelli_alloggio/{id}', 'UserController@cancelliAlloggio');
       

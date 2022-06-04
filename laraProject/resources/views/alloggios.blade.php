@@ -14,7 +14,7 @@
         </h1>
 
 <section>
-        
+        <a href="/inserisci_alloggio" class="btn_inserisci" left="50px">Inserisci Alloggio</a>
     <div>
         <table>
             <thead>
@@ -57,7 +57,7 @@
                         <td>{{$post->etat}}</td> 
 
                         <td>
-                            <a href="/alloggi/{{$post->id_alloggio}}" class="btn_alloggio">Dettaglio Alloggio</a>
+                            <a href="/alloggios/{{$post->id_alloggio}}" class="btn_alloggio">Dettaglio Alloggio</a>
                             <a href="/modifica_alloggio/{{$post->id_alloggio}}" class="btn_modifica">Modifica Alloggio</a>
                             <a href="/cancelli_alloggio/{{$post->id_alloggio}}" class="btn_cancelli">Cancelli Alloggio</a>
                         </td>
