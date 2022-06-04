@@ -108,9 +108,9 @@ Route::get('/alloggios/{id_alloggio}', 'PostController@getalloggioById');
 
 Route::get('/cancelli_alloggio/{id_alloggio}', 'PostController@cancelliAlloggio');
       
-//Route::get('/modifica_alloggio/{id}', 'UserController@modificaAlloggio');
+Route::get('/modifica_alloggio/{id_alloggio}', 'PostController@modificaAlloggio');
 
-//Route::post('/salva_modifica', 'UserController@salveModifica')->name('alloggio.salvato');
+Route::post('/salva_modifica', 'PostController@salveModifica')->name('alloggio.salvato');
 
         
         

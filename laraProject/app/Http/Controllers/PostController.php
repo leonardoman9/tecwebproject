@@ -49,4 +49,27 @@ class PostController extends Controller
 
     }
 
+    public function modificaAlloggio($id_alloggio){
+        $post = alloggio::find($id_alloggio);
+        return view('modifica_alloggio', compact('post'));
+    }
+
+    public function salveModifica(Request $request){
+        $post = alloggio::find($request->id_alloggio);
+       // $post->tipologia = $request->tipologia;
+        $post->data_inserimento = $request->data_inserimento;
+        $post->canone = $request->canone;
+        $post->dimensione = $request->dimensione;
+        $post->citta = $request->citta;
+        $post->indirizzo = $request->indirizzo;
+        $post->data_inizio_locazione = $request->data_inizio_locazione;
+        $post->data_fine_locazione = $request->data_fine_locazione;
+        $post->numero_camere = $request->numero_camere;
+        $post->numero_posto_letto_totale = $request->numero_posto_letto_totale;
+        $post->numero_letti_nella_camera = $request->numero_letti_nella_camera; 
+        $post->descrizione = $request->descrizione;
+        $post->etat = $request->etat;
+        $post->save();
+        return back()->with('alloggio_modificato', 'lalloggio è stato modificato con successo.');
+    }
 }
