@@ -1,7 +1,8 @@
 @extends('welcome')
 
-@section('title', 'DettagliAlloggio')
+@section('title', 'Dettagli Alloggio')
 @section('content')
+<link href="{{asset('css/insertAll.css')}}" rel="stylesheet" type="text/css"/>
 
 <h1 style="margin: auto;
                     width: 50%;
@@ -12,29 +13,36 @@
                     margin-bottom: 30px;">Dettagli alloggio
         </h1>
 
-
+<div class="floatingForm">
 <div class="modif">
-<a href="http://127.0.0.1:8000/alloggios">Mie Alloggi</a>
+<a href="{{route('alloggiLocatore')}}">Miei Alloggi</a>
         <h1>Dettagli Alloggio</h1>
     </div>
     <div class="dettaglio">
-        <!-- Tipologia: {{$post->tipologia}}</h3>--><h3>
-        <h3>Data Inserimento: {{$post->data_inserimento}}</h3>
-        <h3>Canone: {{$post->canone}} €/Mese</h3>
-        <h3>Dimenzione: {{$post->dimenzione}} Mq</h3>
-        <h3>Citta: {{$post->citta}}</h3>
-        <h3>Indirizzo: {{$post->indirizzo}}</h3>
-        <h3>Data Inizio Locazione: {{$post->data_inizio_locazione}}</h3>
-        <h3>Data Fine Locazione: {{$post->data_fine_locazione}}</h3>
-        <h3>Numero Camere: {{$post->numero_camere}}</h3>
-        <h3>Numero Posto Letto Totale: {{$post->numero_posto_letto_totale}}</h3>
-        <h3>Numero Letti Nella Camera: {{$post->numero_letti_nella_camera}}</h3>
-        <h3>Descrizione: {{$post->descrizione}}</h3>
-        <h3>Etat: {{$post->etat}}</h3>
+        @isset($post)
         
+        <h3>Tipologia:</h3><h4> @switch($post->tipologia)
+                        @case(1) Posto letto @break
+                        @case(2) Appartamento @break
+                        @endswitch </h4>
+        
+        <h3>Data Inserimento:</h3> <h4>{{$post->data_inserimento}}</h4>
+        <h3>Canone:</h3> <h4>{{$post->canone}} €/Mese</h4>
+        <h3>Dimenzione:</h3> <h4>{{$post->dimensione}} Mq</h4>
+        <h3>Citta:</h3> <h4>{{$post->citta}}</h4>
+        <h3>Indirizzo:</h3> <h4> {{$post->indirizzo}}</h4>
+        <h3>Data Inizio Locazione: </h3><h4>{{$post->data_inizio_locazione}}</h4>
+        <h3>Data Fine Locazione:</h3><h4> {{$post->data_fine_locazione}}</h4>
+        <h3>Numero Camere:</h3><h4> {{$post->numero_camere}}</h4>
+        <h3>Numero Posto Letto Totale:</h3><h4> {{$post->numero_posto_letto_totale}}</h4>
+        <h3>Numero Letti Nella Camera:</h3><h4> {{$post->numero_letti_nella_camera}}</h4>
+        <h3>Descrizione: </h3><h4>{{$post->descrizione}}</h4>
+        <a href="{{route('modificaAlloggio', $post->id_alloggio)}}"  id="modificaButton" >Modifica</a>
+        <a href="{{route('cancellaAlloggio', $post->id_alloggio)}}"  id="cancellaButton" " onclick="return deleteElement();">Cancella</a>
+        @endisset
     </div>    
    
 
-
+</div>
 
     @endsection

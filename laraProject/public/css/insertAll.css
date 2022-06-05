@@ -1,0 +1,104 @@
+.allInsert{
+    margin-top: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom:100px;
+    border-top: solid red;
+  border-right: solid red;
+  border-bottom: solid red;
+  border-left: solid red
+}
+
+#insAllForm{
+    
+}
+#insAllForm input[type=text], select, input[type=number], input[type=date], input[type=file]{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+#insAllForm textArea{
+     width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#title{
+    margin: auto;
+                    width: 50%;
+                    border: 3px solid green;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    }
+#alloggiosTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  margin-top: 40px;
+
+}
+
+#alloggiosTable td, #alloggiosTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#alloggiosTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#alloggiosTable tr:hover {background-color: #ddd;}
+
+#alloggiosTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #fb911f;
+  color: white;
+}
+
+#buttonwrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#aggiungi {
+  height: auto;
+  width: 100px;
+}
+.holder{
+    width: 400px;
+    height: auto;
+}
+#previewImg{
+    width: 700px;
+}
+h1 #title{ margin: auto;
+                    width: 50%;
+                    border: 3px solid green;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+}
+#modificaButton #cancellaButton{
+    margin-top: 50px;
+    background-color: red;
+}
+
+#tornaIndietro{
+    
+   text-align:center;
+}

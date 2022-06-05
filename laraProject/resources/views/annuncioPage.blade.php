@@ -24,12 +24,12 @@ $("#image-wrapper").click(function () {
                 
                 @if($foto===0){
                     <div id="img_color" class="img_color">
-                    <img id="mainimage" src="../../public/foto/default.jpg" class="catfoto"alt=""/>
+                    <img id="mainimage" src="../../public/fotoprova/default.jpg" class="catfoto"alt=""/>
                 </div>
                 }
                 @else
                 <div class="img_color">
-                    <img src="../../{{$foto->path}}" class="catfoto" >
+                  @php echo "<img src=../../storage/app/{$foto->path}" @endphp class="catfoto" >
                 </div>
                 @endif
             </div>

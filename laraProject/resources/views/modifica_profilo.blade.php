@@ -3,29 +3,26 @@
 <!-- Titolo da appendere alla rotta -->
 @section('title', 'Modifica del profilo')
  <script src="../../resources/js/showpassword.js" type="text/javascript"></script>
-
-    
+<script src="{{ asset('js/modifica_profilo.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/profilo.css') }}" >
 @section('specific')
 <!-- Stili relativi al signup -->
-<link rel="stylesheet" type="text/css" href="{{ asset('css/modifica_profilo.css') }}" >
-<script src="{{ asset('js/modifica_profilo.js') }}"></script>
 @endsection
 <!-- Sezione centrale della pagina di modifica del profilo -->
 @section('content')
-<div id="Modify_Div" >
+<div  id='modificaprofilo' border-style: groove;" >
     <section id="Modify">
-        @can('isLocatario')
+        
         {{ Form::open(array('route' => 'modifica_profilo')) }}
         <h2>Modifica del profilo</h2>
-        @endcan
 
 
         <h4>Lasciare il campo vuoto nel caso in cui non lo si voglia modificare</h4>
 
-        {{ Form::label('username', 'username') }}
+        {{ Form::label('username', 'Username') }}
         {{ Form::text('username', $utente->username, ['disabled']) }}
 
-        {{ Form::label('nome', 'nome') }}
+        {{ Form::label('nome', 'Nome') }}
         {{ Form::text('nome', $utente->nome) }}
         @if ($errors->first('nome'))
         <ul class="errors">
@@ -34,7 +31,7 @@
             @endforeach
         </ul>
         @endif
-        {{ Form::label('cognome', 'cognome') }}
+        {{ Form::label('cognome', 'Cognome') }}
         {{ Form::text('cognome', $utente->cognome) }}
         @if ($errors->first('cognome'))
         <ul class="errors">
@@ -44,8 +41,8 @@
         </ul>
         @endif
         
-        {{ Form::label('genere', 'genere') }}
-        {{ Form::text('genere', $utente->genere) }}
+        {{ Form::label('genere', 'Genere') }}
+        {{Form::select('genere', array('maschio' => 'Maschio', 'Femmina' => 'Femmina'))}}
         @if ($errors->first('genere'))
         <ul class="errors">
             @foreach ($errors->get('genere') as $message)
@@ -54,7 +51,7 @@
         </ul>
         @endif
 
-        {{ Form::label('password', 'password') }}
+        {{ Form::label('password', 'Password') }}
         {{ Form::password('password', ['placeholder' => 'Nuova password', 'id' => 'password']) }}
         <input type="checkbox" onclick="showPassword()" class="checkbox"><label style="font-size: 16px;">Mostra la password</label></input>
         @if ($errors->first('password'))

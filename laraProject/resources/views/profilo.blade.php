@@ -3,22 +3,34 @@
 <!-- Titolo da appendere alla rotta -->
 @section('title', 'Profilo')
 
-@section('specific')
-<!-- Stili relativi ai dettagli di un evento -->
+
 <link rel="stylesheet" type="text/css" href="{{ asset('css/profilo.css') }}" >
-@endsection
 
+@isset($auth)
 @section('content')
+<div id='profilo' style="text-align: center">
+    <div class="Title">
+        <h1><i class="fa fa-user"></i>&nbsp;Profilo</h1>
+    </div>
+    <ul>
+        <li><h2>Username: </h2> {{$auth->username}}</li>
+        <li><h2>Nome: </h2> {{$auth->nome}}</li>
+        <li><h2>Cognome: </h2> {{$auth->cognome}}</li>
+        <li><h2>Genere: </h2> {{$auth->genere}}</li>
+        <li><h2>Età: </h2> {{$auth->eta}}</li>
+        <li><h2>Ruolo: </h2> {{$auth->role}}</li>
+        <li><h2>Data creazione account: </h2> <?php if($auth->created_at == null) { 
+            echo("Account creato tramite db seeding.");
+            } else echo $auth->created_at; ?> </li>
+    </ul>
+    
+    <div id="Mod_Container">
+        <a href="{{route('mostra_modifica_profilo')}}">
+            <button id='bottonemodifica' class='btn-accedi'><i class="fa fa-pencil" aria-hidden="true"></i> Modifica profilo </button>
+        </a>
+    </div>
 
-<div id="Mod_Container">
-    <a href="{{route('mostra_modifica_profilo')}}">
-        <button><i class="fa fa-pencil" aria-hidden="true"></i> Modifica profilo </button>
-    </a>
 </div>
-
-<div class="Title">
-    <p><i class="fa fa-user"></i>&nbsp;Profilo</p>
-</div>
-
 
 @endsection
+@endisset

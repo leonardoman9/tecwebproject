@@ -1,10 +1,7 @@
 @extends('welcome')
 @section('title', 'FAQ')
 @section('content')
-
-<br><br>
-    @isset($allFaqs)
-        <h1 style="margin: auto;
+ <h1 style="margin: auto;
                     width: 50%;
                     border: 3px solid green;
                     padding: 10px;
@@ -12,8 +9,10 @@
                     margin-top: 30px;
                     margin-bottom: 30px;">Frequently Asked Questions 
         </h1>
+<div class="floatingForm">
+    @isset($allFaqs)
+       
         @foreach ($allFaqs as $faq)
-                
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -26,5 +25,5 @@
         </div>
         @endforeach
     @endisset()
-    <br><br>
+</div>
 @endsection

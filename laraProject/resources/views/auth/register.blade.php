@@ -18,11 +18,38 @@
         @endif
 
 
-        {{ Form::label('nome', 'nome') }}
+        {{ Form::label('nome', 'Nome') }}
         {{ Form::text('nome', '') }}
         @if ($errors->first('nome'))
         <ul class="errors">
             @foreach ($errors->get('nome') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+        {{ Form::label('cognome', 'Cognome') }}
+        {{ Form::text('cognome', '') }}
+        @if ($errors->first('cognome'))
+        <ul class="errors">
+            @foreach ($errors->get('cognome') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+        {{ Form::label('eta', 'età') }}
+        {{ Form::number('eta') }}
+        @if ($errors->first('eta'))
+        <ul class="errors">
+            @foreach ($errors->get('eta') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+         {{ Form::label('genere', 'Genere') }}
+        {{ Form::select('genere', array('maschio'=> 'Maschio', 'femmina' => 'Femmina')) }}
+        @if ($errors->first('genere'))
+        <ul class="errors">
+            @foreach ($errors->get('genere') as $message)
             <li>{{ $message }}</li>
             @endforeach
         </ul>

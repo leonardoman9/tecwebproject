@@ -1,44 +1,30 @@
 @extends('welcome')
 
-@section('title', 'Mie Alloggi')
+@section('title', 'Alloggi pubblicati')
 @section('content')
+<link href="{{asset('css/insertAll.css')}}" rel="stylesheet" type="text/css"/>
+<script src="{{asset('../resources/js/confirmDelete.js')}}"></script>
 
-
-<h1 style="margin: auto;
-                    width: 50%;
-                    border: 3px solid green;
-                    padding: 10px;
-                    text-align: center;
-                    margin-top: 30px;
-                    margin-bottom: 30px;">Mie Alloggi
+<h1 id="title">Miei Alloggi
         </h1>
 
 <section>
-        <a href="/inserisci_alloggio" class="btn_inserisci" left="50px">Inserisci Alloggio</a>
     <div>
-    <?php if (Session::has('cancelli_alloggio')) :?>
-           <div class="alert" role="alert">
-           {{Session::get('cancelli_alloggio')}}
-           </div>
-           <?php endif ?>
-        <table>
+        <table class="floatingForm"  id="alloggiosTable">
             <thead>
                 <tr>
-                    <th>ID_ALLOGGIO</th>              
-                   <!-- <th>Tipologia</th> <div class="titolo"><a href="inserisci_alloggio" class="inserisci">Nuovo Alloggio</a></div>-->
                     <th>Data inserimento</th>
                     <th>Canone</th>
-                    <th>Dimenzione</th>
+                    <th>Dimensione</th>
                     <th>Citta</th>
                     <th>Indirizzo</th>
                     <th>Numero camere</th>
                     <th>Numero Posto Letto Totale</th>
-                    <th>Numero letti nella camera</th>
+                    <th>Numero Letti Nella Camera</th>
                     <th>Descrizione</th>
                     <th>Data Inizio Locazione</th>
                     <th>Data Fine Locazione</th>
-                    <th>Etat</th>
-                    <th>Action</th> 
+                    <th>Azione</th> 
                 </tr>
             </thead>
 
@@ -46,7 +32,7 @@
                 <?php foreach($alloggios as $post) :?>   
                 
                     <tr>
-                        <td>{{$post->id_alloggio}}</td>
+                       
                 <!--    <td>{{$post->tipologia}}</td> -->
                         <td>{{$post->data_inserimento}}</td> 
                         <td>{{$post->canone}}</td>
@@ -59,15 +45,21 @@
                         <td>{{$post->descrizione}}</td>
                         <td>{{$post->data_inizio_locazione}}</td>
                         <td>{{$post->data_fine_locazione}}</td>
-                        <td>{{$post->etat}}</td> 
 
                         <td>
-                            <a href="/alloggios/{{$post->id_alloggio}}" class="btn_alloggio">Dettaglio Alloggio</a>
-                            <a href="/modifica_alloggio/{{$post->id_alloggio}}" class="btn_modifica">Modifica Alloggio</a>
-                            <a href="/cancelli_alloggio/{{$post->id_alloggio}}" class="btn_cancelli">Cancelli Alloggio</a>
+                            <a href="{{route('visualizzaAlloggio', $post->id_alloggio)}}" class="btn_alloggio">Dettaglio</a><br>
+                            <a href="{{route('modificaAlloggio', $post->id_alloggio)}}" class="btn_modifica">Modifica</a><br>
+                            <a href="{{route('cancellaAlloggio', $post->id_alloggio)}}" class="btn_cancelli" onclick="return deleteElement();">Cancella</a>
                         </td>
                     </tr>
                 <?php endforeach ;?>
+                    <div id="buttonwrapper">
+                    <a href="{{route('nuovoAlloggio')}}">
+                     <input type="button" class="btn-accedi" id="aggiungi" value="Aggiungi" onclick="addFaq()" />
+                    </div>
+    </a>
+                    
+            
             </tbody>
         </table>
         

@@ -16,49 +16,103 @@ Auth::routes();
 
 Route::get('/', 'PublicController@showHome')
         ->name('Home');
-
 Route::get('/catalogo', 'PublicController@showCatalogo')
         ->name('Catalogo');
-Route::post('/catalogo', 'SearchController@search')
-        ->name('RicercaCatalogo');
+Route::get('/faq', 'PublicController@showFaq')
+        ->name('FaqPage');
+Route::get('/regolamento', 'PublicController@showRegolamento')
+        ->name('RegolamentoPage');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/catalogo/{num}', 'UserController@showAnn')
         ->name('Ann');
+    
+    Route::get('/profilo/modifica', 'UserController@showModificaProfilo')
+        ->name('mostra_modifica_profilo')->middleware("auth");
+    
+    Route::post('/catalogo', 'SearchController@search')
+        ->name('RicercaCatalogo')
+        ->middleware('auth');
+    
+    Route::get('/messaggi', 'UserController@showMsg')
+        ->name('msgPage')
+        ->middleware('auth');
+    Route::post('/profilo/modifica', 'UserController@modificaProfilo')
+        ->name('modifica_profilo')->middleware("auth");
+
 });
 
 
-Route::get('/faq', 'PublicController@showFaq')
-        ->name('FaqPage');
-
-
-
-Route::get('/regolamento', 'PublicController@showRegolamento')
-        ->name('RegolamentoPage');
-
-
-
-Route::get('/messaggi', 'UserController@showMsg')
-        ->name('msgPage')
-        ->middleware('auth');
-
-Route::get('/user', 'UserController@index')
+Route::group(['middleware' => 'can:isLocatario'], function(){
+   Route::get('/user', 'UserController@index')
         ->name('user')
         ->middleware('can:isLocatario');
+});
+
+
+
+
+
 
 Route::get('/profilo', 'UserController@showProfile')
         ->name('profilo');
 
-Route::get('/profilo/modifica', 'UserController@showModificaProfilo')
-        ->name('mostra_modifica_profilo')->middleware("auth");
-
-
-Route::post('/profilo/modifica', 'UserController@modificaProfilo')
-        ->name('modifica_profilo')->middleware("auth");
 
 
 
-Route::post('/gestionefaq', 'UserController@creaFaq')
+
+
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['middleware' => 'can:isLocatore'], function(){
+             
+Route::get('/mieialloggi', 'PostController@getalloggio')
+        ->name('alloggiLocatore');
+        
+Route::get('/mieialloggi/nuovo', 'PostController@inserisciAlloggio')
+        ->name('nuovoAlloggio');
+
+Route::post('/mieialloggi', 'PostController@createAlloggio')
+        ->name('creazioneAlloggio');
+Route::get('/cancelli_alloggio/{id_alloggio}', 'PostController@cancelliAlloggio')
+        ->name('cancellaAlloggio');
+
+
+Route::get('/modifica_alloggio/{id}', 'PostController@modificaAlloggio')
+        ->name('modificaAlloggio');
+Route::post('/modifica_alloggio/{id}', 'PostController@updateAlloggio')
+        ->name('updateAlloggio');
+Route::get('/mieialloggi/{id}', 'PostController@getalloggioById')
+        ->name('visualizzaAlloggio');
+
+    //rotte per l'inserimento di un alloggio
+/*
+ì
+
+Route::get('/mieialloggi', 'PostController@getalloggio')
+        ->name('alloggiLocatore')
+        ->middleware('can:isLocatore');
+
+Route::get('/alloggi/{id}', 'UserController@getalloggioById');
+
+
+      
+Route::get('/modifica_alloggio/{id}', 'UserController@modificaAlloggio');
+
+//Route::post('/salva_modifica', 'UserController@salveModifica')->name('alloggio.salvato');
+
+        */
+});
+
+Route::group(['middleware' => 'can:isAdmin'], function(){
+    Route::get('/stats', 'UserController@showStats')
+        ->name('statsPage')
+        ->middleware('can:isAdmin');
+    Route::post('/gestionefaq', 'UserController@creaFaq')
         ->name('crea_faq')->middleware("can:isAdmin");
 Route::get('/gestionefaq', 'UserController@gestioneFaq')
         
@@ -87,30 +141,4 @@ Route::get('/gestionefaq/{num}', 'UserController@modificaFaq')
 
 Route::view('/form_faq', 'form_faq')
         ->name('form_faq')->middleware("can:isAdmin");
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/stats', 'UserController@showStats')
-        ->name('statsPage')
-        ->middleware('can:isAdmin');
-
-
-
-//rote per l'inserimento di un alloggio
-
-Route::get('/alloggio', 'PostController@inserisciAlloggio') ->name('inserisci_alloggio') ;
-       
-Route::post('/create_alloggio', 'PostController@createAlloggio')->name('alloggio.create');
-
-Route::get('/alloggios', 'PostController@getalloggio');
-
-Route::get('/alloggios/{id_alloggio}', 'PostController@getalloggioById');
-
-Route::get('/cancelli_alloggio/{id_alloggio}', 'PostController@cancelliAlloggio');
-      
-Route::get('/modifica_alloggio/{id_alloggio}', 'PostController@modificaAlloggio');
-
-Route::post('/salva_modifica', 'PostController@salveModifica')->name('alloggio.salvato');
-
-        
-        
+});

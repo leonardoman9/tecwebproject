@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         DB::table('alloggios')->insert(
                 [
                     [               'id_alloggio' => 1,
-                                    //'tipologia'  =>  1,  1 = posto letto, 2 = appartamento
+                                    'tipologia'  =>  1, // 1 = posto letto, 2 = appartamento
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 650,
                                      'dimensione'=> 5,
@@ -28,13 +28,12 @@ class DatabaseSeeder extends Seeder
                                      'numero_posto_letto_totale' => null,
                                      'numero_letti_nella_camera' => 3,
                                      'descrizione' => 'Comodo appartamento in centro, dotato di giardino e corte personale. Disponibile un posto letto.',
-                                     'etat'=> 'prova',
-                        //'added_by' => 'locatore',   
+                        'added_by' => 'lorelore',   
                                      'timestamp' =>  '2022-05-03 20:24:23',
                                     
                     ],
                      [  'id_alloggio' => 2,
-                                    //'tipologia'  =>  2, 
+                                    'tipologia'  =>  2, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 600,
                                      'dimensione'=> 10,
@@ -46,14 +45,13 @@ class DatabaseSeeder extends Seeder
                                      'numero_posto_letto_totale' => 3,
                                      'numero_letti_nella_camera' => null,
                                      'descrizione' => 'Comodo appartamento in centro, dotato di giardino e corte personale. Disponibile un posto letto.',
-                                     'etat'=> 'prova',
-                                    // 'added_by' => 'locatore',
+                                     'added_by' => 'locatore',
                                      
                          
                       'timestamp' =>  '2022-05-04 20:24:23'
                     ],
                      [  'id_alloggio' => 3,
-                                    //'tipologia'  =>  2,
+                                    'tipologia'  =>  2,
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 550,
                                      'dimensione'=> 15,
@@ -66,14 +64,13 @@ class DatabaseSeeder extends Seeder
                                      'numero_letti_nella_camera' => null,
                                      'descrizione' => 'Appartamento 4ºpiano in condivisione con altri 2/3 inquilini in altre 2 camere. Ogni camera ha la sua chiave. Cucina e bagno in comune.
 Ideale per studenti o dipendenti dell ospedale.',
-                                     'etat'=> 'prova',
-                                     //'added_by' => 'locatore',
+                                     'added_by' => 'locatore',
                                     
                          
                       'timestamp' =>  '2022-05-05 20:24:23'
                     ],
                      [   'id_alloggio' => 4,
-                                    //'tipologia'  =>  1, 
+                                    'tipologia'  =>  1, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 500,
                                      'dimensione'=> 20,
@@ -86,15 +83,14 @@ Ideale per studenti o dipendenti dell ospedale.',
                                      'numero_posto_letto_totale' => 4,
                                      'numero_letti_nella_camera' => 3,
                                      'descrizione' => 'Appartamento vista mare, disponibile da subito. no perditempo. ',
-                                     'etat'=> 'prova',
-                                     //'added_by' => 'locatore',
+                                     'added_by' => 'locatore',
                                     
                          
                       'timestamp' =>  '2022-05-06 20:24:23'
                          
                     ],
                     [               'id_alloggio' => 5,
-                                   // 'tipologia'  =>  1, 
+                                    'tipologia'  =>  1, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 450,
                                      'dimensione'=> 25,
@@ -106,12 +102,11 @@ Ideale per studenti o dipendenti dell ospedale.',
                                      'numero_posto_letto_totale' => 4,
                                      'numero_letti_nella_camera' => 2,
                                      'descrizione' => 'Comodo posto letto in centro, dotato di giardino e corte personale. Disponibile un posto letto.',
-                                     'etat'=> 'prova',
-                                    //'added_by' => 'locatore',
+                                    'added_by' => 'lorelore',
                                      'timestamp' =>  '2022-05-07 20:24:23'
                     ],             
                      [  'id_alloggio' => 6,
-                                   // 'tipologia'  =>  2, 
+                                    'tipologia'  =>  2, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 400,
                                      'dimensione'=> 30,
@@ -123,12 +118,11 @@ Ideale per studenti o dipendenti dell ospedale.',
                                      'numero_posto_letto_totale' => 4,
                                      'numero_letti_nella_camera' => null,
                                      'descrizione' => 'Comodo appartamento in centro, dotato di giardino e corte personale. Disponibile un posto letto.',
-                                     'etat'=> 'prova',
-                                     //'added_by' => 'locatore',
+                                     'added_by' => 'locatore',
                       'timestamp' =>  '2022-05-08 20:24:23'
                     ],
                      [  'id_alloggio' => 7,
-                                    //'tipologia'  =>  1, 
+                                    'tipologia'  =>  1, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 350,
                                      'dimensione'=> 35,
@@ -142,12 +136,11 @@ Ideale per studenti o dipendenti dell ospedale.',
                                      'numero_letti_nella_camera' => null,
                                      'descrizione' => 'Appartamento 4ºpiano in condivisione con altri 2/3 inquilini in altre 2 camere. Ogni camera ha la sua chiave. Cucina e bagno in comune.
 Ideale per studenti o dipendenti dell ospedale.',
-                                     'etat'=> 'prova',
-                                     //'added_by' => 'locatore',
+                                     'added_by' => 'locatore',
                       'timestamp' =>  '2022-05-09 20:24:23'
                     ],
                      [   'id_alloggio' => 8,
-                                    //'tipologia'  =>  2,
+                                    'tipologia'  =>  2,
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 300,
                                      'dimensione'=> 40,
@@ -161,13 +154,12 @@ Ideale per studenti o dipendenti dell ospedale.',
                                      'numero_letti_nella_camera' => null,
 
                                      'descrizione' => 'Appartamento vista mare, disponibile da subito. no perditempo. ',
-                                     'etat'=> 'prova',
-                                     //'added_by' => 'locatore',
+                                     'added_by' => 'lorelore',
                       'timestamp' =>  '2022-05-10 20:24:23'
                          
                     ],
                     [               'id_alloggio' => 9,
-                                   // 'tipologia'  =>  1, 
+                                    'tipologia'  =>  1, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 250,
                                      'dimensione'=> 45,
@@ -180,12 +172,11 @@ Ideale per studenti o dipendenti dell ospedale.',
                                      'numero_letti_nella_camera' => 3,
 
                                      'descrizione' => 'Comodo appartamento in centro, dotato di giardino e corte personale. Disponibile un posto letto.',
-                                     'etat'=> 'prova',
-                                    // 'added_by' => 'locatore',
+                                     'added_by' => 'locatore',
                                      'timestamp' =>  '2022-05-11 20:24:23'
                     ],              
                      [  'id_alloggio' => 10,
-                                    //'tipologia'  =>  1, 
+                                    'tipologia'  =>  1, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 200,
                                      'dimensione'=> 50,
@@ -198,13 +189,12 @@ Ideale per studenti o dipendenti dell ospedale.',
                                      'numero_posto_letto_totale' => 2,
                                      'numero_letti_nella_camera' => 2,
                                      'descrizione' => 'Comodo appartamento in centro, dotato di giardino e corte personale. Disponibile un posto letto.',
-                                     'etat'=> 'prova',
-                                     //'added_by' => 'locatore',
+                                     'added_by' => 'locatore',
                          
                       'timestamp' =>  '2022-05-12 20:24:23'
                     ],
                      [  'id_alloggio' => 11,
-                                    //'tipologia'  =>  2, 
+                                    'tipologia'  =>  2, 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 150,
                                      'dimensione'=> 55,
@@ -219,13 +209,12 @@ Ideale per studenti o dipendenti dell ospedale.',
 
                                      'descrizione' => 'Appartamento 4ºpiano in condivisione con altri 2/3 inquilini in altre 2 camere. Ogni camera ha la sua chiave. Cucina e bagno in comune.
 Ideale per studenti o dipendenti dell ospedale.',
-                                     'etat'=> 'prova',
-                                     //'added_by' => 'locatore',
+                                     'added_by' => 'lorelore',
                          
                       'timestamp' =>  '2022-05-13 20:24:23'
                     ],
                      [   'id_alloggio' => 12,
-                                    //'tipologia'  =>  2, // 
+                                    'tipologia'  =>  2, // 
                                      'data_inserimento' => '2022-05-21',
                                      'canone' => 100,
                                      'dimensione'=> 60,
@@ -238,8 +227,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                                      'numero_posto_letto_totale' => 2,
                                      'numero_letti_nella_camera' => 2,
                                      'descrizione' => 'Appartamento vista mare, disponibile da subito. no perditempo. ',
-                                     'etat'=> 'prova',
-                                     //'added_by' => 'locatore',
+                                     'added_by' => 'locatore',
                                      'timestamp' =>  '2022-05-14 20:24:23'
                          
                     ],
@@ -358,7 +346,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                        [
                          [
                              'foto_id' => 1,
-                      'path' => 'public/foto/4dss.jpg',
+                      'path' => 'public\foto\4dss.jpg',
                       'id_alloggio' => 1,
                       
                   ],

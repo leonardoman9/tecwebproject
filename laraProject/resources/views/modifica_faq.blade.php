@@ -1,14 +1,14 @@
 @extends('welcome')
 
 <!-- Titolo da appendere alla rotta -->
-@section('title', 'modifica faq')
+@section('title', 'Modifica FAQ')
 
 
 
 <!-- Sezione centrale della pagina delle faq -->
 @section('content')
 
-<div id="Modify_Div">
+<div class="floatingForm">
     <section id="Modify">
 
   

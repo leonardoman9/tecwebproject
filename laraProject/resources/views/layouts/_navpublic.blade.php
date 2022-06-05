@@ -1,4 +1,4 @@
-<a href="{{route('Home')}}" class="logo"><span>Home</span>Away</a>
+<a href="{{route('Home')}}" class="logo"><span id="home">Home</span>Away</a>
         <div id="menu">
               <ul class="navbar">
                   
@@ -10,7 +10,7 @@
                 
                 @can('isLocatore')
                 <li><a href="{{route('msgPage')}}">Messaggi</a></li>
-                <li><a href="{{route('inserisci_alloggio')}}">Gestione Annunci</a></li>
+                <li><a href="{{route('alloggiLocatore')}}">Gestione Annunci</a></li>
                 @endcan
                 
                 @can('isAdmin')
@@ -21,7 +21,7 @@
                 <li><a href="{{route('FaqPage')}} ">FAQ</a></li>
 
                @auth
-                    <li><a href="{{ route('profilo') }}"  class="btn-accedi" title="Home User">Home User</a></li>
+                    <li><a href="{{ route('profilo') }}"  class="btn-accedi" title="Home User">Profilo</a></li>
                     <li><a href="" title="Esci dal sito" class="btn-accedi" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                     <form id="logout-form" action="{{ route('logout') }}"  method="POST" style="display: none;">
                         {{ csrf_field() }}

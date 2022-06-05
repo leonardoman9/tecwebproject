@@ -9,8 +9,8 @@
                         vertical-align: middle;
                         line-height: 90px;">
             <h2 style="font-size: 30px;
-                border: 3px solid green;">Errore 403</h2>
-            <p style=""font-size: 70px">Utente non autorizzato.</p>
+                border: 3px solid green;">Errore 419</h2>
+            <p style=""font-size: 70px">Sessione scaduta.</p>
             <a href="{{route('Home')}}">
         Torna alla home
     </a>

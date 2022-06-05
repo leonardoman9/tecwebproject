@@ -2,9 +2,17 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\User;
+use Auth;
+use App\Models\FAQ;
+use App\Models\foto;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\InserimentoRequest;
 use App\Models\alloggio;
+use Illuminate\Support\Facades\Storage;
+
 
 class PostController extends Controller
 {
@@ -12,10 +20,11 @@ class PostController extends Controller
         return view('inserisci_alloggio');
        } 
 
-       public function createAlloggio(Request $request){
+       public function createAlloggio(InserimentoRequest $request){
+        $Authenticated = Auth::user();
         $post = new alloggio();
-       // $post->tipologia = $request->tipologia;
-        $post->data_inserimento = $request->data_inserimento;
+        $post->tipologia = $request->tipologia;
+        $post->data_inserimento = '2022-01-01';
         $post->canone = $request->canone;
         $post->dimensione = $request->dimensione;
         $post->citta = $request->citta;
@@ -26,50 +35,88 @@ class PostController extends Controller
         $post->numero_posto_letto_totale = $request->numero_posto_letto_totale;
         $post->numero_letti_nella_camera = $request->numero_letti_nella_camera; 
         $post->descrizione = $request->descrizione;
-        $post->etat = $request->etat;
-        //$post->added_by = $request->locatore;
+        $post->added_by = $Authenticated->username;
         $post->save();
-        return back()->with('alloggio_creato', 'Hai inserito un nuovo annuncio !');
-       }   
+        
+        $foto = new foto();
+        $file = $request->file('image');
+        if($file!=null){
+             $path = $file->store('\\public\\foto');
+             $foto->path = $path ;
+        $foto->id_alloggio = $post->id;
+        $foto->save();
+        }
+       $alloggios = alloggio::where('added_by', '=', Auth::user()->username)->get();
+          return view('alloggios')
+                ->with('alloggios', $alloggios);
+       }
+       
+           
 
        public function getalloggio(){
-        $alloggios = alloggio::orderBy('id_alloggio', 'DESC')->get();
+        $alloggios = alloggio::where('added_by', '=', Auth::user()->username)->get();
         return view('alloggios', compact('alloggios'));
     }
-
     public function getalloggioById($id_alloggio){
-        $post = alloggio::where('id_alloggio',$id_alloggio)->first();
-        return view('singollo_alloggio', compact('post'));
+        $alloggio = new alloggio();
+         $selected = $alloggio::where('id_alloggio','=', $id_alloggio)->first();
+        if(Auth::user()->username != $selected->added_by){
+             return view('errors/403');
+         }else{
+        return view('singollo_alloggio')
+                ->with('post', $selected);
+         }
     }
-
     
     public function cancelliAlloggio($id_alloggio){
-        alloggio::where('id_alloggio',$id_alloggio)->delete();
-        return back()->with('cancelli_alloggio', 'lalloggio è stato cancellato con successo'); 
+        $alloggio = new alloggio();
+        $selected=$alloggio::where('id_alloggio',$id_alloggio)->first();
+        if($selected===null || Auth::user()->username != $selected->added_by){
+             return view('errors/403');
+        } else{
+         $fotos= new Foto();
+         alloggio::where('id_alloggio',$id_alloggio)->delete();
+         $fotos::where('id_alloggio', $id_alloggio)->delete();
+         return back()->with('cancelli_alloggio', 'Alloggio cancellato con successo');
+        }
+     }
+     public function modificaAlloggio($id_alloggio){
+        $selected = alloggio::where('id_alloggio',$id_alloggio)->first();
+        if($selected===null || Auth::user()->username != $selected->added_by){
+             return view('errors/403');
+        }
+        else{
+            $foto = foto::where('id_alloggio', $id_alloggio)->first();
+            return view('modificaAlloggio')->with('selected', $selected)->with('foto', $foto);
+         
+         }
+     }
+     public function updateAlloggio(InserimentoRequest $request, $idAlloggio){
+         
+        $found = alloggio::where('id_alloggio', $idAlloggio);
+        $found->update([
+            'tipologia' => $request->tipologia,
+            'dimensione' => $request->dimensione,
+            'canone' => $request->canone,
+            'citta' => $request->citta,
+            'indirizzo' => $request->indirizzo,
+             'data_inizio_locazione' => $request->data_fine_locazione,
+            'numero_camere' => $request->numero_camere,
+            'numero_posto_letto_totale' => $request->numero_posto_letto_totale,
+            'numero_letti_nella_camera' => $request->numero_letti_nella_camera,
+            'descrizione' => $request->descrizione,
+        ]);
+         
+        $foto = foto::where('id_alloggio', $idAlloggio);
+        $file = $request->file('image');
+        if($file!=null){
+             $path = $file->store('\\public\\foto');
+             $foto->update([path => $path]);
+        }
+       $alloggios = alloggio::where('added_by', '=', Auth::user()->username)->get();
 
-    }
-
-    public function modificaAlloggio($id_alloggio){
-        $post = alloggio::find($id_alloggio);
-        return view('modifica_alloggio', compact('post'));
-    }
-
-    public function salveModifica(Request $request){
-        $post = alloggio::find($request->id_alloggio);
-       // $post->tipologia = $request->tipologia;
-        $post->data_inserimento = $request->data_inserimento;
-        $post->canone = $request->canone;
-        $post->dimensione = $request->dimensione;
-        $post->citta = $request->citta;
-        $post->indirizzo = $request->indirizzo;
-        $post->data_inizio_locazione = $request->data_inizio_locazione;
-        $post->data_fine_locazione = $request->data_fine_locazione;
-        $post->numero_camere = $request->numero_camere;
-        $post->numero_posto_letto_totale = $request->numero_posto_letto_totale;
-        $post->numero_letti_nella_camera = $request->numero_letti_nella_camera; 
-        $post->descrizione = $request->descrizione;
-        $post->etat = $request->etat;
-        $post->save();
-        return back()->with('alloggio_modificato', 'lalloggio è stato modificato con successo.');
-    }
+          return view('alloggios')
+                ->with('alloggios', $alloggios);
+         
+     }
 }

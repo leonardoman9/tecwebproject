@@ -50,6 +50,7 @@ class PublicController extends Controller
     }
        public function showCatalogo() {
         $alloggio = new alloggio();
+        $alloggio = $alloggio->orderBy('data_inserimento');
         $paginatedAlloggio = $alloggio->paginate(10);
         $foto = new foto();
               return view('catalogo')

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User_model;
+
+use App\Models\User;
 use Auth;
 use App\Models\FAQ;
 use App\Models\alloggio;
@@ -31,7 +32,8 @@ class userController extends Controller {
     public function showProfile() {
         $id = Auth::user()->id;
         
-        return view('profilo');
+        return view('profilo')
+            ->with('auth', Auth::user());
                         
     }
 
@@ -129,10 +131,9 @@ class userController extends Controller {
 public function showAnn($ann) {
         $alloggio = new alloggio();
         $foto = new foto();
-        $fotos = $foto->returnAllFotos();
         $toShow = $alloggio::where('id_alloggio', '=', $ann)->first();
         if($toShow === null) {
-            return redirect('/');;
+            return redirect('/');
         }
         $poster = $alloggio::where('id_alloggio', '=', $ann);
         $selectedFoto = $foto::where('id_alloggio', '=', $toShow->id_alloggio)->first();
