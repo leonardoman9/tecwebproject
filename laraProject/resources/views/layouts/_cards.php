@@ -1,4 +1,4 @@
-   <section class="cards clearfix" id="chisiamo">
+   <section class="cardsclearfix" id="chisiamo">
         <div class="card">
             <img class="card_image" src="../public/css/images/chisiamo.jpg/"  alt="Nature">
             <div class="card_modello">

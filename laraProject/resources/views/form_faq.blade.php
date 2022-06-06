@@ -8,7 +8,7 @@
 <!-- Sezione centrale della pagina delle faq -->
 @section('content')
 
-<div id="Modify_Div">
+<div id="Modify_Div" class="floatingForm">
     <section id="Modify">
 
   

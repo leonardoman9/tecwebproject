@@ -62,11 +62,14 @@ $("#image-wrapper").click(function () {
              </div>
            
         </div>
+         @can('isLocatario')
         <div class="contact">
                 <h3>Prezzo: €/Mese {{$ann->canone}}</h3>
-                <a href="">Contatta</a>
+                
+                <a href="{{route('messaggio', [$ann->id_alloggio]) }}">Contatta</a>
                 <!--<button type=""></button>-->
             </div>
+         @endcan
     </section>  
     
     

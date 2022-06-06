@@ -40,9 +40,6 @@ h1, h2 {
     font-size: 2em;
     text-decoration: none;
 }
-#home{
-    color:#fb911f;
-}
 .logo:hover{
   -o-transition:.5s;
   -ms-transition:.5s;
@@ -338,8 +335,6 @@ transition: 1s ease;
 
 
 footer{
-      margin-top:200px; 
-
     position:relative;
     width: 100%;
     height: auto;
@@ -352,8 +347,6 @@ footer{
 
 footer .container{
     display: flex;
-    justify-content: space-between;
-  
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
@@ -884,30 +877,7 @@ margin: auto;
   } 
   
 
-    
-    .floatingForm{
-     
-        margin-top: 50px;
-        margin-bottom: 50px;
-        margin-right: 25%;
-        margin-left: 25%;
-        text-justify: auto;   
-        padding: 1rem;
-        padding-left: 20px;
-        padding-right: 25px;
-        
-         box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
-                     0 5px 15px 0 rgba(0,0,0,0.08);
-         background-color: #ffffff;
-
-      transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
-         border-radius: 0.5rem;
-      border-left: 0 solid #00ff99;
-}
-#buttonwrapper {
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .searchForm{
+     margin-right: 60%; 
+      
+  }

@@ -25,7 +25,7 @@
                         @case(1) Posto letto @break
                         @case(2) Appartamento @break
                         @endswitch </h4>
-        
+        <img src="../../storage/app/{{$foto->path}}" class='catfoto' onmouseover='bigImg(this)' onmouseout='normalImg(this)'>
         <h3>Data Inserimento:</h3> <h4>{{$post->data_inserimento}}</h4>
         <h3>Canone:</h3> <h4>{{$post->canone}} €/Mese</h4>
         <h3>Dimenzione:</h3> <h4>{{$post->dimensione}} Mq</h4>

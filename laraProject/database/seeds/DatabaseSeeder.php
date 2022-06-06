@@ -330,14 +330,40 @@ Ideale per studenti o dipendenti dell ospedale.',
                       'mittente' => 'leona',
                       'destinatario' => 'ggigi',
                       'testo' => 'Buongiorno, questo è un testo di esempio',
-                      'timestamp' =>  '2022-05-03 20:24:23'
+                      'timestamp' =>  '2022-05-03 20:24:23',
+                             'id_alloggio' => 50,
                   ],
                    [
-                      'id' => 3,
+                      'id' => 2,
                       'mittente' => 'ggigi',
                       'destinatario' => 'leona',
                       'testo' => 'Salve a lei, grazie per la considerazione',
-                      'timestamp' => '2022-05-03 20:25:30'
+                      'timestamp' => '2022-05-03 20:25:30',
+                       'id_alloggio' => 50,
+                  ],
+                           [
+                      'id' => 3,
+                      'mittente' => 'lariolario',
+                      'destinatario' => 'lorelore',
+                      'testo' => 'Sono interessato',
+                      'timestamp' => '2022-05-03 20:25:30',
+                       'id_alloggio' => 1,
+                  ],
+                            [
+                      'id' => 4,
+                      'mittente' => 'lorelore',
+                      'destinatario' => 'lariolario',
+                      'testo' => 'Mi dispiace, non sei il benvenuto',
+                      'timestamp' => '2022-05-03 20:30:30',
+                       'id_alloggio' => 1,
+                  ],
+                           [
+                      'id' => 5,
+                      'mittente' => 'lariolario',
+                      'destinatario' => 'lorelore',
+                      'testo' => 'Peccato, alla prossima.',
+                      'timestamp' => '2022-05-03 20:35:30',
+                       'id_alloggio' => 1,
                   ],
                 ]
         ); 

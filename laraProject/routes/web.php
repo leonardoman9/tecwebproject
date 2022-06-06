@@ -34,9 +34,7 @@ Route::group(['middleware' => 'auth'], function(){
         ->name('RicercaCatalogo')
         ->middleware('auth');
     
-    Route::get('/messaggi', 'UserController@showMsg')
-        ->name('msgPage')
-        ->middleware('auth');
+    
     Route::post('/profilo/modifica', 'UserController@modificaProfilo')
         ->name('modifica_profilo')->middleware("auth");
 
@@ -142,3 +140,22 @@ Route::get('/gestionefaq/{num}', 'UserController@modificaFaq')
 Route::view('/form_faq', 'form_faq')
         ->name('form_faq')->middleware("can:isAdmin");
 });
+
+Route::get('/messaggio/{annId}', 'userController@inviaMessaggio')
+        ->name('messaggio')
+        ->middleware('auth');
+
+Route::get('/messaggi', 'UserController@showMsg')
+        ->name('msgPage')
+        ->middleware('auth');
+
+Route::post('/messaggi', 'userController@messinviato')
+        ->name('inviaMessaggio')
+        ->middleware('auth');
+Route::get('messaggi/{dest}', 'userController@showDestMsgPage')
+        ->name('msgConDest')
+        ->middleware('auth');
+
+Route::get('/rispondi/{id}', 'userController@rispondiMsg')
+        ->name('rispondi')
+        ->middleware('auth');

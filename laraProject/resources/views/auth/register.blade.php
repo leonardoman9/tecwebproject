@@ -2,6 +2,7 @@
 @section('title', 'Registrazione')
 
 @section('content')
+<div class="floatingForm">
 <div id="Signup_Div">
     <section id="Signup">
         {{ Form::open(array('route' => 'register', 'class' => 'contact-form')) }}
@@ -90,5 +91,6 @@
         {{ Form::close() }}
         <a href="{{ route('login') }}">Hai già un account? Accedi!</a>
     </section>
+</div>
 </div>
 @endsection

@@ -19,6 +19,7 @@ class CreateMessaggisTable extends Migration
             $table->string('destinatario');
             $table->string('testo');
             $table->timestamp('timestamp')->useCurrent = true;
+            $table->integer('id_alloggio');
         });
     }
 

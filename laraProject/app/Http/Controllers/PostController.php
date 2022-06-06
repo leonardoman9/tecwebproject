@@ -59,12 +59,15 @@ class PostController extends Controller
     }
     public function getalloggioById($id_alloggio){
         $alloggio = new alloggio();
+        $foto = new foto();
          $selected = $alloggio::where('id_alloggio','=', $id_alloggio)->first();
         if(Auth::user()->username != $selected->added_by){
              return view('errors/403');
          }else{
+             $selectedFoto = $foto::where('id_alloggio', '=', $id_alloggio)->first();
         return view('singollo_alloggio')
-                ->with('post', $selected);
+                ->with('post', $selected)
+                ->with ('foto', $selectedFoto);
          }
     }
     

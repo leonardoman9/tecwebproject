@@ -1,9 +1,16 @@
 @extends('welcome')
 @section('title', 'Catalogo')
-
+<link href="{{asset('css/catal.css')}}" rel="stylesheet" type="text/css"/>
+<script src="{{asset('../resources/js/confirmDelete.js')}}"></script>
     @section('content')
+    <div class ="content">
     @auth
-          @include('layouts/_ricerca') 
+    <div class="ricercaForm">
+   
+        @include('layouts/_ricerca')
+
+          
+    </div>
     @endauth
    
     @guest
@@ -11,6 +18,7 @@
     @endguest
     
     @isset($latestAnn)
+    <div class="resAnns">
           @foreach ($latestAnn as $ann)
           
                     <?php $stampa = false; ?>
@@ -59,16 +67,18 @@
                                 </div>
                          </div>
                      </div>
-                     </div>
+                    
                      
                       </section>
           @endforeach
+          @include('pagination.paginator', ['paginator' => $latestAnn])
+    </div>
        <!--Paginazione-->
-    @include('pagination.paginator', ['paginator' => $latestAnn])
+    
     @endisset()
     
     @isset($results)
-   
+   <div class="resAnns">
     @foreach ($results as $ann)
                     
           
@@ -116,15 +126,16 @@
                                 </div>
                          </div>
                      </div>
-                     </div>
+                     
                       </section>
           @endforeach
-    
+</div>
     @endisset
   
-    @include('layouts/_cards')
-    @endsection
+</div>
     
+    @endsection
+
 
      
     

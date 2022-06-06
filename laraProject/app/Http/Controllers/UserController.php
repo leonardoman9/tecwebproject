@@ -8,10 +8,15 @@ use Auth;
 use App\Models\FAQ;
 use App\Models\alloggio;
 use App\Models\foto;
+use App\Models\Messaggi;
 use App\Http\Requests\UpdateProfileRequest;
 use App\Http\Requests\FaqCreateRequest;
 use App\Http\Requests\FaqUpdateRequest;
+use App\Http\Requests\Request;
+use App\Http\Requests\MessaggioRequest;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
+
 
 
 class userController extends Controller {
@@ -125,7 +130,24 @@ class userController extends Controller {
         return view('statsPage');
     }
     public function showMsg(){
-        return view('msgPage');
+        $messaggi = new messaggi();
+        $sentMessages = $messaggi::where('mittente', '=', Auth::user()->username)
+                ->orderBy('timestamp', 'desc')
+                ->get();
+        $receivedMessages = $messaggi::where('destinatario', '=', Auth::user()->username)
+                ->orderBy('timestamp', 'desc')
+                ->get();
+        
+        $myReceivers = $messaggi::select('destinatario')->where('mittente','=', Auth::user()->username)
+                ->distinct()
+                ->get();
+                
+                           
+        return view('msgPage')
+                ->with('sentMessages', $sentMessages)
+                ->with('receivedMessages', $receivedMessages)
+                ->with('destinatari', $myReceivers);
+        ;
     }
 
 public function showAnn($ann) {
@@ -153,10 +175,67 @@ public function showAnn($ann) {
        return view('gestisciFaq')
        ->with('faq', $selectedFaq);
    }
-
-   //rota per l'inserimento di un alloggio
-
-  
-
-  
+    public function findPosterByAnnId($annId){
+       $alloggio = new alloggio();
+       $selected = $alloggio::where('id_alloggio', '=', $annId)->first();
+       $userName = $selected->value('added_by');
+       return $userName;
+    }
+   public function inviaMessaggio($annId){
+       $username = $this->findPosterByAnnId($annId);
+       return view('messaggio')
+        ->with('locUsername', $username)
+        ->with('annId', $annId);
+   }
+   public function messInviato(MessaggioRequest $request){
+                        //$annId, $sender, $receiver, $mess
+       $messaggi = new messaggi();
+       $messaggi->mittente = $request['sender'];
+       $messaggi->destinatario = $request['receiver'];
+       $messaggi->testo = $request['mess'];
+       $messaggi->timestamp= Carbon::now()->toDateTimeString();
+       $messaggi->id_alloggio = $request['annId'];
+       $messaggi->save();
+       return $this->showMsg();
+   }
+   public function getSentMessagesByUserId($sender){
+      
+       $messaggi = new messaggi();
+       $selectedMessaggi = $messaggi::where('mittente', '=', Auth::user()->username);
+       return $selectedMessaggi;
+   }
+   public function getReceivedMessagesByUserId($receiver){
+      
+       $messaggi = new messaggi();
+       $selectedMessaggi = $messaggi->where('destinatario', '=', Auth::user()->username);
+       return $selectedMessaggi;
+   }
+ 
+   public function showDestMsgPage($dest){
+       $auth = Auth::user();
+       $messaggi = new messaggi();
+       $selectedMessaggiA = $messaggi
+               ->where('mittente', '=', $auth->username)
+               ->where('destinatario', '=', $dest);
+       $selectedMessaggiB = $messaggi
+               ->where('mittente', '=', $dest)
+               ->where('destinatario', '=', $auth->username)
+               ->union($selectedMessaggiA)
+               ->orderBy('timestamp', 'desc')
+               ->get();
+      return view('msgPageDest')
+            ->with('msgs', $selectedMessaggiB);
+   }
+   public function rispondiMsg($msg){
+       $messaggi = new messaggi();
+       $selectedAnn = $messaggi::where('id', $msg)->first();
+       if (Auth::user()->username == $selectedAnn->destinatario){
+              $destinatario = $selectedAnn->mittente;
+       }else  {$destinatario = $selectedAnn->destinatario;}
+       return view('messaggio')
+        ->with('locUsername', $destinatario)
+        ->with('annId', $selectedAnn->id_alloggio);
+   }
 }
+
+

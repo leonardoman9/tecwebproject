@@ -20,8 +20,9 @@ class SearchController extends Controller
         $foto = new foto();
            $results = $alloggio::query()
                 ->where('citta', 'LIKE',"%{$request['citta']}%")
+                ->where('tipologia', '=', $request['tipologia'])
                 ->whereDate('data_inizio_locazione', '>=', $request['data_inizio_locazione'])
-                ->whereDate('data_fine_locazione', '<=', $request['data_fine_locazione'])->get();;
+                ->whereDate('data_fine_locazione', '<=', $request['data_fine_locazione'])->get();
 
         if ($request['dimensionemax'] !=null ){
             $results=$results->where('dimensione', '<=', $request['dimensionemax']);
@@ -44,8 +45,6 @@ class SearchController extends Controller
         if ($request['numerocamere'] !=null && $request['tipologia']==2){                             
             $results=$results->where('numero_camere', '=', $request['numerocamere']);
         } 
-
-        
         return view('catalogo')
                 ->with('results', $results)
                 ->with('allFotos', $foto->returnAllFotos());
