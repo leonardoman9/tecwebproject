@@ -412,7 +412,12 @@ Ideale per studenti o dipendenti dell ospedale.',
                       'id_alloggio' => 7,
                       
                   ],
-                          
+                            [
+                             'foto_id' => 8,
+                      'path' => 'public\foto\OwkTOP0tzsPfxm8TATilld1yzIZnHwffCl8TihCN.jpg',
+                      'id_alloggio' => 8,
+                      
+                  ],
                             [
                              'foto_id' => 9,
                       'path' => 'public\foto\HB2020_APT_90MQ_INTRODUTTIVA_PAG_20_21.jpg',
@@ -440,6 +445,95 @@ Ideale per studenti o dipendenti dell ospedale.',
                            
                 ]
         ); 
+        
+        DB::table('servizios')->insert(
+              [
+                  [
+                    'id'=>1,
+                    'id_alloggio'=>1,
+                    'cucina'=>true,
+                      'localeRicreativo'=>false,
+                      'angoloStudio'=>false,
+                  ],
+                  [
+                    'id'=>2,
+                    'id_alloggio'=>2,
+                     'cucina'=>false,
+                      'localeRicreativo'=>false,
+                      'angoloStudio'=>true,
+                  ],
+                  [
+                    'id'=>3,
+                    'id_alloggio'=>3,
+                     'cucina'=>false,
+                      'localeRicreativo'=>false,
+                      'angoloStudio'=>true,
+                  ],
+                  [
+                    'id'=>4,
+                    'id_alloggio'=>4,
+                     'cucina'=>true,
+                      'localeRicreativo'=>false,
+                      'angoloStudio'=>false,
+                  ],
+                  [
+                    'id'=>5,
+                    'id_alloggio'=>5,
+                    'cucina'=>true,
+                      'localeRicreativo'=>true,
+                      'angoloStudio'=>false,
+                  ],
+                  [
+                    'id'=>6,
+                    'id_alloggio'=>6,
+                     'cucina'=>false,
+                      'localeRicreativo'=>false,
+                      'angoloStudio'=>false,
+                  ],[
+                    'id'=>7,
+                    'id_alloggio'=>7,
+                     'cucina'=>true,
+                      'localeRicreativo'=>true,
+                      'angoloStudio'=>false,
+                  ],
+                  [
+                    'id'=>8,
+                    'id_alloggio'=>8,
+                     'cucina'=>false,
+                      'localeRicreativo'=>false,
+                      'angoloStudio'=>true,
+                  ],
+                  [
+                    'id'=>9,
+                    'id_alloggio'=>9,
+                     'cucina'=>true,
+                      'localeRicreativo'=>true,
+                      'angoloStudio'=>false,
+                  ],
+                  [
+                    'id'=>10,
+                    'id_alloggio'=>10,
+                     'cucina'=>false,
+                      'localeRicreativo'=>true,
+                      'angoloStudio'=>false,
+                  ],
+                  [
+                    'id'=>11,
+                    'id_alloggio'=>11,
+                     'cucina'=>false,
+                      'localeRicreativo'=>false,
+                      'angoloStudio'=>true,
+                  ],
+                  [
+                    'id'=>12,
+                    'id_alloggio'=>12,
+                     'cucina'=>false,
+                      'localeRicreativo'=>false,
+                      'angoloStudio'=>false,
+                  ],
+                  
+              ]  
+        );
         
     }
         

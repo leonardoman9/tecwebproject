@@ -10,7 +10,8 @@
                     margin-top: 30px;
                     margin-bottom: 30px;">Messaggi
         </h1>
-
+<script src="../js/lengthRange.js" type="text/javascript"></script>
+<script src="{{asset('../resources/js/lengthRange.js')}}"></script>
 
 <div class='floatingForm'>
    {{ Form::open(array('route' => array('inviaMessaggio'),'class' => 'searchForm')) }}
@@ -24,7 +25,7 @@
     <h3>{!! Form::text('receiver', $locUsername, ['class' => 'form-control', 'readonly' => 'true']) !!}</h3><!-- comment -->
 <h1>Corpo del messaggio:</h1>
     {!! Form::textarea('mess', null, ['id' => 'mess', 'rows' => 5, 'cols' => 150, 'style' => 'resize:none']) !!}
-     {{Form::submit('Invia', ['class'=>'login-btn'])}}
+     {{Form::submit('Invia', ['class'=>'login-btn', 'onclick' => 'return lengthRange(mess, 1, 255);'])}}
 {{Form::close()}}
 </div>
 @endsection

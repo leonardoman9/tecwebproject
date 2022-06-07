@@ -76,6 +76,7 @@
             @endforeach
         </ul>
         @endif
+        <br>
          {{Form::label('data_fine_locazione', 'Data fine locazione')}}
         {{Form::date('data_fine_locazione', null, array('id' => 'start', 'value'=>'2022-01-01', 'min'=>'2022-01-01', 'max' => '2052-01-01'))}}
                @if ($errors->first('data_fine_locazione'))
@@ -128,6 +129,39 @@
         @if ($errors->first('descrizione'))
         <ul class="errors">
             @foreach ($errors->get('descrizione') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+        <div class="servizi">
+            {{Form::label('cucina', 'Cucina')}}<br>
+            {{Form::checkbox('cucina')}}
+        </div>
+        @if ($errors->first('cucina'))
+        <ul class="errors">
+            @foreach ($errors->get('cucina') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+         <div class="servizi">
+            {{Form::label('locRicr', 'Locali Ricreativi')}}<br>
+            {{Form::checkbox('locRicr')}}
+        </div>
+        @if ($errors->first('locRicr'))
+        <ul class="errors">
+            @foreach ($errors->get('locRicr') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+         <div class="servizi">
+            {{Form::label('angoloStudio', 'Angolo Studio')}}<br>
+            {{Form::checkbox('angoloStudio')}}
+        </div>
+        @if ($errors->first('angoloStudio'))
+        <ul class="errors">
+            @foreach ($errors->get('angoloStudio') as $message)
             <li>{{ $message }}</li>
             @endforeach
         </ul>

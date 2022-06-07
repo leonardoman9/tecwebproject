@@ -9,6 +9,7 @@ use App\Models\FAQ;
 use App\Models\alloggio;
 use App\Models\foto;
 use App\Models\Messaggi;
+use App\Models\servizio;
 use App\Http\Requests\UpdateProfileRequest;
 use App\Http\Requests\FaqCreateRequest;
 use App\Http\Requests\FaqUpdateRequest;
@@ -153,10 +154,12 @@ class userController extends Controller {
 public function showAnn($ann) {
         $alloggio = new alloggio();
         $foto = new foto();
+        $servizio = new servizio();
         $toShow = $alloggio::where('id_alloggio', '=', $ann)->first();
         if($toShow === null) {
             return redirect('/');
         }
+        $selectedServizio=$servizio::where('id_alloggio','=',$ann)->first();
         $poster = $alloggio::where('id_alloggio', '=', $ann);
         $selectedFoto = $foto::where('id_alloggio', '=', $toShow->id_alloggio)->first();
         if($selectedFoto === null){
@@ -164,6 +167,7 @@ public function showAnn($ann) {
         }
         return view('annuncioPage')
                 ->with('ann', $toShow)
+                ->with('servizi', $selectedServizio)
                 ->with('poster', $poster)
                 ->with('foto', $selectedFoto);
    }

@@ -12,11 +12,9 @@
                     margin-top: 30px;
                     margin-bottom: 30px;">Dettagli alloggio
         </h1>
-
+<h2 id="tornaIndietro" class="btn"><a href="{{route('alloggiLocatore')}}"><span>&laquo Torna indietro</span></a></h2>
 <div class="floatingForm">
-    <div class="buttonM">
-        <a href="{{route('alloggiLocatore')}}"> <span >Miei Alloggi</span> </a>
-    </div>
+   
 
         
         <div class="dettaglio">
@@ -26,7 +24,9 @@
                             @case(1) Posto letto @break
                             @case(2) Appartamento @break
                             @endswitch </h4><br>
+             @isset($foto)
             <img src="../../storage/app/{{$foto->path}}" class='catfoto' onmouseover='bigImg(this)' onmouseout='normalImg(this)'>
+            @endisset
             <h3>Data Inserimento:</h3> <h4>{{$post->data_inserimento}}</h4>
             <h3>Canone:</h3> <h4>{{$post->canone}} €/Mese</h4>
             <h3>Dimenzione:</h3> <h4>{{$post->dimensione}} Mq</h4>
@@ -38,11 +38,15 @@
             <h3>Numero Posto Letto Totale:</h3><h4> {{$post->numero_posto_letto_totale}}</h4>
             <h3>Numero Letti Nella Camera:</h3><h4> {{$post->numero_letti_nella_camera}}</h4>
             <h3>Descrizione: </h3><h4>{{$post->descrizione}}</h4>
-
-            <div class="buttonF">
-                <a href="{{route('modificaAlloggio', $post->id_alloggio)}}"  id="modificaButton" > <span> Modifica Allogio</span></a>
-                <!-- -->  <a href="{{route('cancellaAlloggio', $post->id_alloggio)}}"  id="cancellaButton" onclick="return deleteElement();"><span>Cancelli Alloggio</span></a> 
+            <div>
+            <h3>Cucina: </h3><h4>{{$servizi->cucina==1 ? "sì" : "no" }}</h4>
+            <h3>Locale Ricreativo: </h3><h4>{{$servizi->localeRicreativo==1 ? "sì" : "no" }}</h4>
+            <h3>Angolo Studio: </h3><h4>{{$servizi->angoloStudio==1 ? "sì" : "no" }}</h4>
             </div>
+<!--            <div class="buttonF">
+                <a href="{{route('modificaAlloggio', $post->id_alloggio)}}"  id="modificaButton" > <span> Modifica Allogio</span></a>
+                   <a href="{{route('cancellaAlloggio', $post->id_alloggio)}}"  id="cancellaButton" onclick="return deleteElement();"><span>Cancelli Alloggio</span></a> 
+            </div>-->
 
             @endisset
             

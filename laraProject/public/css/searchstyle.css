@@ -6,6 +6,10 @@
       width: 400px;
 }
 
+#formId{
+        overflow: hidden;
+
+}
 
 .searchForm {
   max-width: 400px;
@@ -58,8 +62,27 @@ label{
 }
 .resanns{
     float: right;
-    width:1700px;
+    width:1500px;
+    margin-bottom: 100px;
+    vertical-align: middle;
 }
 .ricercaForm{
     float:left;
+     width: 100px;
+}
+.banner{
+    margin: 10px;
+    
+}
+.banner h4{
+    font-size: 80%;
+    margin: 10px;
+}
+.container{
+        overflow: hidden;
+
+}
+#1 #2 input[type=number]{
+        overflow: hidden;
+        width: 70%;
 }

@@ -15,7 +15,10 @@ class CreateServiziosTable extends Migration
     {
         Schema::create('servizios', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->integer('id_alloggio');
+            $table->boolean('cucina');
+            $table->boolean('localeRicreativo');
+            $table->boolean('angoloStudio');
         });
     }
 

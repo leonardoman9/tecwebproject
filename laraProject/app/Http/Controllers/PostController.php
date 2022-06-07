@@ -7,12 +7,13 @@ use App\Models\User;
 use Auth;
 use App\Models\FAQ;
 use App\Models\foto;
+use App\Models\servizio;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\InserimentoRequest;
 use App\Models\alloggio;
 use Illuminate\Support\Facades\Storage;
-
+use DB;
 
 class PostController extends Controller
 {
@@ -23,6 +24,7 @@ class PostController extends Controller
        public function createAlloggio(InserimentoRequest $request){
         $Authenticated = Auth::user();
         $post = new alloggio();
+        $serv = new servizio();
         $post->tipologia = $request->tipologia;
         $post->data_inserimento = '2022-01-01';
         $post->canone = $request->canone;
@@ -37,6 +39,24 @@ class PostController extends Controller
         $post->descrizione = $request->descrizione;
         $post->added_by = $Authenticated->username;
         $post->save();
+        
+        $id = DB::table('alloggios')
+                ->orderBy('timestamp', 'desc')
+                ->first()
+                ->id_alloggio;
+        $serv->id_alloggio = $id;
+           if($request['cucina']!=null){
+                 $serv->cucina = $request['cucina'];
+           } else {$serv->cucina = false;}
+       if($request['locRicr']!=null){
+                 $serv->localeRicreativo = $request['locRicr'];
+       }    else {$serv->localeRicreativo = false;}
+       if($request['angoloStudio']!=null){
+           $serv->angoloStudio = $request['angoloStudio'];
+       } else  {$serv->angoloStudio = false;}
+       
+        $serv->angoloStudio = $request['angoloStudio'];
+        $serv->save();
         
         $foto = new foto();
         $file = $request->file('image');
@@ -65,8 +85,10 @@ class PostController extends Controller
              return view('errors/403');
          }else{
              $selectedFoto = $foto::where('id_alloggio', '=', $id_alloggio)->first();
+             $servizi = servizio::where('id_alloggio', $id_alloggio)->first();
         return view('singollo_alloggio')
                 ->with('post', $selected)
+                ->with('servizi', $servizi)
                 ->with ('foto', $selectedFoto);
          }
     }
@@ -78,6 +100,10 @@ class PostController extends Controller
              return view('errors/403');
         } else{
          $fotos= new Foto();
+         $path = $fotos->where('id_alloggio',$id_alloggio)
+                        ->select('path')
+                        ->get();
+          @unlink($path);
          alloggio::where('id_alloggio',$id_alloggio)->delete();
          $fotos::where('id_alloggio', $id_alloggio)->delete();
          return back()->with('cancelli_alloggio', 'Alloggio cancellato con successo');
@@ -85,12 +111,16 @@ class PostController extends Controller
      }
      public function modificaAlloggio($id_alloggio){
         $selected = alloggio::where('id_alloggio',$id_alloggio)->first();
+        $servizio = servizio::where('id_alloggio', $id_alloggio)->first();
         if($selected===null || Auth::user()->username != $selected->added_by){
              return view('errors/403');
         }
         else{
             $foto = foto::where('id_alloggio', $id_alloggio)->first();
-            return view('modificaAlloggio')->with('selected', $selected)->with('foto', $foto);
+            return view('modificaAlloggio')
+                    ->with('selected', $selected)
+                    ->with('servizi', $servizio)
+                    ->with('foto', $foto);
          
          }
      }
@@ -113,8 +143,12 @@ class PostController extends Controller
         $foto = foto::where('id_alloggio', $idAlloggio);
         $file = $request->file('image');
         if($file!=null){
+             foto::where('id_alloggio', $idAlloggio)->delete();
              $path = $file->store('\\public\\foto');
-             $foto->update([path => $path]);
+             $newFoto = new Foto();
+             $newFoto->id_alloggio = $idAlloggio;
+             $newFoto->path = $path;
+             $newFoto->save();
         }
        $alloggios = alloggio::where('added_by', '=', Auth::user()->username)->get();
 

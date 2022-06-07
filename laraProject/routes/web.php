@@ -140,7 +140,7 @@ Route::get('/messaggi', 'UserController@showMsg')
 Route::post('/messaggi', 'userController@messinviato')
         ->name('inviaMessaggio')
         ->middleware('auth');
-Route::get('messaggi/{dest}', 'userController@showDestMsgPage')
+Route::get('messaggi/{ann}', 'userController@showDestMsgPage')
         ->name('msgConDest')
         ->middleware('auth');
 

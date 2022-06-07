@@ -1,13 +1,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
+<script href={{asset("resources/js/searchform.js")}} type="text/javascript">
+    $( document ).ready(function() {
+    $("#scelta").on("change", function() {
+                $("#" + $(this).val().toString()).show().siblings().hide();
+                $($(this).show())
+            })
+});
+
+
+
+
+</script>
 <link rel="stylesheet" href="{{asset('css/searchstyle.css')}}" rel="stylesheet" type="text/css"/>
 <div class="container">
-    <div class = "container">
+    
     <div id="formId" class="searchForm">
-    {{ Form::open(array('route' => 'RicercaCatalogo', 'class' => 'searchForm')) }}
-    @csrf
+        Ricerca
         
-        {{Form::select('tipologia', array(1 => 'Posto letto', 2 => 'Appartamento'), null, array('id'=>'scelta'))}}
+         <select id="scelta">
+            <option value=1>Posto letto</option>
+            <option value=2>Appartamento</option>
+        </select>
         @if ($errors->first('tipologia'))
         <ul class="errors">
             @foreach ($errors->get('tipologia') as $message)
@@ -16,11 +30,24 @@
         </ul>
         @endif
         
-        <div id='1' style>
-            tipo 1
-          {{Form::label('tipologia', 'Tipologia')}}
+        <div id="2" style="display:none" >
+            {{ Form::open(array('route' => 'RicercaCatalogo', 'class' => 'searchForm')) }}
+            @csrf
+         <input type="hidden" name="tipologia" value="1">
+        @if ($errors->first('tipologia'))
+        <ul class="errors">
+            @foreach ($errors->get('tipologia') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+        
         {{Form::label('citta', 'Città')}}
+        @isset($request)
+         {{Form::select('citta', array('Ancona' => 'Ancona', 'Milano'=> 'Milano', 'Torino' => 'Torino'), null, array('placeholder' => $request->citta))}}
+        @else
         {{Form::select('citta', array('Ancona' => 'Ancona', 'Milano'=> 'Milano', 'Torino' => 'Torino'))}}
+        @endisset
     @if ($errors->first('citta'))
         <ul class="errors">
             @foreach ($errors->get('citta') as $message)
@@ -111,17 +138,46 @@
             @endforeach
         </ul>
         @endif
-
+        <div class="servizi">
+             {{Form::label('cucina', 'Cucina')}}
+        {{Form::checkbox('cucina')}}
+         @if ($errors->first('cucina'))
+        <ul class="errors">
+            @foreach ($errors->get('cucina') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+        
+         {{Form::label('locRicr', 'Locale Ricreativo')}}
+        {{Form::checkbox('locRicr')}}
+         @if ($errors->first('locRicr'))
+        <ul class="errors">
+            @foreach ($errors->get('locRicr') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+        </div>
+       
 
         
         {{Form::submit('Cerca', ['class'=>'login-btn'])}}
         {{Form::reset('Reset', ['class'=>'login-btn'])}}
- 
+     {{Form::close()}}  
         </div>
-
-        <div id='2' style="display:none">
-            tipo 2
-          {{Form::label('tipologia', 'Tipologia')}}
+        <div id="1" >
+             {{ Form::open(array('route' => 'RicercaCatalogo', 'class' => 'searchForm')) }}
+                @csrf
+           <input type="hidden" name="tipologia" value="2">
+        @if ($errors->first('tipologia'))
+        <ul class="errors">
+            @foreach ($errors->get('tipologia') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+          
             {{Form::label('citta', 'Città')}}
         {{Form::select('citta', array('Ancona' => 'Ancona', 'Milano'=> 'Milano', 'Torino' => 'Torino'))}}
     @if ($errors->first('citta'))
@@ -216,26 +272,42 @@
             @endforeach
         </ul>
         @endif
-
+ <div class="servizi">
+             {{Form::label('angoloStudio', 'Angolo Studio')}}
+        {{Form::checkbox('angoloStudio')}}
+         @if ($errors->first('angoloStudio'))
+        <ul class="errors">
+            @foreach ($errors->get('angoloStudio') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+        
+        
+        </div>
 
         
         {{Form::submit('Cerca', ['class'=>'login-btn'])}}
         {{Form::reset('Reset', ['class'=>'login-btn'])}}
-
+  {{Form::close()}}  
             
         </div>
-    {{Form::close()}}  
+   
+        
+        
+
+       
      
-        <script>
-            $("#scelta").on("change", function() {
+<!--        <script>
+            $("#wdwd").on("change", function() {
                 $("#" + $(this).val().toString()).show().siblings().hide();
                 $($(this).show())
             })
-        </script>
+        </script>-->
         
         
         
 
     </div>
-    </div>
+
 </div>

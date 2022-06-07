@@ -131,7 +131,39 @@
             @endforeach
         </ul>
         @endif
-
+ <div class="servizi">
+            {{Form::label('cucina', 'Cucina')}}<br>
+            {{Form::checkbox('cucina', $servizi->cucina)}}
+        </div>
+        @if ($errors->first('cucina'))
+        <ul class="errors">
+            @foreach ($errors->get('cucina') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+         <div class="servizi">
+            {{Form::label('locRicr', 'Locali Ricreativi')}}<br>
+            {{Form::checkbox('locRicr', $servizi->locRicr)}}
+        </div>
+        @if ($errors->first('locRicr'))
+        <ul class="errors">
+            @foreach ($errors->get('locRicr') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+         <div class="servizi">
+            {{Form::label('angoloStudio', 'Angolo Studio')}}<br>
+            {{Form::checkbox('angoloStudio', $servizi->angoloStudio)}}
+        </div>
+        @if ($errors->first('angoloStudio'))
+        <ul class="errors">
+            @foreach ($errors->get('angoloStudio') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
         <div class="file">
             {{Form::label('image', 'Carica foto')}}
             

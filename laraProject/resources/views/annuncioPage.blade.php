@@ -47,7 +47,20 @@ $("#image-wrapper").click(function () {
             <h4>Citta: {{$ann->citta}}</h4>
             <h4>Indirizzo: {{$ann->indirizzo}}</h4>
             <h5>{{$ann->descrizione}}</h5>
-                 
+            <h5>Servizi disponibili:</h5>
+                @switch($servizi->cucina)
+                @case(1) <h4>Cucina</h4> @break
+                @case(0) <h4></h4>@break
+                @endswitch
+                 @switch($servizi->localeRicreativo)
+                @case(1) <h4>Locale Ricreativo</h4> @break
+                @case(0) <h4></h4>@break
+                @endswitch
+                 @switch($servizi->angoloStudio)
+                @case(1) <h4>Angolo studio</h4> @break
+                @case(0) <h4></h4>@break
+                @endswitch
+         
         </div>
        </section>
 
