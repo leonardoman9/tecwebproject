@@ -14,7 +14,15 @@
     @endauth
    
     @guest
-    <h1>Accedi per ricercare annunci</h1>
+    
+<h1 style="margin: auto;
+                    width: 50%;
+                    border: 3px solid green;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 30px;
+                    margin-bottom: 30px;">Accedi per ricercare annunci
+        </h1>
     @endguest
     
     @isset($latestAnn)

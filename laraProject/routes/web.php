@@ -48,20 +48,8 @@ Route::group(['middleware' => 'can:isLocatario'], function(){
 });
 
 
-
-
-
-
 Route::get('/profilo', 'UserController@showProfile')
         ->name('profilo');
-
-
-
-
-
-
-
-
 
 Route::get('/home', 'HomeController@index')->name('home');
 

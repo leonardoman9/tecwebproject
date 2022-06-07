@@ -7,10 +7,12 @@
 "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
         </script>
 <script src="{{asset('../resources/js/showImage.js')}}"></script>
-<h1 id='title'>Modifica Alloggio</h1>
-<h2 id="tornaIndietro"><a href="{{route('alloggiLocatore')}}">Torna indietro</a></h2>
-    <div class="allInsert">
+<h1 id='title'>Modifica Alloggio
+                            </h1>
+<h2 id="tornaIndietro" class="btn"><a href="{{route('alloggiLocatore')}}"><span>&laquo Torna indietro</span></a></h2>
 
+
+    <div class="allInsert">
         
         {{ Form::open(array(route('updateAlloggio',[$selected->id_alloggio]), 'method' => 'POST', 'files' => true))}}
         @csrf
@@ -46,7 +48,7 @@
         @endif
         </div>
         <div class ="local">
-            {{Form::label('citta', 'Città')}}
+            {{Form::label('citta', 'Città')}}<br>
         {{Form::select('citta', array('Ancona' => 'Ancona', 'Milano'=> 'Milano', 'Torino' => 'Torino'))}}              
         @if ($errors->first('citta'))
         <ul class="errors">
@@ -55,10 +57,13 @@
             @endforeach
         </ul>
         @endif
-             {{Form::label('indirizzo', 'Indirizzo')}}
-            {{Form::text('indirizzo', $selected->indirizzo)}}
-             
         </div>
+
+        <div class="ind">
+            {{Form::label('indirizzo', 'Indirizzo')}}
+            {{Form::text('indirizzo', $selected->indirizzo)}}
+        </div>
+        
         
         <div class="per">
         {{Form::label('data_inizio_locazione', 'Data inizio locazione')}}
@@ -70,7 +75,7 @@
             @endforeach
         </ul>
         @endif
-         {{Form::label('data_fine_locazione', 'Data fine locazione')}}
+         {{Form::label('data_fine_locazione', 'Data fine locazione')}}<br><br>
         {{Form::date('data_fine_locazione', $selected->data_fine_locazione)}}
                @if ($errors->first('data_fine_locazione'))
         <ul class="errors">
@@ -116,7 +121,7 @@
         </div>
         
         <div class="des">
-            {{Form::label('descrizione', 'Descrizione')}}
+            {{Form::label('descrizione', 'Descrizione')}}<br>
             {{Form::textarea('descrizione',$selected->descrizione)}}
         </div>
         @if ($errors->first('descrizione'))
@@ -126,16 +131,21 @@
             @endforeach
         </ul>
         @endif
+
         <div class="file">
-        {{Form::label('image', 'Carica foto')}}
-      <input accept="image/x-png,image/gif,image/jpeg" name="image" type="file" id="image" value="{{$foto}}" onchange="previewFile(this);">
+            {{Form::label('image', 'Carica foto')}}
+            
+            <input accept="image/x-png,image/gif,image/jpeg" name="image" type="file" id="image" value="{{$foto}}" onchange="previewFile(this);">
+        </div>
              <div class ="holder">
               <img id="previewImg" src="" alt=""/>
             </div>
        
-        </div>
+       
+    <div class="inv">
         {{Form::submit('Invia', ['class'=>'login-btn'])}}
         {{Form::close()}}
+    </div>
 </div>    
 
 

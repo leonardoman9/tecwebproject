@@ -47,7 +47,7 @@
         @endif
         </div>
         <div class ="local">
-            {{Form::label('citta', 'Città')}}
+            {{Form::label('citta', 'Città')}}<br>
         {{Form::select('citta', array('Ancona' => 'Ancona', 'Milano'=> 'Milano', 'Torino' => 'Torino'))}}              
         @if ($errors->first('citta'))
         <ul class="errors">
@@ -55,11 +55,16 @@
             <li>{{ $message }}</li>
             @endforeach
         </ul>
-        @endif
-             {{Form::label('indirizzo', 'Indirizzo')}}
+        @endif 
+    </div>
+
+        <div class="ind">
+           {{Form::label('indirizzo', 'Indirizzo')}}
             {{Form::text('indirizzo',null, array('placeholder' => 'Via Rossi 3...'))}}
-             
         </div>
+             
+             
+       
         
         <div class="per">
         {{Form::label('data_inizio_locazione', 'Data inizio locazione')}}
@@ -117,7 +122,7 @@
         </div>
         
         <div class="des">
-            {{Form::label('descrizione', 'Descrizione')}}
+            {{Form::label('descrizione', 'Descrizione')}}<br>
             {{Form::textarea('descrizione', null, array('id'=> 'textArea', 'cols' => '80', 'rows' => '10'))}}
         </div>
         @if ($errors->first('descrizione'))

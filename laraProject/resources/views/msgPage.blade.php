@@ -6,9 +6,16 @@
  <h1 id="top">Messaggi </h1>
  
  @isset($destinatari)
- <h1>Le mie chat</h1>
+ <h1 style="margin: auto;
+                    width: 40%;
+                    border: 3px solid red;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 30px;
+                    margin-bottom: 30px;">Le mie chat
+        </h1>
  @foreach($destinatari as $dest)
- <a href="{{route('msgConDest', $dest->destinatario)}}"> {{$dest->destinatario}}</a
+ <a href="{{route('msgConDest', $dest->destinatario)}}"> {{$dest->destinatario}}</a>
  <br>
  @endforeach
  @endisset

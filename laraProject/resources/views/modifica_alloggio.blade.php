@@ -13,12 +13,5 @@
                     margin-bottom: 30px;">Modifica Alloggi
         </h1>
 
-
-
-        <div class="main">
-
-</div>   
-
-
         
         @endsection

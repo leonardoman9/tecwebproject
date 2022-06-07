@@ -46,10 +46,10 @@
                         <td>{{$post->data_inizio_locazione}}</td>
                         <td>{{$post->data_fine_locazione}}</td>
 
-                        <td>
-                            <a href="{{route('visualizzaAlloggio', $post->id_alloggio)}}" class="btn_alloggio">Dettaglio</a><br>
-                            <a href="{{route('modificaAlloggio', $post->id_alloggio)}}" class="btn_modifica">Modifica</a><br>
-                            <a href="{{route('cancellaAlloggio', $post->id_alloggio)}}" class="btn_cancelli" onclick="return deleteElement();">Cancella</a>
+                        <td class="button1">
+                            <a href="{{route('visualizzaAlloggio', $post->id_alloggio)}}" class="btn1">Dettagli</a><br>
+                            <a href="{{route('modificaAlloggio', $post->id_alloggio)}}" class="btn1">Modifica</a><br>
+                            <a href="{{route('cancellaAlloggio', $post->id_alloggio)}}" class="btn1" onclick="return deleteElement();">Cancella</a> 
                         </td>
                     </tr>
                 <?php endforeach ;?>
