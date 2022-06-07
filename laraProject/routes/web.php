@@ -147,3 +147,11 @@ Route::get('messaggi/{ann}', 'userController@showDestMsgPage')
 Route::get('/rispondi/{id}', 'userController@rispondiMsg')
         ->name('rispondi')
         ->middleware('auth');
+
+Route::get('/opzionamenti', 'userController@showOpzionamenti')
+        ->name('opzionamenti')
+        ->middleware('can:isLocatario');
+
+Route::get('/opzionamenti/cancella/{id}', 'userController@cancellaOpzionamento')
+        ->name('cancellaOpzionamento')
+        ->middleware('can:isLocatario');

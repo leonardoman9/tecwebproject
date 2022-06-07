@@ -37,9 +37,9 @@ class InserimentoRequest extends FormRequest
                 'numero_posti_letto_totale' => 'required|integer|min:0',
                 'numero_letti_nella_camera' => 'required|integer|min:0',
                 'descrizione' => 'required|string',
-            'cucina' => 'boolean',
-            'locRicr' => 'boolean',
-            'angoloStudio' => 'boolean',
+                'cucina' => 'boolean',
+                'locRicr' => 'boolean',
+                'angoloStudio' => 'boolean',
                 'image' => 'nullable',
            
         ];

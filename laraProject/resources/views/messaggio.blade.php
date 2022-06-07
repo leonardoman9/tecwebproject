@@ -17,7 +17,7 @@
    {{ Form::open(array('route' => array('inviaMessaggio'),'class' => 'searchForm')) }}
         @csrf
         {!! Form::hidden('annId', $annId, ['class' => 'form-control', 'readonly' => 'true', 'hidden' => 'true']) !!}
-    
+        <h1>Alloggio: <a href="{{route('Ann', $annId)}}">{{$annId}}</a></h1> 
     <h1>Mittente:  </h1> 
     <h3> {!! Form::text('sender', Auth::user()->username, ['class' => 'form-control', 'readonly' => 'true']) !!}
                             </h3>
@@ -25,6 +25,19 @@
     <h3>{!! Form::text('receiver', $locUsername, ['class' => 'form-control', 'readonly' => 'true']) !!}</h3><!-- comment -->
 <h1>Corpo del messaggio:</h1>
     {!! Form::textarea('mess', null, ['id' => 'mess', 'rows' => 5, 'cols' => 150, 'style' => 'resize:none']) !!}
+    
+    @can('isLocatario')
+       @if($flag==0)
+    {{Form::checkbox('opziona')}}
+         {{Form::label('opziona', 'Invia richiesta di opzionamento per questo alloggio')}}
+    
+    @else
+    <input type="hidden" name="opziona" value="false">
+    Hai già inviato una richiesta di opzionamento per questo alloggio.
+   @endif
+    @endcan
+    
+    
      {{Form::submit('Invia', ['class'=>'login-btn', 'onclick' => 'return lengthRange(mess, 1, 255);'])}}
 {{Form::close()}}
 </div>

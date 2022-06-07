@@ -21,7 +21,11 @@
         <li><h2>Ruolo: </h2> {{$auth->role}}</li>
         <li><h2>Data creazione account: </h2> <?php if($auth->created_at == null) { 
             echo("Account creato tramite db seeding.");
-            } else echo $auth->created_at; ?> </li>
+            } else {echo $auth->created_at; }?> </li>
+        
+         @if($auth->updated_at!=$auth->created_at) 
+         <li><h2>Ultima modifica account: </h2>  {{$auth->updated_at}} </li>
+         @endif
     </ul>
     
     <div id="Mod_Container">

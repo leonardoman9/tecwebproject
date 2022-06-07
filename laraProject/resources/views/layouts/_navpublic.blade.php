@@ -1,6 +1,10 @@
 <a href="{{route('Home')}}" class="logo"><span id="home">Home</span>Away</a>
         <div id="menu">
               <ul class="navbar">
+                  @can('isLocatario')
+                  
+                   <li><a href="{{route('opzionamenti')}}">Richieste di Opzionamento</a></li>
+                @endcan
                   
                 @can('isLocatario')
                 

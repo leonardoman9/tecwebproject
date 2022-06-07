@@ -33,7 +33,7 @@
         <div id="2" style="display:none" >
             {{ Form::open(array('route' => 'RicercaCatalogo', 'class' => 'searchForm')) }}
             @csrf
-         <input type="hidden" name="tipologia" value="1">
+         <input type="hidden" name="tipologia" value="2">
         @if ($errors->first('tipologia'))
         <ul class="errors">
             @foreach ($errors->get('tipologia') as $message)
@@ -169,7 +169,7 @@
         <div id="1" >
              {{ Form::open(array('route' => 'RicercaCatalogo', 'class' => 'searchForm')) }}
                 @csrf
-           <input type="hidden" name="tipologia" value="2">
+           <input type="hidden" name="tipologia" value="1">
         @if ($errors->first('tipologia'))
         <ul class="errors">
             @foreach ($errors->get('tipologia') as $message)

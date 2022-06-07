@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\User;
+use App\User;
 use Auth;
 use App\Models\FAQ;
 use App\Models\alloggio;
 use App\Models\foto;
+use App\Models\inserimentos;
 use App\Models\Messaggi;
 use App\Models\servizio;
+use App\Models\Opzionamento;
 use App\Http\Requests\UpdateProfileRequest;
 use App\Http\Requests\FaqCreateRequest;
 use App\Http\Requests\FaqUpdateRequest;
@@ -57,6 +59,21 @@ class userController extends Controller {
         if ($request->nome != null) {
             $utente->update([
                 'nome' => $request->nome,
+            ]);
+        }
+         if ($request->cognome != null) {
+            $utente->update([
+                'cognome' => $request->cognome,
+            ]);
+        }
+        if ($request->genere != null) {
+            $utente->update([
+                'genere' => $request->genere,
+            ]);
+        }
+         if ($request->eta != null) {
+            $utente->update([
+                'eta' => $request->eta,
             ]);
         }
         if ($request->password != null) {
@@ -181,18 +198,38 @@ public function showAnn($ann) {
    }
     public function findPosterByAnnId($annId){
        $alloggio = new alloggio();
-       $selected = $alloggio::where('id_alloggio', '=', $annId)->first();
-       $userName = $selected->value('added_by');
-       return $userName;
+       $selected = $alloggio::where('id_alloggio', $annId)
+               ->value('added_by')
+               ;
+      
+       return $selected;
     }
    public function inviaMessaggio($annId){
        $username = $this->findPosterByAnnId($annId);
+       $madeOpzionamento = Opzionamento::where('id_alloggio', $annId)
+                                        ->where('id_opzionante', Auth::user()->id)
+                                        ->first();
+       
+        $madeOpzionamento!=null ? $flag=1 : $flag=0;
+                                        //esiste        //non esiste
        return view('messaggio')
+        ->with('madeOpzionamento', $madeOpzionamento)
         ->with('locUsername', $username)
+        ->with('flag', $flag)
         ->with('annId', $annId);
    }
    public function messInviato(MessaggioRequest $request){
-                        //$annId, $sender, $receiver, $mess
+                        //$annId, $sender, $receiver, $mess, $opziona
+       if($request['opziona']==true){
+          
+          $opzionamenti = new Opzionamento();
+          $opzionamenti->id_alloggio = $request['annId'];
+          $opzionamenti->id_proprietario = User::getUserIdByUsername($request['receiver']);
+          $opzionamenti->id_opzionante = Auth::user()->id;
+          $opzionamenti->data = Carbon::now()->toDateTimeString();
+          $opzionamenti->save();
+       
+       }
        $messaggi = new messaggi();
        $messaggi->mittente = $request['sender'];
        $messaggi->destinatario = $request['receiver'];
@@ -239,6 +276,22 @@ public function showAnn($ann) {
        return view('messaggio')
         ->with('locUsername', $destinatario)
         ->with('annId', $selectedAnn->id_alloggio);
+   }
+   
+   public function showOpzionamenti(){
+       $opzionamenti = new Opzionamento();
+       $myOpzionamenti = $opzionamenti
+               ->where('id_opzionante', Auth::user()->id)->get();
+       
+       
+       return view('opzionamenti')
+        ->with('opzionamenti', $myOpzionamenti);
+   }
+   public function cancellaOpzionamento($opzId){
+       $opzionamenti = new Opzionamento();
+       $selected = $opzionamenti::where('id', $opzId)
+               ->delete();
+       return redirect('opzionamenti');
    }
 }
 

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use DB;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -41,5 +42,15 @@ class User extends Authenticatable
     public function hasRole($role) {
         $role = (array)$role;
         return in_array($this->role, $role);
+    }
+    public static function getUserById(int $id) {
+        $user=DB::table('users')->where('id', $id)
+                ->first();
+        return $user;
+    }
+    public static function getUserIdByUsername($username){
+        $userId = DB::table('users')->where('username', $username)
+                ->value('id');
+        return $userId;
     }
 }

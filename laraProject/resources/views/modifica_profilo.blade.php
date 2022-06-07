@@ -50,7 +50,16 @@
             @endforeach
         </ul>
         @endif
-
+        {{ Form::label('eta', 'Età') }}
+        {{Form::number('eta', $utente->eta)}}
+        @if ($errors->first('eta'))
+        <ul class="errors">
+            @foreach ($errors->get('eta') as $message)
+            <li>{{ $message }}</li>
+            @endforeach
+        </ul>
+        @endif
+        <br>
         {{ Form::label('password', 'Password') }}
         {{ Form::password('password', ['placeholder' => 'Nuova password', 'id' => 'password']) }}
         <input type="checkbox" onclick="showPassword()" class="checkbox"><label style="font-size: 16px;">Mostra la password</label></input>

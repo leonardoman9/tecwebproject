@@ -82,6 +82,7 @@ $("#image-wrapper").click(function () {
                 <a href="{{route('messaggio', [$ann->id_alloggio]) }}">Contatta</a>
                 <!--<button type=""></button>-->
             </div>
+         
          @endcan
     </section>  
     

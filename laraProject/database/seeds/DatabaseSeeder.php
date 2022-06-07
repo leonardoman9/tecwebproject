@@ -534,6 +534,26 @@ Ideale per studenti o dipendenti dell ospedale.',
                   
               ]  
         );
+         DB::table('opzionamenti')->insert([  
+            [
+                'id' => 1,
+                'id_alloggio' => 1,
+                'id_proprietario' => 4,
+                'id_opzionante' => 5,
+                'data' => '2022-06-07 12:22:22'
+                ],
+             [
+                'id' => 2,
+                'id_alloggio' => 5,
+                'id_proprietario' => 4,
+                'id_opzionante' => 5,
+                'data' => '2022-06-07 12:24:22'
+                ],
+            
+                
+       ] );
+    
+        
         
     }
         
