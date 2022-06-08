@@ -1,6 +1,7 @@
 
 
 .floatingForm {
+   
     background-attachment: fixed;
     border: solid ;
     border-radius: 25px;
@@ -19,6 +20,7 @@
 }
 
 .singup_1 {
+    
     margin-left: 5rem;
     margin-right: 5rem;
     margin-top: 5rem;
@@ -53,7 +55,9 @@
     margin-right: 20px;
 }
 
-
+.register {
+    background-color: rgb(236, 236, 192);
+}
 /* 
 .button {
         text-align: center;
