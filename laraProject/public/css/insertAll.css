@@ -129,9 +129,9 @@ h1 #title{
   margin-bottom: 30px;
 }
 
-
+/*  */
 .btn {
-
+  text-decoration: none;
   background-color: #9cdde2;
   border: none;
   color: rgb(132, 97, 97);
@@ -167,6 +167,31 @@ h1 #title{
  color: white;
 } 
 
+
+/*singolo alloggio
+
+.dettaglio{
+  
+}
+
+.catfoto {
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.tip {
+  display: block;
+  margin: 20px;
+  padding: 20px;
+  margin-left: 20px;
+  text-align: left}
+
+.desc {
+  display: flex;
+}
+*/
 .buttonM {
   text-decoration: none;
   border-radius: 15px;

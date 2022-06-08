@@ -10,9 +10,6 @@
 
 <div class="floatingForm">
     <section id="Modify">
-
-  
-
         {{ Form::open(array(route('modifica_faq',[$faq->id]), 'method' => 'POST')) }}
         <h2>Modifica FAQ</h2>
         <div>

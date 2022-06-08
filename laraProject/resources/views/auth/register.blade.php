@@ -2,6 +2,7 @@
 @section('title', 'Registrazione')
 
 @section('content')
+
 <div class="floatingForm">
 <div id="Signup_Div">
     <section id="Signup">

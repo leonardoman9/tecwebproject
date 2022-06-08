@@ -246,10 +246,6 @@ transition: 1s ease;
 }
 */
 
-
-
-
-
 .banner_copy_text .prezzo {
    font-size: 25px;
     margin-top: 40px;
@@ -325,11 +321,6 @@ background-color: #6583a1;
     opacity: 1;
     right: 0;
   }
-  
-  
-
-
-
 
 /*
 .button {
@@ -349,10 +340,6 @@ background-color: #6583a1;
   }
 
   .button:hover {opacity: 0.6}
-
-
-  
-
 
 */
 
@@ -393,9 +380,6 @@ background-color: #6583a1;
 
 
 /*Footer */
-
-
-
 footer{
       margin-top:200px; 
 
@@ -445,8 +429,6 @@ footer .container  h2:before{
 footer p{
     color: #999;
 }
-
-
 /*Contatti*/
 
 
@@ -471,8 +453,6 @@ footer p{
     display: flex;
 }
 
-
-
 .contatti .informazioni li span:nth-child(1){
     color: #fff;
     font-size: 20px;
@@ -490,9 +470,6 @@ footer p{
 .contatti .informazioni li a:hover{
     color: #fff;
 }
-
-
-
 /*Link utili*/
 
 .quicklink{
@@ -803,142 +780,10 @@ margin: auto;
   padding: 10px;
 }
 
-/* dettaglio annuncio */
-
-
-.section_p1{
-    background-color: blanchedalmond;
-    width: 100rem;
-    height: 35rem;
-    border-style:outset;
-    border-color: rgb(186, 194, 191);
-    border-radius: 50px;
-    margin-left: 90px;
-}
-#detaglio_prodotto{
-    display: flex;
-    margin-top:20px ;
-}
-#detaglio_prodotto .imagine_prodotto{
-    margin-right: 100px;
-    width: 40%;
-    
-}
 
 
 
-.img_group{
-    display: flex;
-    justify-content: space-between;
-    
-}
 
-.img_color{
-    flex-basis: 24px;
-    cursor: pointer;
-}
-#detaglio_prodotto .detagio_prod{
-   
-    padding-top: 3px;
-}
-.detagio_prod h4{
-    font-size: 20px;
-    display: inline-flex;
-    padding: 8px;
-    margin: 29px;
-}
-
-#detaglio_prodotto .detagio_prod h3{
-    font-size: 30px;
-}
-.detagio_prod h1{
-    font-size: 30px;
-}
-
-.detaglio_an{
-    margin-top: 10px;
-    margin-left: 20px;
-    font-size: 20px;
-}
-
-.detagio_prod h5{
-    margin-top: 8%;
-    font-size: 30px;
-    text-align: center;
-    text-underline-position: inherit;
-}
-
-
-.proprietario{
-    background-color: rgb(204, 224, 218);
-    width: 40rem;
-    border-style:outset;
-    border-color: none;
-    border-radius: 40px;
-    margin-left: 90px;
-    height: 150px;
-    
-}
-
-.proprietario .nome h2{
-    
-    text-align: center;
-    margin-top: -40px;
-    padding: 0.1px;
-}
-
-
-.proprietario .nome h3{
-    
-    text-align: left;
-    margin-top: -20px;
-    padding: 8px;
-}
-
-.proprietario .contact{
-    background-color: rgb(204, 224, 218);
-    width: 40rem;
-    border-style:outset;
-    border-color: rgb(219, 235, 229);
-    border-radius: 40px;
-    margin-left: 930px;
-    height: 150px;
-    margin-top: -34%;
-    display: flex;
-   
-}
-
-.proprietario .contact h3{
-    size-adjust: 20px;
-    text-align:left;
-    font-size: 30px;
-    margin-top: -8%;
-    margin: 10%;
-}
-
-.proprietario a {
-    margin-top: 8%;
-   -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    width: 160px;
-    height: 50px;
-    background-color: #7b38d8;
-    border-radius: 10px;
-    border: 4px double #e4a5a5;
-    color: #fcf5f5;
-    text-align: center;
-    font-size: 28px;
-    cursor: pointer;
-    margin: 10%;
-    margin-left: 100px;
-    display: inline-block;
-  }
-  .proprietario a:hover{
-      background-color: #f0aeae;
-  } 
-  
 
     
     .floatingForm{
