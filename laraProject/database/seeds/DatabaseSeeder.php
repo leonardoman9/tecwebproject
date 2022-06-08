@@ -541,7 +541,8 @@ Ideale per studenti o dipendenti dell ospedale.',
                 'id_proprietario' => 4,
                 'id_opzionante' => 5,
                 'data' => '2022-06-07 12:22:22',
-                'accettata' => false
+                'accettata' => false,
+                'data_assegnazione'=> null,
                 ],
              [
                 'id' => 2,
@@ -549,7 +550,8 @@ Ideale per studenti o dipendenti dell ospedale.',
                 'id_proprietario' => 4,
                 'id_opzionante' => 5,
                 'data' => '2022-06-07 12:24:22',
-                'accettata' => false
+                'accettata' => false,
+                 'data_assegnazione'=> null,
                 ],
             
                 

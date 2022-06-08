@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'Gestione FAQ')
+@section('title', 'Statistiche')
 @section('content')
  <h1 style="margin: auto;
                     width: 50%;

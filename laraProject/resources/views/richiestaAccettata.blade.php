@@ -7,5 +7,7 @@
 
 <h1 id="title">Richiesta Accettata
         </h1>
-
+<div class="floatingForm">
+    <h1><a href="{{route('alloggiLocatore')}}">Torna agli alloggi</a></h1>
+</div>
 @endsection

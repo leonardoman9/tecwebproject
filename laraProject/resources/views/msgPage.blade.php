@@ -14,16 +14,24 @@
                     margin-top: 30px;
                     margin-bottom: 30px;">Le mie chat
         </h1>-->
-<!-- @foreach($destinatari as $dest)
- <a href="{{route('msgConDest', $dest->destinatario)}}"> {{$dest->destinatario}}</a>
- <br>
- @endforeach
- @endisset
- -->
+
+     @endisset
+     
 <div class='floatingForm'>
 
-
+    <div class="row">
+        
+        <div class="chats">
+            <h1>Le mie chat: </h1>
+     @foreach($destinatari as $dest)
+     
+     <a href="{{route('msgConDest', $dest->destinatario)}}"> {{$dest->destinatario}}</a>
+     <br>
+     @endforeach
+</div>
+    </div>
  <div class="row">
+     
      <div class="column">@isset($receivedMessages)
 <h1>Messaggi ricevuti</h1>
 <div class='receivedMessages'>
