@@ -100,6 +100,11 @@ Route::group(['middleware' => 'can:isAdmin'], function(){
         ->middleware('can:isAdmin');
     Route::post('/gestionefaq', 'UserController@creaFaq')
         ->name('crea_faq')->middleware("can:isAdmin");
+
+Route::get('/stats', 'UserController@showStatsFilt')
+        ->name('StatFiltrate')
+        ->middleware('can:isAdmin');    
+
 Route::get('/gestionefaq', 'UserController@gestioneFaq')
         
         ->name('gestioneFaq')
