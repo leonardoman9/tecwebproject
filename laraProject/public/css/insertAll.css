@@ -46,21 +46,6 @@
   margin: 15px;
 }
 
-/* 
-.inv {
-  border-radius: 4px;
-  background-color: #cad9cb;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 30px;
-  padding: 15px;
-  width: 100%;
-  transition: all 0s;
-  cursor: pointer;
-  margin: 5px;
-  margin-left: 1%;
-} */
 
 #title{
   margin: auto;
@@ -168,30 +153,6 @@ h1 #title{
 } 
 
 
-/*singolo alloggio
-
-.dettaglio{
-  
-}
-
-.catfoto {
-  position: relative;
-  padding: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.tip {
-  display: block;
-  margin: 20px;
-  padding: 20px;
-  margin-left: 20px;
-  text-align: left}
-
-.desc {
-  display: flex;
-}
-*/
 .buttonM {
   text-decoration: none;
   border-radius: 15px;

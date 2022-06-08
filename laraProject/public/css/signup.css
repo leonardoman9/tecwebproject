@@ -1,0 +1,72 @@
+
+
+.floatingForm {
+    background-attachment: fixed;
+    border: solid ;
+    border-radius: 25px;
+    border-style:outset;
+    margin-left: 45rem;
+    margin-right: 45rem;
+    height: 45em;
+    margin-top: 10rem;
+    background-color: rgb(228, 207, 180);
+    background-position: center;
+    padding: 5px;
+    text-transform: capitalize;
+    font-size: 20px;
+    float: inherit;
+    transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+}
+
+.singup_1 {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 5rem;
+    border-radius: 2px;
+   
+}
+
+.singup_1 .eta {
+    font-size: 30px;
+    display: inline-block;
+    margin: 28px;
+    text-transform: capitalize;
+    margin-left: -3px;
+}
+
+.singup_1 .pass {
+    font-size: 30px;
+    text-transform: capitalize;
+    margin: 10px;
+    margin-left: -1px;
+}
+
+.singup_1 a {
+    margin: 10px;
+    margin-left: 25%;
+    text-decoration: none;
+    text-align: center;
+}
+ 
+.singup_1 .loc {
+    margin: 10px;
+    margin-right: 20px;
+}
+
+
+/* 
+.button {
+        text-align: center;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        display: block;
+        width: 100%;
+        margin-left: 0%;
+    }
+ */

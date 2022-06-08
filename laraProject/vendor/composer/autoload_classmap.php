@@ -35,6 +35,7 @@ return array(
     'App\\Http\\Requests\\InserimentoRequest' => $baseDir . '/app/Http/Requests/InserimentoRequest.php',
     'App\\Http\\Requests\\MessaggioRequest' => $baseDir . '/app/Http/Requests/MessaggioRequest.php',
     'App\\Http\\Requests\\Ricerca' => $baseDir . '/app/Http/Requests/Ricerca.php',
+    'App\\Http\\Requests\\StatisticheRequest' => $baseDir . '/app/Http/Requests/StatisticheRequest.php',
     'App\\Http\\Requests\\UpdateProfileRequest' => $baseDir . '/app/Http/Requests/UpdateProfileRequest.php',
     'App\\Models\\FAQ' => $baseDir . '/app/Models/FAQ.php',
     'App\\Models\\Opzionamento' => $baseDir . '/app/Models/Opzionamento.php',

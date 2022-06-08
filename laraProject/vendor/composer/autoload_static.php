@@ -490,6 +490,7 @@ class ComposerStaticInit74b6f56b03146c69fd51e97ea6804a03
         'App\\Http\\Requests\\InserimentoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/InserimentoRequest.php',
         'App\\Http\\Requests\\MessaggioRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MessaggioRequest.php',
         'App\\Http\\Requests\\Ricerca' => __DIR__ . '/../..' . '/app/Http/Requests/Ricerca.php',
+        'App\\Http\\Requests\\StatisticheRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StatisticheRequest.php',
         'App\\Http\\Requests\\UpdateProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateProfileRequest.php',
         'App\\Models\\FAQ' => __DIR__ . '/../..' . '/app/Models/FAQ.php',
         'App\\Models\\Opzionamento' => __DIR__ . '/../..' . '/app/Models/Opzionamento.php',
