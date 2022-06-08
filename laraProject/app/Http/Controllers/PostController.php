@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 
 use App\Models\User;
 use Auth;
 use App\Models\FAQ;
 use App\Models\foto;
+use App\Models\Opzionamento;
 use App\Models\servizio;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -17,6 +19,20 @@ use DB;
 
 class PostController extends Controller
 {
+      protected $_faqs;
+    protected $FAQ;
+    private $alloggio;
+    protected $servizi;
+    protected $opzionamenti;
+    
+     public function __construct() {
+        $this->middleware('auth');
+        $this->FAQ = new FAQ;
+        $this->alloggio = new alloggio;
+        $this->servizi = new  servizio();
+        $this->opzionamenti = new Opzionamento();
+                
+    }
     public function inserisciAlloggio(){
         return view('inserisci_alloggio');
        } 
@@ -26,7 +42,7 @@ class PostController extends Controller
         $post = new alloggio();
         $serv = new servizio();
         $post->tipologia = $request->tipologia;
-        $post->data_inserimento = '2022-01-01';
+        $post->data_inserimento = Carbon::now()->format('Y-m-d');
         $post->canone = $request->canone;
         $post->dimensione = $request->dimensione;
         $post->citta = $request->citta;
@@ -55,7 +71,6 @@ class PostController extends Controller
            $serv->angoloStudio = $request['angoloStudio'];
        } else  {$serv->angoloStudio = false;}
        
-        $serv->angoloStudio = $request['angoloStudio'];
         $serv->save();
         
         $foto = new foto();
@@ -71,8 +86,6 @@ class PostController extends Controller
                 ->with('alloggios', $alloggios);
        }
        
-           
-
        public function getalloggio(){
         $alloggios = alloggio::where('added_by', '=', Auth::user()->username)->get();
         return view('alloggios', compact('alloggios'));
@@ -106,6 +119,7 @@ class PostController extends Controller
           @unlink($path);
          alloggio::where('id_alloggio',$id_alloggio)->delete();
          $fotos::where('id_alloggio', $id_alloggio)->delete();
+         servizio::where('id_alloggio', $id_alloggio)->delete();
          return back()->with('cancelli_alloggio', 'Alloggio cancellato con successo');
         }
      }
@@ -155,5 +169,38 @@ class PostController extends Controller
           return view('alloggios')
                 ->with('alloggios', $alloggios);
          
+     }
+     public function showRichieste($id_alloggio){
+         $users = DB::table('users')->get();
+         $allRichieste = DB::table('opzionamenti')
+                 ->where('id_alloggio', $id_alloggio)
+                 ->get();
+         
+          $joinedTable = DB::table('opzionamenti')
+                                    ->where('opzionamenti.id_alloggio', $id_alloggio)
+                                    ->join('alloggios', 'alloggios.id_alloggio', '=', 'opzionamenti.id_alloggio')
+                                    ->join('users', 'users.id', '=', 'opzionamenti.id_opzionante')
+                                    ->get();
+          
+          
+         return view('richiesteAlloggio')
+                ->with('richiesteAlloggio', $joinedTable);
+     }
+     
+     public function accettaRichiesta($opzId, $id_alloggio, $id_opzionante){
+      
+         $result = DB::table('opzionamenti')
+                 ->where('id_alloggio', $id_alloggio)
+                 ->where('id_opzionante', $id_opzionante)->update([
+                     'accettata' => 1,
+                 ]);
+         DB::table('opzionamenti')
+                 ->where('id_alloggio', $id_alloggio)
+                 ->where('accettata', 0)
+                 ->delete();
+         
+         return view('richiestaAccettata')->with('result', $result)
+                             ->with('id_alloggio', $id_alloggio)
+                             ->with('id_opzionante', $id_opzionante);
      }
 }

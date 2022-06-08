@@ -24,8 +24,11 @@ class StatisticheRequest extends FormRequest {
     public function rules() {
         return [
             
-            'datefrom' => 'nullable|date',
-            'dateto' => 'nullable|date|after:from',
+            'statistica' => 'required|string',
+            'scelta' => 'required|string',
+            'data_inizio' => 'required|date',
+            'data_fine' => 'required|date',
+            
          
         ];
     }

@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
                 [
                     [               'id_alloggio' => 1,
                                     'tipologia'  =>  1, // 1 = posto letto, 2 = appartamento
-                                     'data_inserimento' => '2022-05-21',
+                                     'data_inserimento' => '2020-02-20',
                                      'canone' => 650,
                                      'dimensione'=> 5,
                                      'citta' => 'Ancona',
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
                     ],
                      [  'id_alloggio' => 2,
                                     'tipologia'  =>  2, 
-                                     'data_inserimento' => '2022-05-21',
+                                     'data_inserimento' => '2021-02-20',
                                      'canone' => 600,
                                      'dimensione'=> 10,
                                      'citta' => 'Ancona',
@@ -71,7 +71,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                     ],
                      [   'id_alloggio' => 4,
                                     'tipologia'  =>  1, 
-                                     'data_inserimento' => '2022-05-21',
+                                     'data_inserimento' => '2022-01-03',
                                      'canone' => 500,
                                      'dimensione'=> 20,
                          
@@ -91,7 +91,7 @@ Ideale per studenti o dipendenti dell ospedale.',
                     ],
                     [               'id_alloggio' => 5,
                                     'tipologia'  =>  1, 
-                                     'data_inserimento' => '2022-05-21',
+                                     'data_inserimento' => '2022-06-08',
                                      'canone' => 450,
                                      'dimensione'=> 25,
                                      'citta' => 'Ancona',
@@ -540,14 +540,16 @@ Ideale per studenti o dipendenti dell ospedale.',
                 'id_alloggio' => 1,
                 'id_proprietario' => 4,
                 'id_opzionante' => 5,
-                'data' => '2022-06-07 12:22:22'
+                'data' => '2022-06-07 12:22:22',
+                'accettata' => false
                 ],
              [
                 'id' => 2,
                 'id_alloggio' => 5,
                 'id_proprietario' => 4,
                 'id_opzionante' => 5,
-                'data' => '2022-06-07 12:24:22'
+                'data' => '2022-06-07 12:24:22',
+                'accettata' => false
                 ],
             
                 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Auth;
+use DB;
 use App\Models\FAQ;
 use App\Models\alloggio;
 use App\Models\foto;
@@ -29,11 +30,16 @@ class userController extends Controller {
     protected $_faqs;
     protected $FAQ;
     private $alloggio;
+    protected $servizi;
+    protected $opzionamenti;
 
     public function __construct() {
         $this->middleware('auth');
         $this->FAQ = new FAQ;
         $this->alloggio = new alloggio;
+        $this->servizi = new  servizio();
+        $this->opzionamenti = new Opzionamento();
+                
     }
 
     public function index() {
@@ -155,23 +161,62 @@ class userController extends Controller {
         
         
         return view('statsPage')
-                ->with('n_alloggi',$n_alloggi);
+                ->with('n_alloggi',$n_alloggi)
+                ->with('alloggios', $alloggios);
     }
     
     
     
    public function showStatsFilt(StatisticheRequest $request){
-        $alloggios = $this->alloggio->returnAll();
-        $datefrom = $request()->datefrom;
-        $dateto = $request()->dateto;
-        $n_alloggi = $alloggios
-                       ->whereBetween('data_inserimento',[$datefrom,$dateto])
-                       ->count();
-        
-        
-        
+
+       switch($request['statistica']){
+           case 'offerteDiAlloggio': 
+                //filtro tutti gli alloggi in base al tipo
+                switch($request['scelta']){
+                    case 1: $alloggi = alloggio::where('tipologia', 1)->get(); break;
+                    case 2: $alloggi = alloggio::where('tipologia', 2)->get(); break;
+                    case 3: $alloggi = DB::table('alloggios')->get(); break;
+                }
+               //filtro tutti gli alloggi in base alla data
+                $result = $alloggi->where('data_inserimento', '>=', $request['data_inizio'])
+                                    ->where('data_inserimento', '<=', $request['data_fine'])
+                                    ->count();
+           break;
+           case 'offerteLocazioneDaLocat':
+              $joinedTable = DB::table('opzionamenti')
+                                    ->join('alloggios', 'opzionamenti.id_alloggio', '=', 'alloggios.id_alloggio')
+                                    ->where('data', '>=', $request['data_inizio'])
+                                    ->where('data', '<=', $request['data_fine'])
+                                    ;
+                 switch($request['scelta']){
+                    case 1: $result = $joinedTable->where('tipologia', 1)->get(); break;
+                    case 2: $result = $joinedTable->where('tipologia', 2)->get(); break;
+                    case 3: $result = $joinedTable->get(); break;
+                }       
+                $result = $result->count();
+           break;
+           case 'alloggiLocati':
+                  $joinedTable = DB::table('opzionamenti')
+                                    ->join('alloggios', 'opzionamenti.id_alloggio', '=', 'alloggios.id_alloggio')
+                                    ->where('data', '>=', $request['data_inizio'])
+                                    ->where('data', '<=', $request['data_fine'])
+                                    ->where('accettata', '=', 1)
+                                    ;
+                 switch($request['scelta']){
+                    case 1: $result = $joinedTable->where('tipologia', 1)->get(); break;
+                    case 2: $result = $joinedTable->where('tipologia', 2)->get(); break;
+                    case 3: $result = $joinedTable->get(); break;
+                }       
+                $result = $result->count();
+           break;
+           
+           
+           
+       }
         return view('statsPage')
-                ->with('n_alloggi',$n_alloggi);
+                ->with('result', $result)
+                ->with('request', $request)
+                ;
     }
      
     
@@ -212,10 +257,13 @@ public function showAnn($ann) {
         if($selectedFoto === null){
             $selectedFoto=0;
         }
+        $accettata= DB::table('opzionamenti')->where('id_alloggio', $ann)->where('accettata', 1)->get();
+        
         return view('annuncioPage')
                 ->with('ann', $toShow)
                 ->with('servizi', $selectedServizio)
                 ->with('poster', $poster)
+                ->with('accettata',$accettata)
                 ->with('foto', $selectedFoto);
    }
    
@@ -257,6 +305,7 @@ public function showAnn($ann) {
           $opzionamenti->id_proprietario = User::getUserIdByUsername($request['receiver']);
           $opzionamenti->id_opzionante = Auth::user()->id;
           $opzionamenti->data = Carbon::now()->toDateTimeString();
+          $opzionamenti->accettata = false;
           $opzionamenti->save();
        
        }

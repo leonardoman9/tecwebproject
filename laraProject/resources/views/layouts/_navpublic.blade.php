@@ -24,7 +24,7 @@
                 
                 <li><a href="{{route('FaqPage')}} ">FAQ</a></li>
 
-               @auth
+               @auth    
                     <li><a href="{{ route('profilo') }}"  class="btn-accedi" title="Home User">Profilo</a></li>
                     <li><a href="" title="Esci dal sito" class="btn-accedi" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                     <form id="logout-form" action="{{ route('logout') }}"  method="POST" style="display: none;">

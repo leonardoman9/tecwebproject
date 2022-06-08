@@ -78,8 +78,12 @@ $("#image-wrapper").click(function () {
          @can('isLocatario')
         <div class="contact">
                 <h3>Prezzo: €/Mese {{$ann->canone}}</h3>
+                @if($accettata->isEmpty())
+                     <a href="{{route('messaggio', [$ann->id_alloggio]) }}">Contatta</a>
+                     @else
+                     <h1>Offerta non opzionabile.</h1>
+                @endif
                 
-                <a href="{{route('messaggio', [$ann->id_alloggio]) }}">Contatta</a>
                 <!--<button type=""></button>-->
             </div>
          

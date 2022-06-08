@@ -19,6 +19,7 @@ class CreateOpzionamentiTable extends Migration
             $table->integer('id_proprietario');
             $table->integer('id_opzionante');
             $table->timestamp('data');
+            $table->boolean('accettata');
         });
     }
 

@@ -59,6 +59,12 @@ Route::group(['middleware' => 'can:isLocatore'], function(){
 Route::get('/mieialloggi', 'PostController@getalloggio')
         ->name('alloggiLocatore');
         
+Route::get('/mieialloggi/richieste/{annId}', 'PostController@showRichieste')
+        ->name('RichiesteLocazione');
+
+Route::get('/mieialloggi/accettata/{opzId}/{id_alloggio}/{id_opzionante}', 'PostController@accettaRichiesta')
+        ->name('AccettaRichiesta');
+
 Route::get('/mieialloggi/nuovo', 'PostController@inserisciAlloggio')
         ->name('nuovoAlloggio');
 
@@ -101,7 +107,7 @@ Route::group(['middleware' => 'can:isAdmin'], function(){
     Route::post('/gestionefaq', 'UserController@creaFaq')
         ->name('crea_faq')->middleware("can:isAdmin");
 
-Route::get('/stats', 'UserController@showStatsFilt')
+Route::post('/stats', 'UserController@showStatsFilt')
         ->name('StatFiltrate')
         ->middleware('can:isAdmin');    
 

@@ -25,6 +25,7 @@
                     <th>Data Inizio Locazione</th>
                     <th>Data Fine Locazione</th>
                     <th>Azione</th> 
+                    <th>Richieste di locazione</th>
                 </tr>
             </thead>
 
@@ -45,12 +46,14 @@
                         <td>{{$post->descrizione}}</td>
                         <td>{{$post->data_inizio_locazione}}</td>
                         <td>{{$post->data_fine_locazione}}</td>
+                        
 
                         <td class="button1">
                             <a href="{{route('visualizzaAlloggio', $post->id_alloggio)}}" class="btn1">Dettagli</a><br>
                             <a href="{{route('modificaAlloggio', $post->id_alloggio)}}" class="btn1">Modifica</a><br>
                             <a href="{{route('cancellaAlloggio', $post->id_alloggio)}}" class="btn1" onclick="return deleteElement();">Cancella</a> 
                         </td>
+                        <td> <a href="{{route('RichiesteLocazione', $post->id_alloggio)}}">Visualizza</a></td>
                     </tr>
                 <?php endforeach ;?>
                     <div id="buttonwrapper">
