@@ -15,6 +15,7 @@ use App\Models\Opzionamento;
 use App\Http\Requests\UpdateProfileRequest;
 use App\Http\Requests\FaqCreateRequest;
 use App\Http\Requests\FaqUpdateRequest;
+use App\Http\Requests\StatisticheRequest;
 use App\Http\Requests\Request;
 use App\Http\Requests\MessaggioRequest;
 use Illuminate\Support\Facades\Hash;
@@ -27,10 +28,12 @@ class userController extends Controller {
     
     protected $_faqs;
     protected $FAQ;
-    
+    private $alloggio;
+
     public function __construct() {
         $this->middleware('auth');
         $this->FAQ = new FAQ;
+        $this->alloggio = new alloggio;
     }
 
     public function index() {
@@ -145,8 +148,35 @@ class userController extends Controller {
     
     
     public function showStats(){
-        return view('statsPage');
+        $alloggios = $this->alloggio->returnAll();
+        
+        $n_alloggi = $alloggios->count();
+        
+        
+        
+        return view('statsPage')
+                ->with('n_alloggi',$n_alloggi);
     }
+    
+    
+    
+   public function showStatsFilt(StatisticheRequest $request){
+        $alloggios = $this->alloggio->returnAll();
+        $datefrom = $request()->datefrom;
+        $dateto = $request()->dateto;
+        $n_alloggi = $alloggios
+                       ->whereBetween('data_inserimento',[$datefrom,$dateto])
+                       ->count();
+        
+        
+        
+        return view('statsPage')
+                ->with('n_alloggi',$n_alloggi);
+    }
+     
+    
+    
+    
     public function showMsg(){
         $messaggi = new messaggi();
         $sentMessages = $messaggi::where('mittente', '=', Auth::user()->username)
