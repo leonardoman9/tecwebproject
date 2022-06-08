@@ -8,6 +8,7 @@ $("#mainimage").elevateZoom({
     lensSize: 300
 });
 
+
 //on page load hide the container which plugin is applied 
 $('#img_color').hide();    
 
@@ -18,76 +19,88 @@ $("#image-wrapper").click(function () {
 </script>
 
     @section('content')
-     <section id="detaglio_prodotto" class="section_p1">
+    
+    <link href="{{asset('css/det_annuncio.css')}}" rel="stylesheet" type="text/css"/>
+
+        <h1 style="margin: auto;
+                    width: 50%;
+                    border: 3px solid green;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 30px;
+                    margin-bottom: 30px;">Dettagli Annuncio
+        </h1>
+    
+   
+
+    <section id="detaglio_prodotto">
         <div class="imagine_prodotto">
-            <div id="image-wrapper" class="img_group">
+            <!--      <div id="image-wrapper" class="img_group">--> 
                 
-                @if($foto===0){
-                    <div id="img_color" class="img_color">
+               @if($foto===0){
+                <!-- <div id="img_color" class="img_color"></div> -->
                     <img id="mainimage" src="../../public/fotoprova/default.jpg" class="catfoto"alt=""/>
-                </div>
+                
                 }
                 @else
-                <div class="img_color">
+              <!-- <div class="img_color"></div> -->  
                   @php echo "<img src=../../storage/app/{$foto->path}" @endphp class="catfoto" >
-                </div>
-                @endif
-            </div>
-               
-        </div>
-
-        <div class="detagio_prod">
-             @switch($ann->tipologia)
-             @case(0) <h1> <u>POSTO LETTO </u></h1> @break
-             @case(1) <h1> <u>APPARTAMENTO</u></h1> @break
-             @endswitch
-            <h4>Superficie: {{$ann->dimensione}} Mq</h4>
-            <h4>Numero posto letti: {{$ann->numero_posto_letto_totale}}</h4>
-            <h4>Periodo di locazione: dal {{$ann->data_inizio_locazione}} al {{$ann->data_fine_locazione}}</h4>
-            <h4>Citta: {{$ann->citta}}</h4>
-            <h4>Indirizzo: {{$ann->indirizzo}}</h4>
-            <h5>{{$ann->descrizione}}</h5>
-            <h5>Servizi disponibili:</h5>
-                @switch($servizi->cucina)
-                @case(1) <h4>Cucina</h4> @break
-                @case(0) <h4></h4>@break
-                @endswitch
-                 @switch($servizi->localeRicreativo)
-                @case(1) <h4>Locale Ricreativo</h4> @break
-                @case(0) <h4></h4>@break
-                @endswitch
-                 @switch($servizi->angoloStudio)
-                @case(1) <h4>Angolo studio</h4> @break
-                @case(0) <h4></h4>@break
-                @endswitch
-         
-        </div>
-       </section>
-
-    <section class="proprietario ">
-         <div class="datti">
-             <div class="nome">
-                <h2>Informazioni Proprietario</h2>
-                <h3>Nome: {{$poster->value('added_by')}}</h3>
-<!--                <h3>Telefono: 34567890</h3>-->
-<!--                <h3>Mail: wertyuio</h3>-->
-<br><br>
-             </div>
-           
-        </div>
-         @can('isLocatario')
-        <div class="contact">
-                <h3>Prezzo: €/Mese {{$ann->canone}}</h3>
                 
-                <a href="{{route('messaggio', [$ann->id_alloggio]) }}">Contatta</a>
-                <!--<button type=""></button>-->
+                @endif      
+      
+
+            <div class="app">
+                @switch($ann->tipologia)
+                @case(0) <h1> <u>POSTO LETTO </u></h1> @break
+                @case(1) <h1> <u>APPARTAMENTO</u></h1> @break
+                @endswitch <br><br>
+
+                <ul>
+                    
+                    <li><h3>Citta: {{$ann->citta}}</h4></li>
+                    <li><h3>Indirizzo: {{$ann->indirizzo}}</h3></li>
+                    <li><h3>Superficie: {{$ann->dimensione}} Mq</h3></li>
+                    <li><h3>Numero posto letti: {{$ann->numero_posto_letto_totale}}</h3></li>
+                    <li><h3>Periodo di locazione: dal {{$ann->data_inizio_locazione}} al {{$ann->data_fine_locazione}}</h3></li>
+                    <h2>Servizi disponibili:</h2>
+                        @switch($servizi->cucina)
+                        @case(1) <li><h3>Cucina</h3></li> @break
+                        @case(0) <h3></h3>@break
+                        @endswitch
+                        @switch($servizi->localeRicreativo)
+                        @case(1) <li><h3>Locale Ricreativo</h3></li> @break
+                        @case(0) <h3></h3>@break
+                        @endswitch
+                        @switch($servizi->angoloStudio)
+                        @case(1) <li><h3>Angolo studio</h3></li> @break
+                        @case(0) <h3></h3>@break 
+                       
+                </ul>
+                
+                    @endswitch
             </div>
+        </div>
          
+        <div class="nome"> 
+                 
+                <h3>{{$ann->descrizione}}</h3> <br><br><br><br>
+                <h1>Prezzo: €/Mese {{$ann->canone}}</h1><br>
+                <h1>Informazioni Proprietario</h1> <br>
+                <h2>Nome: {{$poster->value('added_by')}}</h2><br>
+        </div>
+        
+</div>
+         @can('isLocatario')
+
+        <div class="prezzo">
+               
+                <a href="{{route('messaggio', [$ann->id_alloggio]) }}">Contatta</a>
+                
+        </div>
+    
+ </section>
          @endcan
-    </section>  
-    
-    
- 
+        
     @endsection
     
 

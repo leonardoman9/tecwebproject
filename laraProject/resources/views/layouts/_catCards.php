@@ -3,6 +3,7 @@
     @isset($latestAnn)
           @foreach($latestAnn as $ann)
                     <?php $stampa = false; ?>
+     
                         <section class="banner">
                             <div class="banner_image">
                                 <a href="{{route('LoginPage')}}">
