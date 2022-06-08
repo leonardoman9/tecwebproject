@@ -57,8 +57,14 @@
                                </p>
                                <div class="prezzo">
                                    <ul>
-                                       <li><h4>  Camere: {{$ann->numero_camere}}</h4></li>
-                                       <li><h4>  Posti letto:  {{$ann->numero_posto_letto_totale}} </h4></li>
+                                       
+                                       @switch($ann->tipologia)
+                                         @case(2) <li><h4>Numero camere: <u>{{$ann->numero_camere}} </u></h4> </li>
+                                                   <li><h4>Numero posti letto in totale: <u>{{$ann->numero_posto_letto_totale}} </u></h4></li> @break
+                                         @case(1)  <li><h4>Numero posti letto in totale: <u>{{$ann->numero_posto_letto_totale}} </u></h4> </li>
+                                                    <li><h4>Numero letti nella camera: <u>{{$ann->numero_letti_nella_camera}} </u></h4> </li>  @break
+                                        @endswitch
+                                       
                                        <li><h4> Dimensione:  {{$ann->dimensione}} Mq</h4></li>
                                        <li><h4> Canone: {{$ann->canone}}€/Mese </h4></li>
                                    </ul>
@@ -116,8 +122,14 @@
                                </p>
                                <div class="prezzo">
                                    <ul>
-                                       <li><h4>  Camere: {{$ann->numero_camere}}</h4></li>
-                                       <li><h4>  Posti letto:  {{$ann->numero_posto_letto_totale}} </h4></li>
+                                       
+                                       @switch($ann->tipologia)
+                                         @case(2) <li><h4>Numero camere: <u>{{$ann->numero_camere}} </u></h4> </li>
+                                                   <li><h4>Numero posti letto in totale: <u>{{$ann->numero_posto_letto_totale}} </u></h4></li> @break
+                                         @case(1)  <li><h4>Numero posti letto in totale: <u>{{$ann->numero_posto_letto_totale}} </u></h4> </li>
+                                                    <li><h4>Numero letti nella camera: <u>{{$ann->numero_letti_nella_camera}} </u></h4> </li>  @break
+                                        @endswitch
+                                       
                                        <li><h4> Dimensione:  {{$ann->dimensione}} Mq</h4></li>
                                        <li><h4> Canone: {{$ann->canone}}€/Mese </h4></li>
                                    </ul>
