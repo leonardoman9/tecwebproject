@@ -4,10 +4,10 @@
 
 @section('content')
 
-
-
 <link href="{{asset('css/signup.css')}}" rel="stylesheet" type="text/css"/>
+
 <div class="register">
+
 <h1 style="margin: auto;
                     width: 50%;
                     border: 3px solid green;
@@ -115,7 +115,6 @@
             <a href="{{ route('login') }}">Hai già un account? Accedi!</a>
             
         </section>
-    <!-- </div><div id="Signup"> <div class="button"></div>-->
 </div>
 
 @endsection
