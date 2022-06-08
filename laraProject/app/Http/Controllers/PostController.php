@@ -193,6 +193,7 @@ class PostController extends Controller
                  ->where('id_alloggio', $id_alloggio)
                  ->where('id_opzionante', $id_opzionante)->update([
                      'accettata' => 1,
+                     'data_assegnazione' => Carbon::now()->toDateTimeString(),
                  ]);
          DB::table('opzionamenti')
                  ->where('id_alloggio', $id_alloggio)

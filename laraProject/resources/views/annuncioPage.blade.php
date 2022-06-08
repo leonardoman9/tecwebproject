@@ -51,7 +51,7 @@ $("#image-wrapper").click(function () {
 
             <div class="app">
                 @switch($ann->tipologia)
-                @case(0) <h1> <u>POSTO LETTO </u></h1> @break
+                @case(2) <h1> <u>POSTO LETTO </u></h1> @break
                 @case(1) <h1> <u>APPARTAMENTO</u></h1> @break
                 @endswitch <br><br>
 
@@ -85,21 +85,30 @@ $("#image-wrapper").click(function () {
                  
                 <h3>{{$ann->descrizione}}</h3> <br><br><br><br>
                 <h1>Prezzo: €/Mese {{$ann->canone}}</h1><br>
-                <h1>Informazioni Proprietario</h1> <br>
-                <h2>Nome: {{$poster->value('added_by')}}</h2><br>
+                <h2>Annuncio postato da: {{$poster->value('added_by')}}</h2><br>
         </div>
         
 </div>
          @can('isLocatario')
 
         <div class="prezzo">
-               
-                <a href="{{route('messaggio', [$ann->id_alloggio]) }}">Contatta</a>
+               @can('isLocatario')
+        <div class="contact">
                 
-        </div>
-    
- </section>
+                @if($accettata->isEmpty())
+                     <a href="{{route('messaggio', [$ann->id_alloggio]) }}">Contatta</a>
+                     @else
+                     <h1 style="text-align:center">Offerta non più opzionabile.</h1>
+                @endif
+                
+                <!--<button type=""></button>-->
+            </div>
+         
          @endcan
+        </div>
+    @endcan
+ </section>
+         
         
     @endsection
     

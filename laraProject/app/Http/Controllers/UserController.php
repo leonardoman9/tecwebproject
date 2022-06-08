@@ -224,6 +224,7 @@ class userController extends Controller {
     
     public function showMsg(){
         $messaggi = new messaggi();
+        
         $sentMessages = $messaggi::where('mittente', '=', Auth::user()->username)
                 ->orderBy('timestamp', 'desc')
                 ->get();
@@ -352,7 +353,13 @@ public function showAnn($ann) {
        if (Auth::user()->username == $selectedAnn->destinatario){
               $destinatario = $selectedAnn->mittente;
        }else  {$destinatario = $selectedAnn->destinatario;}
+       $madeOpzionamento = Opzionamento::where('id_alloggio', $selectedAnn->id_alloggio)
+                                        ->where('id_opzionante', Auth::user()->id)
+                                        ->first();
+       
+        $madeOpzionamento!=null ? $flag=1 : $flag=0;
        return view('messaggio')
+       ->with('flag', $flag)
         ->with('locUsername', $destinatario)
         ->with('annId', $selectedAnn->id_alloggio);
    }

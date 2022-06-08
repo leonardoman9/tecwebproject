@@ -24,9 +24,10 @@
             <h1>Età: </h1> {{$ric->eta}}
             <h1>Data richiesta di locazione: </h1> {{$ric->data}}
             <h1>Date di locazione: </h1> dal {{$ric->data_inizio_locazione}} al {{$ric->data_fine_locazione}}
+            <h1>Data di assegnazione: </h1> {{$ric->data_assegnazione}}
         
         @else
-        {{$ric->id}}
+        
         <h1>Username locatario: </h1> {{$ric->username}}
         <h1>Nome locatario: </h1> {{$ric->nome}} {{$ric->cognome}}
         <h1>Genere: </h1> {{$ric->genere}}
