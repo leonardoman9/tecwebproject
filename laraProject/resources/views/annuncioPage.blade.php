@@ -57,10 +57,10 @@ $("#image-wrapper").click(function () {
 
                 <ul>
                     
-                    <li><h3>Citta: {{$ann->citta}}</h4></li>
+                    <li><h3>Citta: {{$ann->citta}}</h3></li>
                     <li><h3>Indirizzo: {{$ann->indirizzo}}</h3></li>
                     <li><h3>Superficie: {{$ann->dimensione}} Mq</h3></li>
-                    <li><h3>Numero posto letti: {{$ann->numero_posto_letto_totale}}</h3></li>
+                    <li><h3>Numero posto letto: {{$ann->numero_posto_letto_totale}}</h3></li>
                     <li><h3>Periodo di locazione: dal {{$ann->data_inizio_locazione}} al {{$ann->data_fine_locazione}}</h3></li>
                     <h2>Servizi disponibili:</h2>
                         @switch($servizi->cucina)
@@ -88,7 +88,7 @@ $("#image-wrapper").click(function () {
                 <h2>Annuncio postato da: {{$poster->value('added_by')}}</h2><br>
         </div>
         
-</div>
+    </div>
          @can('isLocatario')
 
         <div class="prezzo">
