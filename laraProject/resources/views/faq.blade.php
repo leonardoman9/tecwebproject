@@ -9,7 +9,7 @@
                     margin-top: 30px;
                     margin-bottom: 30px;">Frequently Asked Questions 
         </h1>
-<div class="floatingForm">
+<div>
     @isset($allFaqs)
        
         @foreach ($allFaqs as $faq)

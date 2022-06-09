@@ -75,6 +75,7 @@
             @endforeach
         </ul>
         @endif
+        <br>
          {{Form::label('data_fine_locazione', 'Data fine locazione')}}<br><br>
         {{Form::date('data_fine_locazione', $selected->data_fine_locazione)}}
                @if ($errors->first('data_fine_locazione'))

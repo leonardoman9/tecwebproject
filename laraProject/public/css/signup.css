@@ -1,21 +1,5 @@
+ .register{
 
-.floatingForm {
-   
-    background-attachment: fixed;
-    border: solid ;
-    border-radius: 25px;
-    border-style:outset;
-    margin-left: 45rem;
-    margin-right: 45rem;
-    height: 45em;
-    margin-top: 10rem;
-    background-color: rgb(228, 207, 180);
-    background-position: center;
-    padding: 5px;
-    text-transform: capitalize;
-    font-size: 20px;
-    float: inherit;
-    transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
 }
 
 .singup_1 {
@@ -55,5 +39,5 @@
 }
 
 .register {
-    background-color: rgb(236, 236, 192);
+    
 }

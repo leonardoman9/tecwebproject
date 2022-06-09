@@ -97,7 +97,7 @@
                     
           
                     <?php $stampa = false; ?>
-                        <section class="banner">
+                        <section class="bannerr">
                             
                             <div class="banner_image">
                                 @guest

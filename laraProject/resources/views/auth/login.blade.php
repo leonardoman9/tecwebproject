@@ -18,10 +18,11 @@
                     margin-bottom: 30px;">Accedi
         </h1>
 
-    <div class="floatingForm">
+    <div class="login" >
     
             <section section id="Signup1" class="singup_1">
                 {{ Form::open(array('route' => 'login', 'class' => 'Form')) }}
+                <div class="pass">
                 {{ Form::label('username', 'username') }}
                 {{ Form::text('username') }}
                 @if ($errors->first('username'))
@@ -31,6 +32,7 @@
                     @endforeach
                 </ul>
                 @endif
+                </div>
                 <div class="pass">
                     {{ Form::label('password', 'password') }}
                     {{ Form::password('password') }}

@@ -25,8 +25,8 @@
             {{ Form::open(array('route' => 'register', 'class' => 'contact-form')) }}
             @csrf
             
-            
-            {{ Form::label('username','username' ) }}
+            <div class="pass">
+            {{ Form::label('username','Username' ) }}
             {{ Form::text('username') }}
             @if ($errors->first('username'))
             <ul class="errors">
@@ -35,8 +35,8 @@
                 @endforeach
             </ul>
             @endif
-
-
+            </div>
+<div class="pass">
             {{ Form::label('nome', 'Nome') }}
             {{ Form::text('nome', '') }}
             @if ($errors->first('nome'))
@@ -45,6 +45,7 @@
                 <li>{{ $message }}</li>
                 @endforeach
             </ul>
+</div>
             @endif
             {{ Form::label('cognome', 'Cognome') }}
             {{ Form::text('cognome', '') }}

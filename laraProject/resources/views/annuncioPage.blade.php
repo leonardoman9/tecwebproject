@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('title', 'Annuncio')
-<script>
+<!--<script>
     
 $("#mainimage").elevateZoom({
     zoomType: "lens",
@@ -16,7 +16,7 @@ $("#image-wrapper").click(function () {
    // hide matched element if shown, shows if element is hidden
    $('#image1-container, #image2-container').toggle();    
 });
-</script>
+</script>-->
 
     @section('content')
     

@@ -2,8 +2,7 @@
 
 @section('title', 'Dettagli Alloggio')
 @section('content')
-<link href="{{asset('css/det_alloggio.css')}}" rel="stylesheet" type="text/css"/>
-
+<link href="{{asset('css/det_annuncio.css')}}" rel="stylesheet" type="text/css"/>
 <h1 style="margin: auto;
                     width: 50%;
                     border: 3px solid green;
@@ -59,10 +58,11 @@
                         <div class="can">
                             <h3>Canone:{{$post->canone}} €/Mese</h3>
                         </div>
-
+                        <div id="buttonwrapper" style=" text-align: center; float:left">
+            <a href="{{route('modificaAlloggio', $post->id_alloggio)}}" class="btn1">Modifica</a><br>
+                        </div>
                         <h2 id="tornaIndietro" class="btn">
                             <a href="{{route('alloggiLocatore')}}"><span>&laquo Torna indietro</span></a></h2>
-
                   <!--  </div></h3><h4>  </h3><h4> </h3> <h4> </h3><h4>  </h3> <h4>  </h3> <h4>  </h3><h4> </h3><h4> </h3><h4> </h3><h4> </h3><h4> </h3><h4> --> 
                 
                                 <!--      <div class="buttonF">

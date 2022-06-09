@@ -60,8 +60,10 @@
                     @endforeach
                 </ul>
                 @endif
-               <div class="oo">
+               <div>
+                   <br>
                 {{ Form::label('genere', 'Genere') }}
+                
                 {{Form::select('genere', array('maschio' => 'Maschio', 'Femmina' => 'Femmina'))}}
                 @if ($errors->first('genere'))
                 <ul class="errors">

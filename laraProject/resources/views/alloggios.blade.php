@@ -16,6 +16,12 @@
 
 <section>
     <div>
+         <div id="buttonwrapper" style=" text-align: center; float:left">
+                    <a href="{{route('nuovoAlloggio')}}">
+                     <input type="button" class="btn-accedi" id="aggiungi" value="Aggiungi" onclick="addFaq()" />
+                     </a>
+                    </div>
+                     
         <table class="floatingForm"  id="alloggiosTable">
             <thead>
                 <tr>
@@ -62,11 +68,7 @@
                         <td  class="button1"> <a href="{{route('RichiesteLocazione', $post->id_alloggio)}}" class="btn1">Visualizza</a></td>
                     </tr>
                 <?php endforeach ;?>
-                    <div id="buttonwrapper" style=" text-align: center; float:left">
-                    <a href="{{route('nuovoAlloggio')}}">
-                     <input type="button" class="btn-accedi" id="aggiungi" value="Aggiungi" onclick="addFaq()" />
-                    </div>
-    </a>
+                   
                     
             
             </tbody>
