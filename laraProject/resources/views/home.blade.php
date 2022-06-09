@@ -5,7 +5,7 @@
           @include('layouts/_ultimiAnnunci')
     @isset($latestAnn)
           @foreach($latestAnn as $ann)
-                        <section class="banner">
+                        <section class="bannerr">
                             <div 
                                     class="banner_image">
                                         @guest

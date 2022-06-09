@@ -185,7 +185,7 @@ h1, h2 {
 
 /*banner*/
 
-.banner{
+.bannerr{
     width: 80%;
     margin-left: 220px;
     margin-right: 150px;
@@ -194,6 +194,7 @@ h1, h2 {
     position: relative; 
     margin-top: 50px;
     border-style:outset;
+    inline-size: auto;
  } 
  
 .banner:hover{
@@ -248,27 +249,45 @@ transition: 1s ease;
 }
 
 
-  .banner .button{
+  .bannerr .button{
     margin: auto;  
     text-decoration: none;
     border-radius: 15px;
+   
     
     text-align: center;
     font-size: 25px;
     padding: 10px;
-    width: 300px;
+   
     height: 45px;
     transition: all 0s;
     cursor: pointer;
     margin-top: 70px;
-    margin-left: 30%;
+    
   }
   
   .button span {
+
+      margin: auto;  
+    text-decoration: none;
+    border-radius: 15px;
+   
+    
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+   
+    height: 45px;
+    transition: all 0s;
     cursor: pointer;
+    margin-top: 70px;
+      
+      
+      
+      /*    cursor: pointer;
     display: inline-block;
     position: relative;
-    transition: 0.5s;
+    transition: 0.5s;*/
   }
   
   .button span:after {
@@ -341,7 +360,7 @@ footer{
 footer .container{
     display: flex;
     justify-content: space-between;
-  
+    inline-size: auto;
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;

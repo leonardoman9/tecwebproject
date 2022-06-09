@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="{{asset('css/searchstyle.css')}}" rel="stylesheet" type="text/css"/>
 <div class="container">
     
-    <div id="formId" class="searchForm">
+    <div id="formId" class="searchFormm">
         Ricerca
         
          <select id="scelta">
