@@ -1,6 +1,7 @@
 <a href="{{route('Home')}}" class="logo"><span id="home">Home</span>Away</a>
         <div id="menu">
               <ul class="navbar">
+                  <li><a href="../../../public/files/" download="documentazione.pdf">Documentazione </a></li>
                   @can('isLocatario')
                   
                    <li><a href="{{route('opzionamenti')}}">Richieste di Opzionamento</a></li>
@@ -21,9 +22,9 @@
                 <li><a href="{{route('statsPage')}}">Statistiche</a></li>
                 <li><a href="{{route('gestioneFaq')}}">Gestisci FAQ</a></li>
                 @endcan
-                
+                <a href=""></a>
                 <li><a href="{{route('FaqPage')}} ">FAQ</a></li>
-
+                
                @auth    
                     <li><a href="{{ route('profilo') }}"  class="btn-accedi" title="Home User">Profilo</a></li>
                     <li><a href="" title="Esci dal sito" class="btn-accedi" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
