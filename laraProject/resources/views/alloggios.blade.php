@@ -5,7 +5,13 @@
 <link href="{{asset('css/insertAll.css')}}" rel="stylesheet" type="text/css"/>
 <script src="{{asset('../resources/js/confirmDelete.js')}}"></script>
 
-<h1 id="title">Miei Alloggi
+<h1 id="title" style="margin: auto;
+                    width: 50%;
+                    border: 3px solid green;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 30px;
+                    margin-bottom: 30px;">Miei Alloggi
         </h1>
 
 <section>

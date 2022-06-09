@@ -30,11 +30,11 @@
     
     <div id="Mod_Container">
         <a href="{{route('mostra_modifica_profilo')}}">
-            <button id='bottonemodifica' class='btn-accedi'><i class="fa fa-pencil" aria-hidden="true"></i> Modifica profilo </button>
+           <button class="button">Modifica profilo</button>
         </a>
     </div>
 
-</div>
+</div> <!-- <button id='bottonemodifica' class='btn-accedi'><i class="fa fa-pencil" aria-hidden="true"></i> Modifica profilo </button> -->
 
 @endsection
 @endisset

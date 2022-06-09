@@ -55,10 +55,14 @@ h1, h2 {
     color: #13ec0c;
 }
 
+/* vavbar*/
 
 .navbar{
     display: flex;
     position: relative;
+    text-decoration: none;
+    font-size: 25px;
+    
 }
 
 
@@ -66,41 +70,47 @@ h1, h2 {
     list-style: none;
 }
 
+
+ 
 .navbar a{
-    color: rgb(175, 58, 58);
+    border: none;
     text-decoration: none;
     margin-left: 30px;
     font-weight: 700;
-    font-size: 1em;
-
+    color: rgb(175, 58, 58);
 }
 .navbar a:hover{
-       text-decoration: underline;
+       text-decoration: none;
+       animation: ani 8s linear infinite;
+        border: none;
 }
-
 
 .btn-accedi{
-    padding: 10px 20px;
+  padding: 10px 20px;
     background: #fb911f;
     margin-top: -10px;
-    text-transform: uppercase;
+    text-transform: uppercase; 
 }
+
 
 .btn-accedi:hover{
     background: #d87710;
-    transition: ease-out;
+        transition: ease-out;
 }
+
+
+       
 .header .navbar li a:hover{
     color: #fb911f;
     border-bottom: 2px solid #fb911f;
 }
-
 .btn-registrati {
     padding: 10px 20px;
     background: #fb911f;
     margin-top: -10px;
     text-transform: uppercase;
 }
+
 
 .btn-registrati:hover {
     background: #a8825a;  

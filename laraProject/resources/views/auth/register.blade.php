@@ -17,6 +17,7 @@
                     
                     margin-bottom: 30px;">Registrati
         </h1>
+
 <div class="floatingForm">
     
         <section id="Signup1" class="singup_1">
@@ -65,7 +66,8 @@
                     @endforeach
                 </ul>
                 @endif
-                {{ Form::label('genere', 'Genere') }}
+                
+                    {{ Form::label('genere', 'Genere') }}
                     {{ Form::select('genere', array('maschio'=> 'Maschio', 'femmina' => 'Femmina')) }}
                     @if ($errors->first('genere'))
                     <ul class="errors">
@@ -74,6 +76,8 @@
                         @endforeach
                     </ul>
                     @endif
+                
+                
                    
              </div>
 
