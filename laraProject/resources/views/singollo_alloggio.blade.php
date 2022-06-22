@@ -22,6 +22,9 @@
                     <div class="tip"> </div>
                     @isset($foto)
                         <img src="../../storage/app/{{$foto->path}}" class='catfoto' onmouseover='bigImg(this)' onmouseout='normalImg(this)'>
+                          @else
+             
+                  <img src="../../public/fotoprova/default.jpg" class="catfoto" >
                         @endisset
 
                         <div class="app">                        

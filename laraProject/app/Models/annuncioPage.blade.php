@@ -37,14 +37,14 @@ $("#image-wrapper").click(function () {
         <div class="imagine_prodotto">
             <!--      <div id="image-wrapper" class="img_group">--> 
                 
-               @if($foto===0)
+               @if($foto===0){
                 <!-- <div id="img_color" class="img_color"></div> -->
                     <img id="mainimage" src="../../public/fotoprova/default.jpg" class="catfoto"alt=""/>
                 
-                
+                }
                 @else
               <!-- <div class="img_color"></div> -->  
-                  @php echo "<img src=../../storage/app/$foto->path" @endphp class="catfoto" >
+                  @php echo "<img src=../../storage/app/{$foto->path}" @endphp class="catfoto" >
                 
                 @endif      
       

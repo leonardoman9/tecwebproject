@@ -10,7 +10,7 @@ use App\Models\FAQ;
 use App\Models\alloggio;
 use App\Models\foto;
 use App\Models\inserimentos;
-use App\Models\Messaggi;
+use App\Models\messaggi;
 use App\Models\servizio;
 use App\Models\Opzionamento;
 use App\Http\Requests\UpdateProfileRequest;

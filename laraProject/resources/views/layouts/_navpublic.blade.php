@@ -1,7 +1,7 @@
 <a href="{{route('Home')}}" class="logo"><span id="home">Home</span>Away</a>
         <div id="menu">
               <ul class="navbar">
-                  <li><a href="../../../public/files/" download="documentazione.pdf">Documentazione </a></li>
+                  <li><a href="{{asset('files/documentazione.pdf')}}">Documentazione </a></li>
                   @can('isLocatario')
                   
                    <li><a href="{{route('opzionamenti')}}">Richieste di Opzionamento</a></li>

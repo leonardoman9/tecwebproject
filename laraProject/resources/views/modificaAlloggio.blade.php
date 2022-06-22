@@ -9,8 +9,8 @@
 <script src="{{asset('../resources/js/showImage.js')}}"></script>
 <h1 id='title'>Modifica Alloggio
                             </h1>
-<h2 id="tornaIndietro" class="btn"><a href="{{route('alloggiLocatore')}}"><span>&laquo Torna indietro</span></a></h2>
 
+<h2 id="tornaIndietro" class="btn"><a href="{{route('alloggiLocatore')}}"><span>&laquo Torna indietro</span></a></h2>
 
     <div class="allInsert">
         

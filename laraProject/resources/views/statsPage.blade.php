@@ -21,7 +21,7 @@
     {{Form::select('statistica', array(
                 'offerteDiAlloggio' => 'Offerte di alloggio presenti nel sito', 
                 'offerteLocazioneDaLocat'=> 'Offerte di locazione fatte dai potenziali locatari', 
-                'alloggiLocati' => 'Alloggi Locati'), )
+                'alloggiLocati' => 'Alloggi Locati') )
                 }}
 </div>
 
@@ -30,7 +30,7 @@
       {{Form::select('scelta', 
           array(3 => 'Tutti', 
                  2=> 'Posto letto', 
-                 1 => 'Appartamento'),
+                 1 => 'Appartamento')
                    )}}        
      @if ($errors->first('scelta'))
         <ul class="errors">
